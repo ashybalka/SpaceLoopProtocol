@@ -1,0 +1,271 @@
+{
+    "ru": {
+        "explore-capsule": {
+            "name": "Осмотреться",
+            "description": "Осмотреться вокруг и понять, где вы находитесь"
+        },
+        "meditate": {
+            "name": "Медитировать",
+            "description": "Восстановить жизненные силы и память",
+            "unlockMessage": "Вы замечаете, что дыхание сбивается. Нужно успокоиться и сосредоточиться..."
+        },
+        "examine-door": {
+            "name": "Изучить дверь",
+            "description": "Осмотреть замки и механизмы криокапсулы",
+            "unlockMessage": "В тусклом свете вы различаете очертания массивной двери с несколькими замками."
+        },
+        "examine-door-controls": {
+            "name": "Изучить управление дверью",
+            "description": "Изучить панели управления и системы безопасности двери",
+            "unlockMessage": "Рядом с дверью мерцает панель управления. Некоторые кнопки ещё подсвечены."
+        },
+        "open-capsule": {
+            "name": "Открыть дверь",
+            "description": "Давить на замеры и рычаги люка",
+            "unlockMessage": "Вы нашли ручной рычаг аварийного открытия. Он заржавел, но попробовать стоит."
+        },
+        "concentrate": {
+            "name": "Сосредоточиться",
+            "description": "Попытаться разобраться, где вы находитесь",
+            "unlockMessage": "Разум проясняется. Обрывки мыслей начинают складываться в картину..."
+        },
+        "recall-memory": {
+            "name": "Вспомнить прошлое",
+            "description": "Погружаться в воспоминания и восстанавливать их",
+            "unlockMessage": "Вспышка! Образы прошлого мелькают перед глазами — лица, голоса, запуск корабля..."
+        },
+        "unlock-systems": {
+            "name": "Активировать системы",
+            "description": "Вкл. резервное питание и системы жизнеобеспечения",
+            "unlockMessage": "Вы обнаружили аварийный переключатель питания под боковой панелью!"
+        },
+        "open-electronic-lock": {
+            "name": "Открыть электронный замок",
+            "description": "Взломать электронную систему блокировки двери",
+            "unlockMessage": "Системы ожили! На панели двери загорелся экран ввода кода доступа."
+        },
+        "escape-capsule": {
+            "name": "Выбраться из капсулы",
+            "description": "Протиснуться через открытый люк и выбраться наружу",
+            "unlockMessage": "Дверь со скрежетом отходит в сторону. Пора выбираться!"
+        },
+        "physical-exercise": {
+            "name": "Физупражнения",
+            "description": "Размять мышцы после долгого сна",
+            "unlockMessage": "Тело затекло от долгого криосна. Мышцы требуют движения."
+        },
+        "explore-systems": {
+            "name": "Сканировать систему жизнеобеспечения",
+            "description": "Изучить состояние систем жизнеобеспечения капсулы",
+            "unlockMessage": "Вы заметили мигающие индикаторы на стене — система жизнеобеспечения ещё работает!"
+        },
+        "go-to-hall": {
+            "name": "Выйти в зал",
+            "description": "Перейти в зал гибернации"
+        },
+        "go-to-capsule": {
+            "name": "Вернуться в капсулу",
+            "description": "Вернуться обратно в криокапсулу"
+        },
+        "explore-hall": {
+            "name": "Осмотреть зал",
+            "description": "Изучить огромный зал гибернации с рядами криокапсул",
+            "unlockMessage": "Перед вами открывается огромный зал. Десятки криокапсул стоят рядами в полумраке."
+        },
+        "check-other-capsules": {
+            "name": "Проверить другие капсулы",
+            "description": "Заглянуть в соседние криокапсулы",
+            "unlockMessage": "Вы замечаете, что некоторые капсулы повреждены. Внутри... пусто?"
+        },
+        "find-terminal": {
+            "name": "Найти терминал",
+            "description": "Найти информационный терминал в зале",
+            "unlockMessage": "В дальнем углу зала мерцает экран — кажется, это рабочий терминал!"
+        },
+        "read-logs": {
+            "name": "Прочитать логи",
+            "description": "Изучить записи бортового журнала на терминале",
+            "unlockMessage": "Терминал загружается... На экране появляются строки бортового журнала."
+        }
+    },
+
+    "en": {
+        "explore-capsule": {
+            "name": "Look around",
+            "description": "Look around and understand where you are"
+        },
+        "meditate": {
+            "name": "Meditate",
+            "description": "Restore vital energy and memory",
+            "unlockMessage": "You notice your breathing is unsteady. You need to calm down and focus..."
+        },
+        "examine-door": {
+            "name": "Examine door",
+            "description": "Inspect the locks and mechanisms of the cryocapsule",
+            "unlockMessage": "In the dim light, you can make out the outline of a massive door with several locks."
+        },
+        "examine-door-controls": {
+            "name": "Examine door controls",
+            "description": "Study the control panels and door security systems",
+            "unlockMessage": "A control panel flickers next to the door. Some buttons are still lit."
+        },
+        "open-capsule": {
+            "name": "Open the door",
+            "description": "Push on the latches and levers of the hatch",
+            "unlockMessage": "You found the manual emergency release lever. It's rusty, but worth a try."
+        },
+        "concentrate": {
+            "name": "Concentrate",
+            "description": "Try to figure out where you are",
+            "unlockMessage": "Your mind clears. Fragments of thoughts begin to form a picture..."
+        },
+        "recall-memory": {
+            "name": "Recall the past",
+            "description": "Dive into memories and restore them",
+            "unlockMessage": "Flash! Images of the past flicker before your eyes — faces, voices, ship launch..."
+        },
+        "unlock-systems": {
+            "name": "Activate systems",
+            "description": "Turn on backup power and life support systems",
+            "unlockMessage": "You discovered an emergency power switch under the side panel!"
+        },
+        "open-electronic-lock": {
+            "name": "Open electronic lock",
+            "description": "Hack the electronic door locking system",
+            "unlockMessage": "Systems came alive! An access code screen lit up on the door panel."
+        },
+        "escape-capsule": {
+            "name": "Escape the capsule",
+            "description": "Squeeze through the open hatch and get outside",
+            "unlockMessage": "The door slides open with a screech. Time to get out!"
+        },
+        "physical-exercise": {
+            "name": "Exercise",
+            "description": "Stretch muscles after a long sleep",
+            "unlockMessage": "Your body is stiff from the long cryosleep. Muscles need movement."
+        },
+        "explore-systems": {
+            "name": "Scan life support",
+            "description": "Study the state of the capsule's life support systems",
+            "unlockMessage": "You noticed blinking indicators on the wall — the life support system is still working!"
+        },
+        "go-to-hall": {
+            "name": "Go to the hall",
+            "description": "Move to the hibernation hall"
+        },
+        "go-to-capsule": {
+            "name": "Return to capsule",
+            "description": "Return back to the cryocapsule"
+        },
+        "explore-hall": {
+            "name": "Explore the hall",
+            "description": "Study the huge hibernation hall with rows of cryocapsules",
+            "unlockMessage": "A huge hall opens before you. Dozens of cryocapsules stand in rows in the darkness."
+        },
+        "check-other-capsules": {
+            "name": "Check other capsules",
+            "description": "Look into neighboring cryocapsules",
+            "unlockMessage": "You notice some capsules are damaged. Inside... empty?"
+        },
+        "find-terminal": {
+            "name": "Find terminal",
+            "description": "Find an information terminal in the hall",
+            "unlockMessage": "A screen flickers in the far corner of the hall — it seems to be a working terminal!"
+        },
+        "read-logs": {
+            "name": "Read logs",
+            "description": "Study the ship's log entries on the terminal",
+            "unlockMessage": "The terminal is loading... Lines from the ship's log appear on the screen."
+        }
+    },
+
+    "de": {
+        "explore-capsule": {
+            "name": "Umsehen",
+            "description": "Sich umsehen und verstehen, wo du bist"
+        },
+        "meditate": {
+            "name": "Meditieren",
+            "description": "Lebensenergie und Erinnerung wiederherstellen",
+            "unlockMessage": "Du merkst, dass deine Atmung unregelmäßig ist. Du musst dich beruhigen und konzentrieren..."
+        },
+        "examine-door": {
+            "name": "Tür untersuchen",
+            "description": "Die Schlösser und Mechanismen der Kryokapsel inspizieren",
+            "unlockMessage": "Im schwachen Licht erkennst du die Umrisse einer massiven Tür mit mehreren Schlössern."
+        },
+        "examine-door-controls": {
+            "name": "Türsteuerung untersuchen",
+            "description": "Die Bedienfelder und Türsicherheitssysteme studieren",
+            "unlockMessage": "Ein Bedienfeld flackert neben der Tür. Einige Knöpfe leuchten noch."
+        },
+        "open-capsule": {
+            "name": "Tür öffnen",
+            "description": "Auf die Riegel und Hebel der Luke drücken",
+            "unlockMessage": "Du hast den manuellen Notentriegelungshebel gefunden. Er ist rostig, aber einen Versuch wert."
+        },
+        "concentrate": {
+            "name": "Konzentrieren",
+            "description": "Versuchen herauszufinden, wo du bist",
+            "unlockMessage": "Dein Geist klärt sich. Gedankenfragmente beginnen ein Bild zu formen..."
+        },
+        "recall-memory": {
+            "name": "Vergangenheit erinnern",
+            "description": "In Erinnerungen eintauchen und sie wiederherstellen",
+            "unlockMessage": "Blitz! Bilder der Vergangenheit flackern vor deinen Augen — Gesichter, Stimmen, Schiffsstart..."
+        },
+        "unlock-systems": {
+            "name": "Systeme aktivieren",
+            "description": "Notstrom und Lebenserhaltungssysteme einschalten",
+            "unlockMessage": "Du hast einen Notschalter unter der Seitenplatte entdeckt!"
+        },
+        "open-electronic-lock": {
+            "name": "Elektronisches Schloss öffnen",
+            "description": "Das elektronische Türverriegelungssystem hacken",
+            "unlockMessage": "Systeme erwachten! Ein Zugangscode-Bildschirm leuchtete am Türpaneel auf."
+        },
+        "escape-capsule": {
+            "name": "Aus der Kapsel entkommen",
+            "description": "Durch die offene Luke nach draußen gelangen",
+            "unlockMessage": "Die Tür gleitet quietschend auf. Zeit rauszukommen!"
+        },
+        "physical-exercise": {
+            "name": "Körperübungen",
+            "description": "Muskeln nach langem Schlaf dehnen",
+            "unlockMessage": "Dein Körper ist steif vom langen Kryoschlaf. Muskeln brauchen Bewegung."
+        },
+        "explore-systems": {
+            "name": "Lebenserhaltung scannen",
+            "description": "Den Zustand der Lebenserhaltungssysteme der Kapsel untersuchen",
+            "unlockMessage": "Du bemerkst blinkende Indikatoren an der Wand — das Lebenserhaltungssystem funktioniert noch!"
+        },
+        "go-to-hall": {
+            "name": "Zur Halle gehen",
+            "description": "Zur Hibernationshalle wechseln"
+        },
+        "go-to-capsule": {
+            "name": "Zur Kapsel zurück",
+            "description": "Zurück zur Kryokapsel"
+        },
+        "explore-hall": {
+            "name": "Halle erkunden",
+            "description": "Die riesige Hibernationshalle mit Reihen von Kryokapseln untersuchen",
+            "unlockMessage": "Eine riesige Halle öffnet sich vor dir. Dutzende Kryokapseln stehen in Reihen im Halbdunkel."
+        },
+        "check-other-capsules": {
+            "name": "Andere Kapseln prüfen",
+            "description": "In benachbarte Kryokapseln schauen",
+            "unlockMessage": "Du bemerkst, dass einige Kapseln beschädigt sind. Innen... leer?"
+        },
+        "find-terminal": {
+            "name": "Terminal finden",
+            "description": "Ein Informationsterminal in der Halle finden",
+            "unlockMessage": "Ein Bildschirm flackert in der hinteren Ecke der Halle — das scheint ein funktionierendes Terminal zu sein!"
+        },
+        "read-logs": {
+            "name": "Logs lesen",
+            "description": "Die Einträge des Bordtagebuchs am Terminal studieren",
+            "unlockMessage": "Das Terminal lädt... Zeilen aus dem Bordtagebuch erscheinen auf dem Bildschirm."
+        }
+    }
+}

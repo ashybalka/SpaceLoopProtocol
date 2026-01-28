@@ -1,0 +1,190 @@
+{
+    "ru": {
+        "ui": {
+            "stats": "ХАРАКТЕРИСТИКИ",
+            "eventLog": "ЛОГ СОБЫТИЙ",
+            "automation": "АВТОМАТИЗАЦИЯ",
+            "queue": "Очередь:",
+            "queueEmpty": "Очередь пуста",
+            "start": "Запустить",
+            "stop": "Остановить",
+            "oxygen": "Кислород (O2)",
+            "resetGame": "Сброс игры",
+            "completed": "выполнено",
+            "loopExp": "Опыт петли",
+            "permanent": "Постоянный",
+            "level": "Ур.",
+            "settings": "Настройки",
+            "language": "Язык",
+            "close": "Закрыть"
+        },
+        "stats": {
+            "strength": "Сила",
+            "intelligence": "Интеллект",
+            "agility": "Ловкость",
+            "endurance": "Выносливость",
+            "perception": "Восприятие"
+        },
+        "statIcons": {
+            "strength": "💪",
+            "intelligence": "🧠",
+            "agility": "🎯",
+            "endurance": "❤️",
+            "perception": "👁️"
+        },
+        "automation": {
+            "inQueue": "В очереди",
+            "addToQueue": "Добавить в очередь",
+            "remainingCompletions": "Ещё {count} выполнений",
+            "unlocked": "Автоматизация разблокирована: {name}!"
+        },
+        "log": {
+            "activityCompleted": "✓ {name} завершена ({done}/{max})",
+            "activityFullyCompleted": "⭐ {name} выполнена полностью!",
+            "newActivityUnlocked": "🔓 Разблокирована новая активность: {name}",
+            "loopEnded": "=== ПЕТЛЯ ЗАВЕРШЕНА ===",
+            "progressSaved": "Постоянный прогресс сохранен!",
+            "saveLoaded": "🔄 Сохранение загружено!",
+            "oxygenBonus": "💨 +{amount} кислорода!",
+            "chapterOpened": "📖 Открыта: {chapter}!",
+            "chapterMoved": "📍 Вы перешли: {chapter}",
+            "awakening": "Вы медленно приходите в сознание. Холодный воздух заполняет ваши легкие. Вокруг мигают синие индикаторы, слышны звуки жужжания неизвестного оборудования. Где вы? Что произошло?"
+        },
+        "chapters": {
+            "1": "Глава 1: Капсула",
+            "2": "Глава 2: Зал гибернации"
+        },
+        "dialogs": {
+            "resetConfirm": "Вы уверены? Это удалит все сохранения и начнет игру заново."
+        },
+        "time": {
+            "seconds": "с"
+        }
+    },
+
+    "en": {
+        "ui": {
+            "stats": "STATS",
+            "eventLog": "EVENT LOG",
+            "automation": "AUTOMATION",
+            "queue": "Queue:",
+            "queueEmpty": "Queue is empty",
+            "start": "Start",
+            "stop": "Stop",
+            "oxygen": "Oxygen (O2)",
+            "resetGame": "Reset game",
+            "completed": "completed",
+            "loopExp": "Loop XP",
+            "permanent": "Permanent",
+            "level": "Lv.",
+            "settings": "Settings",
+            "language": "Language",
+            "close": "Close"
+        },
+        "stats": {
+            "strength": "Strength",
+            "intelligence": "Intelligence",
+            "agility": "Agility",
+            "endurance": "Endurance",
+            "perception": "Perception"
+        },
+        "statIcons": {
+            "strength": "💪",
+            "intelligence": "🧠",
+            "agility": "🎯",
+            "endurance": "❤️",
+            "perception": "👁️"
+        },
+        "automation": {
+            "inQueue": "In queue",
+            "addToQueue": "Add to queue",
+            "remainingCompletions": "{count} more completions",
+            "unlocked": "Automation unlocked: {name}!"
+        },
+        "log": {
+            "activityCompleted": "✓ {name} completed ({done}/{max})",
+            "activityFullyCompleted": "⭐ {name} fully completed!",
+            "newActivityUnlocked": "🔓 New activity unlocked: {name}",
+            "loopEnded": "=== LOOP ENDED ===",
+            "progressSaved": "Permanent progress saved!",
+            "saveLoaded": "🔄 Save loaded!",
+            "oxygenBonus": "💨 +{amount} oxygen!",
+            "chapterOpened": "📖 Opened: {chapter}!",
+            "chapterMoved": "📍 You moved to: {chapter}",
+            "awakening": "You slowly regain consciousness. Cold air fills your lungs. Blue indicators blink around you, and you hear the hum of unknown equipment. Where are you? What happened?"
+        },
+        "chapters": {
+            "1": "Chapter 1: The Capsule",
+            "2": "Chapter 2: Hibernation Hall"
+        },
+        "dialogs": {
+            "resetConfirm": "Are you sure? This will delete all saves and restart the game."
+        },
+        "time": {
+            "seconds": "s"
+        }
+    },
+
+    "de": {
+        "ui": {
+            "stats": "ATTRIBUTE",
+            "eventLog": "EREIGNISPROTOKOLL",
+            "automation": "AUTOMATISIERUNG",
+            "queue": "Warteschlange:",
+            "queueEmpty": "Warteschlange ist leer",
+            "start": "Starten",
+            "stop": "Stoppen",
+            "oxygen": "Sauerstoff (O2)",
+            "resetGame": "Spiel zurücksetzen",
+            "completed": "abgeschlossen",
+            "loopExp": "Schleifen-XP",
+            "permanent": "Permanent",
+            "level": "St.",
+            "settings": "Einstellungen",
+            "language": "Sprache",
+            "close": "Schließen"
+        },
+        "stats": {
+            "strength": "Stärke",
+            "intelligence": "Intelligenz",
+            "agility": "Geschicklichkeit",
+            "endurance": "Ausdauer",
+            "perception": "Wahrnehmung"
+        },
+        "statIcons": {
+            "strength": "💪",
+            "intelligence": "🧠",
+            "agility": "🎯",
+            "endurance": "❤️",
+            "perception": "👁️"
+        },
+        "automation": {
+            "inQueue": "In Warteschlange",
+            "addToQueue": "Zur Warteschlange hinzufügen",
+            "remainingCompletions": "Noch {count} Abschlüsse",
+            "unlocked": "Automatisierung freigeschaltet: {name}!"
+        },
+        "log": {
+            "activityCompleted": "✓ {name} abgeschlossen ({done}/{max})",
+            "activityFullyCompleted": "⭐ {name} vollständig abgeschlossen!",
+            "newActivityUnlocked": "🔓 Neue Aktivität freigeschaltet: {name}",
+            "loopEnded": "=== SCHLEIFE BEENDET ===",
+            "progressSaved": "Permanenter Fortschritt gespeichert!",
+            "saveLoaded": "🔄 Spielstand geladen!",
+            "oxygenBonus": "💨 +{amount} Sauerstoff!",
+            "chapterOpened": "📖 Geöffnet: {chapter}!",
+            "chapterMoved": "📍 Du bist umgezogen: {chapter}",
+            "awakening": "Du kommst langsam zu Bewusstsein. Kalte Luft füllt deine Lungen. Blaue Indikatoren blinken um dich herum, und du hörst das Summen unbekannter Geräte. Wo bist du? Was ist passiert?"
+        },
+        "chapters": {
+            "1": "Kapitel 1: Die Kapsel",
+            "2": "Kapitel 2: Hibernationshalle"
+        },
+        "dialogs": {
+            "resetConfirm": "Bist du sicher? Dies wird alle Spielstände löschen und das Spiel neu starten."
+        },
+        "time": {
+            "seconds": "s"
+        }
+    }
+}

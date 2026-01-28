@@ -4,782 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryo Capsule Awakening</title>
-    <style>
-        /* твой CSS без изменений */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-            color: #00ff88;
-            padding: 20px;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 250px 1fr 280px;
-            gap: 20px;
-            height: calc(100vh - 40px);
-        }
-
-        .panel {
-            background: rgba(10, 20, 40, 0.8);
-            border: 2px solid #00ff88;
-            border-radius: 8px;
-            padding: 20px;
-            overflow-y: auto;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
-        }
-
-        .main-area {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        h1 {
-            color: #00ff88;
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #00ff88;
-        }
-
-        h2 {
-            color: #00ddff;
-            font-size: 16px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #00ff88;
-            padding-bottom: 8px;
-        }
-
-        .stat-line {
-            display: flex;
-            justify-content: space-between;
-            margin: 10px 0;
-            font-size: 13px;
-        }
-
-        .stat-name {
-            color: #00ddff;
-        }
-
-        .stat-value {
-            color: #00ff88;
-            font-weight: bold;
-        }
-
-        .stat-bar {
-            width: 100%;
-            height: 6px;
-            background: rgba(0, 255, 136, 0.2);
-            border: 1px solid #00ff88;
-            margin: 5px 0;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .stat-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00ff88, #00ddff);
-            transition: width 0.3s ease;
-        }
-
-        .scene {
-            flex: 1;
-            background: rgba(20, 30, 60, 0.6);
-            border: 2px solid #00ddff;
-            border-radius: 8px;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 0 20px rgba(0, 221, 255, 0.2);
-        }
-
-        .scene-title {
-            color: #00ddff;
-            font-size: 20px;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #00ddff;
-        }
-
-        .scene-description {
-            color: #00ff88;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex: 1;
-        }
-
-        .time-display {
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid #00ff88;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .time-bar {
-            width: 100%;
-            height: 20px;
-            background: rgba(0, 255, 136, 0.2);
-            border: 1px solid #00ff88;
-            margin: 10px 0;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .time-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
-            transition: width 0.1s linear;
-        }
-
-        .activities-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            flex: 1;
-            overflow-y: auto;
-        }
-
-        .activity-btn {
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid #00ff88;
-            color: #00ff88;
-            padding: 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            transition: all 0.2s;
-            position: relative;
-            min-height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .activity-btn:hover:not(:disabled) {
-            background: rgba(0, 255, 136, 0.2);
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
-            transform: scale(1.02);
-        }
-
-        .activity-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            color: #666;
-            border-color: #666;
-        }
-
-        .activity-progress {
-            width: 100%;
-            height: 3px;
-            background: rgba(0, 255, 136, 0.2);
-            margin-top: 8px;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .activity-progress-bar {
-            height: 100%;
-            background: #00ff88;
-            transition: width 0.1s linear;
-        }
-
-        .activity-active {
-            background: rgba(0, 221, 255, 0.2);
-            border-color: #00ddff;
-            box-shadow: 0 0 15px rgba(0, 221, 255, 0.4);
-        }
-
-        .log-entry {
-            font-size: 12px;
-            margin: 8px 0;
-            padding: 8px;
-            background: rgba(0, 255, 136, 0.05);
-            border-left: 2px solid #00ff88;
-            border-radius: 2px;
-        }
-
-        .log-entry.power {
-            border-left-color: #ffff00;
-            color: #ffff00;
-        }
-
-        .log-entry.stat {
-            border-left-color: #00ddff;
-            color: #00ddff;
-        }
-
-        .log-entry.complete {
-            border-left-color: #ff6b6b;
-            color: #ff8e53;
-        }
-
-        .loop-btn {
-            background: linear-gradient(135deg, #00ff88, #00ddff);
-            border: 2px solid #00ff88;
-            color: #000;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            margin-top: 15px;
-            width: 100%;
-            transition: all 0.3s;
-        }
-
-        .loop-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-        }
-
-        .prestige-bonus {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid #ffd700;
-            padding: 10px;
-            border-radius: 4px;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #ffd700;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 255, 136, 0.1);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #00ff88;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00ddff;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Левая панель: Статистика -->
-        <div class="panel">
-            <h2>⚙️ ХАРАКТЕРИСТИКИ</h2>
-            <div class="stat-line">
-                <span class="stat-name">Power:</span>
-                <span class="stat-value" id="power">0</span>
-            </div>
-            
-            <h2 style="margin-top: 20px;">📊 АТРИБУТЫ</h2>
-            
-            <div>
-                <div class="stat-line">
-                    <span class="stat-name">Сила</span>
-                    <span class="stat-value" id="strength-val">1.00</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="strength-bar" style="width: 0%"></div>
-                </div>
-            </div>
-
-            <div>
-                <div class="stat-line">
-                    <span class="stat-name">Интеллект</span>
-                    <span class="stat-value" id="intelligence-val">1.00</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="intelligence-bar" style="width: 0%"></div>
-                </div>
-            </div>
-
-            <div>
-                <div class="stat-line">
-                    <span class="stat-name">Ловкость</span>
-                    <span class="stat-value" id="agility-val">1.00</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="agility-bar" style="width: 0%"></div>
-                </div>
-            </div>
-
-            <div>
-                <div class="stat-line">
-                    <span class="stat-name">Выносливость</span>
-                    <span class="stat-value" id="endurance-val">1.00</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="endurance-bar" style="width: 0%"></div>
-                </div>
-            </div>
-
-            <div>
-                <div class="stat-line">
-                    <span class="stat-name">Восприятие</span>
-                    <span class="stat-value" id="perception-val">1.00</span>
-                </div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="perception-bar" style="width: 0%"></div>
-                </div>
-            </div>
-
-            <div class="prestige-bonus">
-                <div style="font-size: 11px; margin-bottom: 5px;">🎖️ ПРЕСТИЖ БОНУС</div>
-                <div id="prestige-mult">+0.0%</div>
-            </div>
+    <div class="time-display">
+        <div style="display: flex; align-items: center; position: relative;">
+            <div id="oxygen-label" style="flex: 1; text-align: center;">💨 <span data-i18n="ui.oxygen">Кислород (O2)</span>: <span id="loop-time">500</span><span data-i18n="time.seconds">с</span> / 500<span data-i18n="time.seconds">с</span></div>
         </div>
-
-        <!-- Центральная область: Сцена и активности -->
-        <div class="main-area">
-            <div class="scene">
-                <div>
-                    <div class="scene-title" id="scene-title">Пробуждение...</div>
-                    <div class="scene-description" id="scene-description">
-                        Вы медленно приходите в сознание. Холодный воздух заполняет ваши легкие. 
-                        Вокруг мигают синие индикаторы, слышны звуки жужжания неизвестного оборудования.
-                        Где вы? Что произошло?
-                    </div>
-                </div>
-                
-                <div class="time-display">
-                    <div>⏱️ Время петли: <span id="loop-time">500</span>с / 500с</div>
-                    <div class="time-bar">
-                        <div class="time-fill" id="time-fill" style="width: 0%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                <div class="activities-container" id="activities-container"></div>
-            </div>
-
-            <button class="loop-btn" id="loop-btn">➜ НАЧАТЬ НОВУЮ ПЕТЛЮ</button>
-        </div>
-
-        <!-- Правая панель: Лог -->
-        <div class="panel">
-            <h2>📝 ЛОГ СОБЫТИЙ</h2>
-            <div id="log" style="font-size: 12px; min-height: 300px;"></div>
+        <div class="time-bar">
+            <div class="time-fill" id="time-fill" style="width: 100%"></div>
         </div>
     </div>
 
-    <script>
-        // Механика игры с временными активностями и старт/стоп по клику [web:23]
-        const game = {
-            stats: {
-                power: 0,
-                strength: 1,
-                intelligence: 1,
-                agility: 1,
-                endurance: 1,
-                perception: 1,
-                prestigeMultiplier: 0 // общий престижный % для всех статов (старый)
-            },
+    <div class="container">
+        <!-- Левая панель: Статистика -->
+        <div class="panel">
+            <h2><span data-i18n="ui.stats">📊 ХАРАКТЕРИСТИКИ</span></h2>
 
-            // отдельный престиж для интеллекта от "Сосредоточиться"
-            intellectPrestigeBonus: 0, // в долях, 0.001 = 0.1%
+            <div class="stat-block">
+                <div class="stat-line">
+                    <span class="stat-name">💪 Сила</span>
+                    <span class="stat-value" id="strength-level">Ур. 0</span>
+                </div>
+                <div class="stat-sublabel">Опыт петли: <span id="strength-loop-exp">0/100</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="strength-loop-bar" style="width: 0%"></div>
+                </div>
+                <div class="stat-sublabel">Постоянный: <span id="strength-perm-exp">0/1000</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill permanent" id="strength-perm-bar" style="width: 0%"></div>
+                </div>
+            </div>
 
-            loopTimeTotal: 500,
-            loopTimeLeft: 500,
-            isLoopActive: false,
+            <div class="stat-block">
+                <div class="stat-line">
+                    <span class="stat-name">🧠 Интеллект</span>
+                    <span class="stat-value" id="intelligence-level">Ур. 0</span>
+                </div>
+                <div class="stat-sublabel">Опыт петли: <span id="intelligence-loop-exp">0/100</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="intelligence-loop-bar" style="width: 0%"></div>
+                </div>
+                <div class="stat-sublabel">Постоянный: <span id="intelligence-perm-exp">0/1000</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill permanent" id="intelligence-perm-bar" style="width: 0%"></div>
+                </div>
+            </div>
 
-            activities: [
-                {
-                    id: 'concentrate',
-                    name: '🧠 Сосредоточиться',
-                    duration: 5,
-                    maxTimes: 5,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'intelligence',
-                    basePower: 1,
-                    description: 'Попытаться разобраться, где вы находитесь'
-                },
-                {
-                    id: 'open-capsule',
-                    name: '🔓 Открыть капсулу',
-                    duration: 8,
-                    maxTimes: 3,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'strength',
-                    basePower: 3,
-                    description: 'Давить на замеры и рычаги люка'
-                },
-                {
-                    id: 'remove-cover',
-                    name: '🛡️ Содрать оболочку',
-                    duration: 6,
-                    maxTimes: 4,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'agility',
-                    basePower: 2,
-                    description: 'Очистить криокапсулу от толстого слоя льда'
-                },
-                {
-                    id: 'examine-controls',
-                    name: '🎛️ Изучить панель',
-                    duration: 7,
-                    maxTimes: 3,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'intelligence',
-                    basePower: 2,
-                    description: 'Понять назначение кнопок и тумблеров'
-                },
-                {
-                    id: 'meditate',
-                    name: '🕉️ Медитация',
-                    duration: 10,
-                    maxTimes: 2,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'endurance',
-                    basePower: 1,
-                    description: 'Восстановить жизненные силы и память'
-                },
-                {
-                    id: 'explore-room',
-                    name: '🚀 Исследовать комнату',
-                    duration: 12,
-                    maxTimes: 3,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'perception',
-                    basePower: 4,
-                    description: 'Обойтись вокруг и найти полезные предметы'
-                },
-                {
-                    id: 'recall-memory',
-                    name: '💭 Вспомнить прошлое',
-                    duration: 9,
-                    maxTimes: 4,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'intelligence',
-                    basePower: 2,
-                    description: 'Погружаться в воспоминания и восстанавливать их'
-                },
-                {
-                    id: 'unlock-systems',
-                    name: '⚡ Активировать системы',
-                    duration: 11,
-                    maxTimes: 2,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'intelligence',
-                    basePower: 5,
-                    description: 'Вкл. резервное питание и системы жизнеобеспечения'
-                },
-                {
-                    id: 'physical-exercise',
-                    name: '💪 Физупражнения',
-                    duration: 8,
-                    maxTimes: 4,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'strength',
-                    basePower: 2,
-                    description: 'Размять мышцы после долгого сна'
-                },
-                {
-                    id: 'scan-surroundings',
-                    name: '🔍 Сканировать окрестности',
-                    duration: 6,
-                    maxTimes: 3,
-                    timesDone: 0,
-                    elapsed: 0,
-                    isActive: false,
-                    stat: 'perception',
-                    basePower: 3,
-                    description: 'Использовать датчики капсулы для сканирования'
-                }
-            ],
+            <div class="stat-block">
+                <div class="stat-line">
+                    <span class="stat-name">🎯 Ловкость</span>
+                    <span class="stat-value" id="agility-level">Ур. 0</span>
+                </div>
+                <div class="stat-sublabel">Опыт петли: <span id="agility-loop-exp">0/100</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="agility-loop-bar" style="width: 0%"></div>
+                </div>
+                <div class="stat-sublabel">Постоянный: <span id="agility-perm-exp">0/1000</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill permanent" id="agility-perm-bar" style="width: 0%"></div>
+                </div>
+            </div>
 
-            activityLog: []
-        };
+            <div class="stat-block">
+                <div class="stat-line">
+                    <span class="stat-name">❤️ Выносливость</span>
+                    <span class="stat-value" id="endurance-level">Ур. 0</span>
+                </div>
+                <div class="stat-sublabel">Опыт петли: <span id="endurance-loop-exp">0/100</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="endurance-loop-bar" style="width: 0%"></div>
+                </div>
+                <div class="stat-sublabel">Постоянный: <span id="endurance-perm-exp">0/1000</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill permanent" id="endurance-perm-bar" style="width: 0%"></div>
+                </div>
+            </div>
 
-        let lastTimestamp = performance.now();
+            <div class="stat-block">
+                <div class="stat-line">
+                    <span class="stat-name">👁️ Восприятие</span>
+                    <span class="stat-value" id="perception-level">Ур. 0</span>
+                </div>
+                <div class="stat-sublabel">Опыт петли: <span id="perception-loop-exp">0/100</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill" id="perception-loop-bar" style="width: 0%"></div>
+                </div>
+                <div class="stat-sublabel">Постоянный: <span id="perception-perm-exp">0/1000</span></div>
+                <div class="stat-bar">
+                    <div class="stat-fill permanent" id="perception-perm-bar" style="width: 0%"></div>
+                </div>
+            </div>
+            <button id="settings-btn" class="settings-btn" onclick="openSettings()">⚙️ <span data-i18n="ui.settings">Настройки</span></button>
+        </div>
 
-        function init() {
-            loadGame();
-            renderActivities();
-            updateUI();
-        }
+        <!-- Центральная область: Активности -->
+        <div class="main-area">
+            <div id="chapter-title" style="color: #00ddff; font-size: 18px; font-weight: bold; text-align: center; text-shadow: 0 0 10px #00ddff;">Глава 1: Капсула</div>
+            <div class="activities-container" id="activities-container"></div>
+        </div>
 
-        function getIntellectMultiplier() {
-            // базовое значение 1 + престиж интеллекта
-            return 1 + game.intellectPrestigeBonus;
-        }
+        <!-- Правая панель: Лог и Автоматизация -->
+        <div class="right-panels">
+            <div class="panel">
+                <h2><span data-i18n="ui.automation">⚙️ АВТОМАТИЗАЦИЯ</span></h2>
+                <div class="automation-section">
+                    <button id="auto-mode-btn" class="auto-btn" onclick="toggleAutoMode()">▶️ <span data-i18n="ui.start">Запустить</span></button>
+                    <div class="automation-label"><span data-i18n="ui.queue">Очередь:</span></div>
+                    <div id="automation-queue" class="automation-queue"></div>
+                </div>
+            </div>
+            <div class="panel">
+                <h2><span data-i18n="ui.eventLog">📝 ЛОГ СОБЫТИЙ</span></h2>
+                <div id="log" style="font-size: 12px; max-height: 300px; overflow-y: auto;"></div>
+            </div>
+        </div>
+    </div>
 
-        function renderActivities() {
-            const container = document.getElementById('activities-container');
-            container.innerHTML = '';
+    <!-- Save Indicator -->
+    <div id="save-indicator" class="save-indicator">💾</div>
 
-            game.activities.forEach(activity => {
-                const canPlay = activity.timesDone < activity.maxTimes && game.isLoopActive;
-                const btn = document.createElement('button');
-                btn.className = 'activity-btn' + (activity.isActive ? ' activity-active' : '');
-                btn.disabled = !canPlay && !activity.isActive;
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>⚙️ <span data-i18n="ui.settings">Настройки</span></h2>
+            <div class="settings-row">
+                <label data-i18n="ui.language">Язык</label>
+                <select id="lang-select" onchange="onLanguageChange()">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+            <div class="settings-row">
+                <button class="reset-btn" onclick="resetGame()">🔄 <span data-i18n="ui.resetGame">Сброс игры</span></button>
+            </div>
+            <button class="close-btn" onclick="closeSettings()" data-i18n="ui.close">Закрыть</button>
+        </div>
+    </div>
 
-                const timeLabel = activity.isActive
-                    ? `${(Math.max(activity.duration - activity.elapsed, 0)).toFixed(1)}с`
-                    : `${activity.duration.toFixed(1)}с`;
-
-                btn.innerHTML = `
-                    <div>${activity.name} (${timeLabel})</div>
-                    <div style="font-size: 10px; margin-top: 4px; opacity: 0.7;">${activity.timesDone}/${activity.maxTimes}</div>
-                    <div class="activity-progress">
-                        <div class="activity-progress-bar" data-id="${activity.id}" style="width: 0%"></div>
-                    </div>
-                `;
-
-                btn.addEventListener('click', () => toggleActivity(activity.id));
-                container.appendChild(btn);
-            });
-        }
-
-        function toggleActivity(id) {
-            if (!game.isLoopActive) return;
-            const a = game.activities.find(x => x.id === id);
-            if (!a) return;
-            if (a.timesDone >= a.maxTimes) return;
-
-            if (a.isActive) {
-                // повторное нажатие: остановить и сбросить прогресс
-                a.isActive = false;
-                a.elapsed = 0;
-            } else {
-                a.isActive = true;
-            }
-            renderActivities();
-        }
-
-        function completeActivity(a) {
-            a.timesDone += 1;
-
-            const statKey = a.stat;
-            const statValue = game.stats[statKey];
-
-            // Power
-            const powerGain = a.basePower + statValue;
-            game.stats.power += powerGain;
-
-            // Рост стата на петлю (1%) для всех, + отдельный престиж интеллекта для "Сосредоточиться"
-            game.stats[statKey] += statValue * 0.01;
-
-            if (a.id === 'concentrate') {
-                // +1% интеллекта на петлю уже сделали выше,
-                // здесь +0.1% постоянного бонуса интеллекта
-                game.intellectPrestigeBonus += 0.001;
-            }
-
-            addLog(`✓ ${a.name}: +${Math.round(powerGain)} Power, ${statKey} +${(statValue * 0.01).toFixed(2)}`, 'complete');
-
-            if (a.timesDone >= a.maxTimes) {
-                a.isActive = false;
-                a.elapsed = 0;
-                addLog(`⭐ ${a.name} выполнена полностью!`, 'stat');
-            }
-        }
-
-        function addLog(message, type = 'default') {
-            const logDiv = document.getElementById('log');
-            const entry = document.createElement('div');
-            entry.className = 'log-entry ' + type;
-            entry.textContent = message;
-            logDiv.insertBefore(entry, logDiv.firstChild);
-
-            while (logDiv.children.length > 30) {
-                logDiv.removeChild(logDiv.lastChild);
-            }
-        }
-
-        function resetLoopState() {
-            game.loopTimeLeft = game.loopTimeTotal;
-            game.activities.forEach(a => {
-                a.timesDone = 0;
-                a.elapsed = 0;
-                a.isActive = false;
-            });
-        }
-
-        function startLoop() {
-            resetLoopState();
-            game.isLoopActive = true;
-            lastTimestamp = performance.now();
-            addLog('▶ Началась новая петля', 'stat');
-            renderActivities();
-            updateUI();
-        }
-
-        function endLoop() {
-            game.isLoopActive = false;
-
-            // общий престижный бонус (старый)
-            Object.keys(game.stats).forEach(stat => {
-                if (stat !== 'power' && stat !== 'prestigeMultiplier') {
-                    const bonus = game.stats[stat] * (game.stats.prestigeMultiplier / 100);
-                    game.stats[stat] += bonus;
-                }
-            });
-            game.stats.prestigeMultiplier += 0.1;
-
-            addLog('=== ПЕТЛЯ ЗАВЕРШЕНА ===', 'power');
-            addLog('Престиж: +0.1% к статам, интеллект получает свой отдельный бонус от сосредоточения.', 'stat');
-
-            saveGame();
-            renderActivities();
-            updateUI();
-        }
-
-        function gameLoop(now) {
-            const dt = (now - lastTimestamp) / 1000;
-            lastTimestamp = now;
-
-            if (game.isLoopActive) {
-                // если есть хотя бы одна активная активность — время петли идёт
-                const hasActive = game.activities.some(a => a.isActive);
-                if (hasActive && game.loopTimeLeft > 0) {
-                    game.loopTimeLeft = Math.max(0, game.loopTimeLeft - dt);
-
-                    game.activities.forEach(a => {
-                        if (!a.isActive) return;
-                        if (a.timesDone >= a.maxTimes) {
-                            a.isActive = false;
-                            a.elapsed = 0;
-                            return;
-                        }
-
-                        a.elapsed += dt;
-                        if (a.elapsed >= a.duration) {
-                            a.elapsed -= a.duration;
-                            completeActivity(a);
-                        }
-                    });
-
-                    if (game.loopTimeLeft <= 0) {
-                        endLoop();
-                    }
-                }
-            }
-
-            updateUI();
-            requestAnimationFrame(gameLoop);
-        }
-
-        function updateUI() {
-            document.getElementById('power').textContent = Math.floor(game.stats.power);
-
-            ['strength', 'intelligence', 'agility', 'endurance', 'perception'].forEach(stat => {
-                let val = game.stats[stat];
-                if (stat === 'intelligence') {
-                    val = game.stats[stat] * getIntellectMultiplier();
-                }
-                document.getElementById(`${stat}-val`).textContent = val.toFixed(2);
-                const progress = Math.min((val - 1) / 9, 1) * 100;
-                document.getElementById(`${stat}-bar`).style.width = progress + '%';
-            });
-
-            const totalPrestigePercent = game.stats.prestigeMultiplier;
-            const intellectPrestigePercent = game.intellectPrestigeBonus * 100;
-            document.getElementById('prestige-mult').textContent =
-                `+${totalPrestigePercent.toFixed(1)}% глобально, интеллект +${intellectPrestigePercent.toFixed(1)}%`;
-
-            const timeRemaining = game.loopTimeLeft;
-            document.getElementById('loop-time').textContent = timeRemaining.toFixed(1);
-            const used = game.loopTimeTotal - game.loopTimeLeft;
-            document.getElementById('time-fill').style.width =
-                (used / game.loopTimeTotal) * 100 + '%';
-
-            // обновляем кнопки (время на кнопке и прогресс)
-            const buttons = document.querySelectorAll('.activity-btn');
-            buttons.forEach((btn, idx) => {
-                const a = game.activities[idx];
-                const timeLabel = a.isActive
-                    ? `${(Math.max(a.duration - a.elapsed, 0)).toFixed(1)}с`
-                    : `${a.duration.toFixed(1)}с`;
-
-                btn.classList.toggle('activity-active', a.isActive);
-                btn.disabled = (!game.isLoopActive || (a.timesDone >= a.maxTimes && !a.isActive));
-
-                const header = btn.firstElementChild;
-                if (header) {
-                    header.innerHTML = `${a.name} (${timeLabel})`;
-                }
-
-                const progressBar = btn.querySelector('.activity-progress-bar');
-                if (progressBar) {
-                    const progress = Math.min(a.elapsed / a.duration, 1) * 100;
-                    progressBar.style.width = progress + '%';
-                }
-
-                const counter = btn.children[1];
-                if (counter) {
-                    counter.textContent = `${a.timesDone}/${a.maxTimes}`;
-                }
-            });
-        }
-
-        function saveGame() {
-            localStorage.setItem('cryoCapsuleGame', JSON.stringify({
-                stats: game.stats,
-                intellectPrestigeBonus: game.intellectPrestigeBonus
-            }));
-        }
-
-        function loadGame() {
-            const saved = localStorage.getItem('cryoCapsuleGame');
-            if (saved) {
-                const data = JSON.parse(saved);
-                if (data.stats) {
-                    game.stats.power = data.stats.power || 0;
-                    game.stats.strength = data.stats.strength || 1;
-                    game.stats.intelligence = data.stats.intelligence || 1;
-                    game.stats.agility = data.stats.agility || 1;
-                    game.stats.endurance = data.stats.endurance || 1;
-                    game.stats.perception = data.stats.perception || 1;
-                    game.stats.prestigeMultiplier = data.stats.prestigeMultiplier || 0;
-                }
-                if (typeof data.intellectPrestigeBonus === 'number') {
-                    game.intellectPrestigeBonus = data.intellectPrestigeBonus;
-                }
-                addLog('🔄 Сохранение загружено!', 'stat');
-            }
-        }
-
-        document.getElementById('loop-btn').addEventListener('click', () => {
-            if (!game.isLoopActive) {
-                startLoop();
-            }
-        });
-
-        init();
-        requestAnimationFrame(gameLoop);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
