@@ -18,9 +18,6 @@ function initMobileTabs() {
         Object.entries(sections).forEach(([key, el]) => {
             if (el) el.classList.toggle('mobile-visible', key === tabName);
         });
-        // Log panel visible with activities
-        const logPanel = document.querySelector('.log-panel');
-        if (logPanel) logPanel.classList.toggle('mobile-visible', tabName === 'activities');
         // Settings button visible with stats
         if (settingsBtn) settingsBtn.classList.toggle('mobile-visible', tabName === 'stats');
     }

@@ -115,22 +115,14 @@ function renderActivities() {
         const timeSuffix = t('time.seconds');
 
         btn.innerHTML = `
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-                <span style="font-weight: bold; color: #00ff88; font-size: 16px;">${activityName}</span>
+            <div class="act-header">
+                <span class="act-name">${activityName}</span>
                 ${autoBtn}
             </div>
-            <div style="color: #00ddff; font-size: 13px; margin-bottom: 2px;">
-                ${statIconsStr}
-            </div>
-            <div style="color: #aaffcc; font-size: 12px; margin-bottom: 3px;">
-                ⏱️ ${remainingTime}${timeSuffix} / ${effectiveDuration.toFixed(1)}${timeSuffix}
-            </div>
-            <div style="color: #00ff88; font-size: 12px; margin-bottom: 3px; line-height: 1.3; opacity: 0.8;">
-                ${activityDesc}
-            </div>
-            <div style="color: #ffaa00; font-size: 11px; margin-bottom: 3px;">
-                ${activity.timesDone}/${activity.maxTimes} ${t('ui.completed')}
-            </div>
+            <div class="act-stats">${statIconsStr}</div>
+            <div class="act-timer">⏱️ ${remainingTime}${timeSuffix} / ${effectiveDuration.toFixed(1)}${timeSuffix}</div>
+            <div class="act-desc">${activityDesc}</div>
+            <div class="act-completed">${activity.timesDone}/${activity.maxTimes} ${t('ui.completed')}</div>
             <div class="activity-progress">
                 <div class="activity-progress-bar" data-id="${activity.id}" style="width: ${progress}%"></div>
             </div>
