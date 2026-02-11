@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Mobile Tab Bar -->
+    <div class="mobile-tabs" id="mobile-tabs">
+        <button class="mobile-tab active" data-tab="stats">📊</button>
+        <button class="mobile-tab" data-tab="activities">⚡</button>
+        <button class="mobile-tab" data-tab="automation">⚙️</button>
+    </div>
+
     <div class="container">
         <!-- Панель кислорода на всю ширину -->
         <div class="time-display">
@@ -19,87 +26,89 @@
         </div>
         <!-- Левая панель: Статистика -->
         <div class="panel">
-            <h2><span data-i18n="ui.stats">📊 ХАРАКТЕРИСТИКИ</span></h2>
+            <div class="panel-scroll">
+                <h2><span data-i18n="ui.stats">📊 ХАРАКТЕРИСТИКИ</span></h2>
 
-            <div class="stat-block">
-                <div class="stat-line">
-                    <span class="stat-name">💪 Сила</span>
-                    <span class="stat-value" id="strength-level">Ур. 0</span>
+                <div class="stat-block">
+                    <div class="stat-line">
+                        <span class="stat-name">💪 Сила</span>
+                        <span class="stat-value" id="strength-level">Ур. 0</span>
+                    </div>
+                    <div class="stat-sublabel">Опыт петли: <span id="strength-loop-exp">0/100</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="strength-loop-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="stat-sublabel">Постоянный: <span id="strength-perm-exp">0/1000</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill permanent" id="strength-perm-bar" style="width: 0%"></div>
+                    </div>
                 </div>
-                <div class="stat-sublabel">Опыт петли: <span id="strength-loop-exp">0/100</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="strength-loop-bar" style="width: 0%"></div>
-                </div>
-                <div class="stat-sublabel">Постоянный: <span id="strength-perm-exp">0/1000</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill permanent" id="strength-perm-bar" style="width: 0%"></div>
-                </div>
-            </div>
 
-            <div class="stat-block">
-                <div class="stat-line">
-                    <span class="stat-name">🧠 Интеллект</span>
-                    <span class="stat-value" id="intelligence-level">Ур. 0</span>
+                <div class="stat-block">
+                    <div class="stat-line">
+                        <span class="stat-name">🧠 Интеллект</span>
+                        <span class="stat-value" id="intelligence-level">Ур. 0</span>
+                    </div>
+                    <div class="stat-sublabel">Опыт петли: <span id="intelligence-loop-exp">0/100</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="intelligence-loop-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="stat-sublabel">Постоянный: <span id="intelligence-perm-exp">0/1000</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill permanent" id="intelligence-perm-bar" style="width: 0%"></div>
+                    </div>
                 </div>
-                <div class="stat-sublabel">Опыт петли: <span id="intelligence-loop-exp">0/100</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="intelligence-loop-bar" style="width: 0%"></div>
-                </div>
-                <div class="stat-sublabel">Постоянный: <span id="intelligence-perm-exp">0/1000</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill permanent" id="intelligence-perm-bar" style="width: 0%"></div>
-                </div>
-            </div>
 
-            <div class="stat-block">
-                <div class="stat-line">
-                    <span class="stat-name">🎯 Ловкость</span>
-                    <span class="stat-value" id="agility-level">Ур. 0</span>
+                <div class="stat-block">
+                    <div class="stat-line">
+                        <span class="stat-name">🎯 Ловкость</span>
+                        <span class="stat-value" id="agility-level">Ур. 0</span>
+                    </div>
+                    <div class="stat-sublabel">Опыт петли: <span id="agility-loop-exp">0/100</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="agility-loop-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="stat-sublabel">Постоянный: <span id="agility-perm-exp">0/1000</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill permanent" id="agility-perm-bar" style="width: 0%"></div>
+                    </div>
                 </div>
-                <div class="stat-sublabel">Опыт петли: <span id="agility-loop-exp">0/100</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="agility-loop-bar" style="width: 0%"></div>
-                </div>
-                <div class="stat-sublabel">Постоянный: <span id="agility-perm-exp">0/1000</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill permanent" id="agility-perm-bar" style="width: 0%"></div>
-                </div>
-            </div>
 
-            <div class="stat-block">
-                <div class="stat-line">
-                    <span class="stat-name">❤️ Выносливость</span>
-                    <span class="stat-value" id="endurance-level">Ур. 0</span>
+                <div class="stat-block">
+                    <div class="stat-line">
+                        <span class="stat-name">❤️ Выносливость</span>
+                        <span class="stat-value" id="endurance-level">Ур. 0</span>
+                    </div>
+                    <div class="stat-sublabel">Опыт петли: <span id="endurance-loop-exp">0/100</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="endurance-loop-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="stat-sublabel">Постоянный: <span id="endurance-perm-exp">0/1000</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill permanent" id="endurance-perm-bar" style="width: 0%"></div>
+                    </div>
                 </div>
-                <div class="stat-sublabel">Опыт петли: <span id="endurance-loop-exp">0/100</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="endurance-loop-bar" style="width: 0%"></div>
-                </div>
-                <div class="stat-sublabel">Постоянный: <span id="endurance-perm-exp">0/1000</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill permanent" id="endurance-perm-bar" style="width: 0%"></div>
-                </div>
-            </div>
 
-            <div class="stat-block">
-                <div class="stat-line">
-                    <span class="stat-name">👁️ Восприятие</span>
-                    <span class="stat-value" id="perception-level">Ур. 0</span>
+                <div class="stat-block">
+                    <div class="stat-line">
+                        <span class="stat-name">👁️ Восприятие</span>
+                        <span class="stat-value" id="perception-level">Ур. 0</span>
+                    </div>
+                    <div class="stat-sublabel">Опыт петли: <span id="perception-loop-exp">0/100</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" id="perception-loop-bar" style="width: 0%"></div>
+                    </div>
+                    <div class="stat-sublabel">Постоянный: <span id="perception-perm-exp">0/1000</span></div>
+                    <div class="stat-bar">
+                        <div class="stat-fill permanent" id="perception-perm-bar" style="width: 0%"></div>
+                    </div>
                 </div>
-                <div class="stat-sublabel">Опыт петли: <span id="perception-loop-exp">0/100</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill" id="perception-loop-bar" style="width: 0%"></div>
-                </div>
-                <div class="stat-sublabel">Постоянный: <span id="perception-perm-exp">0/1000</span></div>
-                <div class="stat-bar">
-                    <div class="stat-fill permanent" id="perception-perm-bar" style="width: 0%"></div>
-                </div>
-            </div>
 
-            <!-- Инвентарь -->
-            <div class="inventory-section" id="inventory-section" style="display: none;">
-                <div class="inventory-title">🎒 <span data-i18n="ui.inventory">Инвентарь</span></div>
-                <div class="inventory-items" id="inventory-items"></div>
+                <!-- Инвентарь -->
+                <div class="inventory-section" id="inventory-section" style="display: none;">
+                    <div class="inventory-title">🎒 <span data-i18n="ui.inventory">Инвентарь</span></div>
+                    <div class="inventory-items" id="inventory-items"></div>
+                </div>
             </div>
 
             <button id="settings-btn" class="settings-btn" onclick="openSettings()">⚙️ <span data-i18n="ui.settings">Настройки</span></button>
