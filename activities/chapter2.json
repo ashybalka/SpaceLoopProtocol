@@ -1,0 +1,500 @@
+[
+    {
+        "id": "go-to-capsule",
+        "chapter": 2,
+        "duration": 10,
+        "maxTimes": 999,
+        "automationThreshold": 5,
+        "stats": {
+            "agility": 150,
+            "strength": 15
+        },
+        "basePower": 4,
+        "unlocked": true,
+        "reward": {
+            "switchChapter": 1
+        }
+    },
+    {
+        "id": "explore-hall",
+        "chapter": 2,
+        "duration": 50,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 135,
+            "agility": 30
+        },
+        "basePower": 4,
+        "unlocked": true
+    },
+    {
+        "id": "check-other-capsules",
+        "chapter": 2,
+        "duration": 40,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 75,
+            "strength": 45,
+            "agility": 75
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-hall": 2
+            }
+        }
+    },
+    {
+        "id": "clear-debris",
+        "chapter": 2,
+        "duration": 65,
+        "maxTimes": 3,
+        "stats": {
+            "strength": 150,
+            "agility": 53
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-hall": 4
+            }
+        },
+        "rewardOnComplete": {
+            "item": "multitool"
+        }
+    },
+    {
+        "id": "search-supplies",
+        "chapter": 2,
+        "duration": 50,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 90,
+            "agility": 30
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "check-other-capsules": 3,
+                "clear-debris": 1
+            }
+        }
+    },
+    {
+        "id": "find-crew-notes",
+        "chapter": 2,
+        "duration": 75,
+        "maxTimes": 4,
+        "stats": {
+            "perception": 113,
+            "intelligence": 75
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "check-other-capsules": 5
+            }
+        }
+    },
+    {
+        "id": "redirect-capsule-power",
+        "chapter": 2,
+        "duration": 250,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 60,
+            "strength": 38,
+            "perception": 23,
+            "agility": 15,
+            "endurance": 15
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "check-other-capsules": 4
+            }
+        }
+    },
+    {
+        "id": "open-intact-capsules",
+        "chapter": 2,
+        "duration": 100,
+        "maxTimes": 5,
+        "stats": {
+            "strength": 60,
+            "agility": 53,
+            "perception": 38
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "clear-debris": 2,
+                "check-other-capsules": 5
+            }
+        },
+        "reward": {
+            "oxygen": 50
+        },
+        "rewardOnComplete": {
+            "item": "emergency-flashlight"
+        }
+    },
+    {
+        "id": "find-terminal",
+        "chapter": 2,
+        "duration": 75,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 75,
+            "intelligence": 38,
+            "agility": 38
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-hall": 5,
+                "clear-debris": 3
+            }
+        }
+    },
+    {
+        "id": "activate-emergency-lights",
+        "chapter": 2,
+        "duration": 300,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 60,
+            "strength": 30,
+            "perception": 38,
+            "agility": 38
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "find-terminal": 1
+            }
+        }
+    },
+    {
+        "id": "read-logs",
+        "chapter": 2,
+        "duration": 160,
+        "maxTimes": 3,
+        "stats": {
+            "intelligence": 113,
+            "perception": 23
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "find-terminal": 2
+            }
+        }
+    },
+    {
+        "id": "decode-crew-message",
+        "chapter": 2,
+        "duration": 280,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 128,
+            "perception": 30,
+            "agility": 15
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "find-crew-notes": 4
+            }
+        },
+        "reward": {
+            "oxygen": 50
+        },
+        "rewardOnComplete": {
+            "item": "crew-id-card"
+        }
+    },
+    {
+        "id": "use-stim-pack",
+        "chapter": 2,
+        "duration": 220,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 218,
+            "agility": 15
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "search-supplies": 3
+            }
+        },
+        "reward": {
+            "oxygen": 100
+        },
+        "rewardOnComplete": {
+            "item": "used-stim-injector"
+        }
+    },
+    {
+        "id": "recover-data-chip",
+        "chapter": 2,
+        "duration": 175,
+        "maxTimes": 1,
+        "stats": {
+            "agility": 75,
+            "strength": 15,
+            "intelligence": 53
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "open-intact-capsules": 3
+            }
+        }
+    },
+    {
+        "id": "examine-damage",
+        "chapter": 2,
+        "duration": 145,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 83,
+            "agility": 30,
+            "intelligence": 30
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "activate-emergency-lights": 1
+            }
+        }
+    },
+    {
+        "id": "try-communication",
+        "chapter": 2,
+        "duration": 50,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 60,
+            "perception": 15,
+            "agility": 15
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "activate-emergency-lights": 1,
+                "read-logs": 1
+            }
+        }
+    },
+    {
+        "id": "access-ship-map",
+        "chapter": 2,
+        "duration": 85,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 80,
+            "perception": 40
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "read-logs": 2
+            }
+        }
+    },
+    {
+        "id": "decrypt-loop-protocol",
+        "chapter": 2,
+        "duration": 400,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 125
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "recover-data-chip": 1,
+                "read-logs": 3
+            }
+        },
+        "reward": {
+            "oxygen": 75
+        },
+        "rewardOnComplete": {
+            "item": "ship-schematic"
+        }
+    },
+    {
+        "id": "check-ventilation",
+        "chapter": 2,
+        "duration": 355,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 38,
+            "endurance": 38,
+            "strength": 38,
+            "agility": 38,
+            "perception": 38
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "examine-damage": 2
+            }
+        },
+        "reward": {
+            "oxygen": 75
+        }
+    },
+    {
+        "id": "find-corridor-exit",
+        "chapter": 2,
+        "duration": 50,
+        "maxTimes": 2,
+        "stats": {
+            "perception": 75,
+            "agility": 60,
+            "intelligence": 15
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "access-ship-map": 5
+            }
+        }
+    },
+    {
+        "id": "boost-ventilation",
+        "chapter": 2,
+        "duration": 645,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 25,
+            "strength": 85,
+            "agility": 70
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "check-ventilation": 1,
+                "redirect-capsule-power": 1
+            }
+        },
+        "reward": {
+            "oxygen": 175
+        }
+    },
+    {
+        "id": "examine-corridor-door",
+        "chapter": 2,
+        "duration": 40,
+        "maxTimes": 3,
+        "stats": {
+            "intelligence": 53,
+            "strength": 38,
+            "perception": 23,
+            "agility": 23,
+            "endurance": 15
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "find-corridor-exit": 2
+            }
+        }
+    },
+    {
+        "id": "crawl-through-vents",
+        "chapter": 2,
+        "duration": 2500,
+        "maxTimes": 1,
+        "stats": {
+            "agility": 150,
+            "endurance": 15,
+            "strength": 75
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "boost-ventilation": 1,
+                "examine-damage": 3
+            }
+        },
+        "reward": {
+            "switchChapter": 3
+        },
+        "excludes": [
+            "force-corridor-door"
+        ]
+    },
+    {
+        "id": "force-corridor-door",
+        "chapter": 2,
+        "duration": 120,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 60,
+            "strength": 53,
+            "agility": 38
+        },
+        "basePower": 4,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "examine-corridor-door": 3,
+                "try-communication": 2
+            }
+        },
+        "reward": {
+            "switchChapter": 3
+        },
+        "excludes": [
+            "crawl-through-vents"
+        ]
+    }
+]

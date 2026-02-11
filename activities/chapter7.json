@@ -1,0 +1,254 @@
+[
+    {
+        "id": "decrypt-vault-door",
+        "chapter": 7,
+        "duration": 150,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 75,
+            "perception": 25
+        },
+        "basePower": 400,
+        "unlocked": true
+    },
+    {
+        "id": "recover-audio-logs",
+        "chapter": 7,
+        "duration": 100,
+        "maxTimes": 20,
+        "stats": {
+            "perception": 65,
+            "intelligence": 35
+        },
+        "basePower": 350,
+        "unlocked": true
+    },
+    {
+        "id": "reconstruct-3d-scene",
+        "chapter": 7,
+        "duration": 250,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 70,
+            "perception": 30
+        },
+        "basePower": 500,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "decrypt-vault-door": 5
+            }
+        }
+    },
+    {
+        "id": "identify-self-in-records",
+        "chapter": 7,
+        "duration": 300,
+        "maxTimes": 1,
+        "stats": {
+            "perception": 60,
+            "intelligence": 40
+        },
+        "basePower": 600,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "reconstruct-3d-scene": 5
+            }
+        },
+        "reward": {
+            "oxygen": 250
+        }
+    },
+    {
+        "id": "analyze-selection-criteria",
+        "chapter": 7,
+        "duration": 200,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 70,
+            "perception": 30
+        },
+        "basePower": 450,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "recover-audio-logs": 10
+            }
+        }
+    },
+    {
+        "id": "read-personal-letters",
+        "chapter": 7,
+        "duration": 120,
+        "maxTimes": 15,
+        "stats": {
+            "perception": 50,
+            "intelligence": 30,
+            "endurance": 20
+        },
+        "basePower": 400,
+        "unlocked": true
+    },
+    {
+        "id": "study-ethical-violations",
+        "chapter": 7,
+        "duration": 220,
+        "maxTimes": 8,
+        "stats": {
+            "intelligence": 80,
+            "perception": 20
+        },
+        "basePower": 550,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "analyze-selection-criteria": 5
+            }
+        }
+    },
+    {
+        "id": "track-missing-files",
+        "chapter": 7,
+        "duration": 180,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 60,
+            "agility": 40
+        },
+        "basePower": 480,
+        "unlocked": true
+    },
+    {
+        "id": "bypass-memory-blocks",
+        "chapter": 7,
+        "duration": 400,
+        "maxTimes": 5,
+        "stats": {
+            "endurance": 90,
+            "intelligence": 10
+        },
+        "basePower": 700,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "identify-self-in-records": 1
+            }
+        }
+    },
+    {
+        "id": "witness-original-sin",
+        "chapter": 7,
+        "duration": 500,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 50,
+            "endurance": 30,
+            "intelligence": 20
+        },
+        "basePower": 800,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "bypass-memory-blocks": 2
+            }
+        }
+    },
+    {
+        "id": "verify-crew-fate",
+        "chapter": 7,
+        "duration": 300,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 60,
+            "perception": 40
+        },
+        "basePower": 600,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "witness-original-sin": 1
+            }
+        }
+    },
+    {
+        "id": "accept-the-facade",
+        "chapter": 7,
+        "duration": 200,
+        "maxTimes": 10,
+        "stats": {
+            "endurance": 60,
+            "intelligence": 40
+        },
+        "basePower": 500,
+        "unlocked": true
+    },
+    {
+        "id": "merge-identities",
+        "chapter": 7,
+        "duration": 600,
+        "maxTimes": 3,
+        "stats": {
+            "endurance": 60,
+            "intelligence": 40
+        },
+        "basePower": 1000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "verify-crew-fate": 3
+            }
+        }
+    },
+    {
+        "id": "find-the-exit-key",
+        "chapter": 7,
+        "duration": 150,
+        "maxTimes": 1,
+        "stats": {
+            "agility": 60,
+            "perception": 40
+        },
+        "basePower": 400,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "merge-identities": 3
+            }
+        },
+        "reward": {
+            "oxygen": 300
+        }
+    },
+    {
+        "id": "leave-for-the-fracture",
+        "chapter": 7,
+        "duration": 400,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 50,
+            "strength": 30,
+            "agility": 20
+        },
+        "basePower": 1,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "find-the-exit-key": 1
+            }
+        },
+        "reward": {
+            "switchChapter": 8
+        }
+    }
+]

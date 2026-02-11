@@ -1,0 +1,249 @@
+[
+    {
+        "id": "return-to-quarters",
+        "chapter": 6,
+        "duration": 80,
+        "maxTimes": 999,
+        "automationThreshold": 5,
+        "stats": {
+            "agility": 100
+        },
+        "basePower": 1,
+        "unlocked": true,
+        "reward": {
+            "switchChapter": 5
+        }
+    },
+    {
+        "id": "access-mainframes",
+        "chapter": 6,
+        "duration": 100,
+        "maxTimes": 25,
+        "stats": {
+            "intelligence": 75,
+            "perception": 25
+        },
+        "basePower": 150,
+        "unlocked": true
+    },
+    {
+        "id": "link-brain-to-interface",
+        "chapter": 6,
+        "duration": 200,
+        "maxTimes": 10,
+        "stats": {
+            "endurance": 80,
+            "intelligence": 20
+        },
+        "basePower": 200,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "access-mainframes": 10
+            }
+        }
+    },
+    {
+        "id": "override-safety-locks",
+        "chapter": 6,
+        "duration": 150,
+        "maxTimes": 15,
+        "stats": {
+            "intelligence": 90,
+            "agility": 10
+        },
+        "basePower": 180,
+        "unlocked": true
+    },
+    {
+        "id": "filter-incoming-data",
+        "chapter": 6,
+        "duration": 80,
+        "maxTimes": 30,
+        "stats": {
+            "perception": 65,
+            "intelligence": 35
+        },
+        "basePower": 160,
+        "unlocked": true
+    },
+    {
+        "id": "suppress-neural-pain",
+        "chapter": 6,
+        "duration": 120,
+        "maxTimes": 20,
+        "stats": {
+            "endurance": 70,
+            "strength": 30
+        },
+        "basePower": 220,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "link-brain-to-interface": 5
+            }
+        },
+        "reward": {
+            "oxygen": 100
+        }
+    },
+    {
+        "id": "optimize-loop-cycles",
+        "chapter": 6,
+        "duration": 300,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 80,
+            "perception": 20
+        },
+        "basePower": 300,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "filter-incoming-data": 15
+            }
+        }
+    },
+    {
+        "id": "monitor-crew-ghosts",
+        "chapter": 6,
+        "duration": 100,
+        "maxTimes": 10,
+        "stats": {
+            "perception": 60,
+            "endurance": 40
+        },
+        "basePower": 180,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "override-safety-locks": 5
+            }
+        }
+    },
+    {
+        "id": "calculate-deterioration",
+        "chapter": 6,
+        "duration": 250,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 70,
+            "perception": 30
+        },
+        "basePower": 350,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "optimize-loop-cycles": 5
+            }
+        }
+    },
+    {
+        "id": "stabilize-bridge-gravity",
+        "chapter": 6,
+        "duration": 140,
+        "maxTimes": 10,
+        "stats": {
+            "strength": 80,
+            "agility": 20
+        },
+        "basePower": 200,
+        "unlocked": true
+    },
+    {
+        "id": "input-daily-commands",
+        "chapter": 6,
+        "duration": 40,
+        "maxTimes": 50,
+        "stats": {
+            "intelligence": 50,
+            "agility": 50
+        },
+        "basePower": 120,
+        "unlocked": true
+    },
+    {
+        "id": "purge-unnecessary-emotions",
+        "chapter": 6,
+        "duration": 400,
+        "maxTimes": 5,
+        "stats": {
+            "endurance": 50,
+            "intelligence": 50
+        },
+        "basePower": 500,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "suppress-neural-pain": 10
+            }
+        }
+    },
+    {
+        "id": "expand-network-reach",
+        "chapter": 6,
+        "duration": 220,
+        "maxTimes": 8,
+        "stats": {
+            "intelligence": 80,
+            "perception": 20
+        },
+        "basePower": 280,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "input-daily-commands": 20
+            }
+        }
+    },
+    {
+        "id": "re-route-emergency-power",
+        "chapter": 6,
+        "duration": 180,
+        "maxTimes": 5,
+        "stats": {
+            "strength": 60,
+            "intelligence": 40
+        },
+        "basePower": 250,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "stabilize-bridge-gravity": 5
+            }
+        },
+        "reward": {
+            "oxygen": 200
+        }
+    },
+    {
+        "id": "activate-protocol-loop",
+        "chapter": 6,
+        "duration": 1000,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 50,
+            "endurance": 30,
+            "perception": 20
+        },
+        "basePower": 1000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "purge-unnecessary-emotions": 5
+            }
+        },
+        "reward": {
+            "switchChapter": 7
+        }
+    }
+]

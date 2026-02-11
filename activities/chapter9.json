@@ -1,0 +1,182 @@
+[
+    {
+        "id": "read-universal-counter",
+        "chapter": 9,
+        "duration": 50,
+        "maxTimes": 50,
+        "stats": {
+            "intelligence": 70,
+            "perception": 30
+        },
+        "basePower": 3000,
+        "unlocked": true
+    },
+    {
+        "id": "scan-dead-planets",
+        "chapter": 9,
+        "duration": 300,
+        "maxTimes": 15,
+        "stats": {
+            "perception": 60,
+            "intelligence": 40
+        },
+        "basePower": 4500,
+        "unlocked": true
+    },
+    {
+        "id": "analyze-humanity-extinction",
+        "chapter": 9,
+        "duration": 400,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 60,
+            "endurance": 40
+        },
+        "basePower": 6000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "read-universal-counter": 20
+            }
+        }
+    },
+    {
+        "id": "feel-the-weight-of-time",
+        "chapter": 9,
+        "duration": 500,
+        "maxTimes": 10,
+        "stats": {
+            "endurance": 60,
+            "intelligence": 40
+        },
+        "basePower": 7000,
+        "unlocked": true,
+        "reward": {
+            "oxygen": 300
+        }
+    },
+    {
+        "id": "calculate-anomaly-pressure",
+        "chapter": 9,
+        "duration": 200,
+        "maxTimes": 20,
+        "stats": {
+            "intelligence": 75,
+            "perception": 25
+        },
+        "basePower": 5000,
+        "unlocked": true
+    },
+    {
+        "id": "observe-frozen-moments",
+        "chapter": 9,
+        "duration": 180,
+        "maxTimes": 15,
+        "stats": {
+            "perception": 70,
+            "intelligence": 30
+        },
+        "basePower": 4800,
+        "unlocked": true
+    },
+    {
+        "id": "touch-the-barrier",
+        "chapter": 9,
+        "duration": 600,
+        "maxTimes": 5,
+        "stats": {
+            "strength": 50,
+            "endurance": 50
+        },
+        "basePower": 8500,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "feel-the-weight-of-time": 5
+            }
+        },
+        "reward": {
+            "oxygen": 400
+        }
+    },
+    {
+        "id": "decipher-ancient-aurora-codes",
+        "chapter": 9,
+        "duration": 350,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 80,
+            "perception": 20
+        },
+        "basePower": 6500,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "scan-dead-planets": 10
+            }
+        }
+    },
+    {
+        "id": "commune-with-ship-ai",
+        "chapter": 9,
+        "duration": 450,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 50,
+            "perception": 50
+        },
+        "basePower": 7500,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "decipher-ancient-aurora-codes": 5
+            }
+        }
+    },
+    {
+        "id": "hold-reality-together",
+        "chapter": 9,
+        "duration": 800,
+        "maxTimes": 5,
+        "stats": {
+            "endurance": 50,
+            "strength": 30,
+            "intelligence": 20
+        },
+        "basePower": 10000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "touch-the-barrier": 3
+            }
+        }
+    },
+    {
+        "id": "approach-the-core",
+        "chapter": 9,
+        "duration": 1200,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 40,
+            "strength": 30,
+            "intelligence": 30
+        },
+        "basePower": 1,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "hold-reality-together": 5
+            }
+        },
+        "reward": {
+            "switchChapter": 10,
+            "oxygen": 1000
+        }
+    }
+]

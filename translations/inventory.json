@@ -1,0 +1,382 @@
+{
+    "ru": {
+        "items": {
+            "mirror-shard": {
+                "name": "Осколок зеркала"
+            },
+            "memory-chip": {
+                "name": "Чип памяти"
+            },
+            "emergency-respirator": {
+                "name": "Аварийный респиратор"
+            },
+            "id-bracelet": {
+                "name": "Браслет идентификации"
+            },
+            "multitool": {
+                "name": "Мультитул"
+            },
+            "crew-id-card": {
+                "name": "Карта доступа экипажа"
+            },
+            "used-stim-injector": {
+                "name": "Использованный инъектор"
+            },
+            "ship-schematic": {
+                "name": "Схема корабля"
+            },
+            "emergency-flashlight": {
+                "name": "Аварийный фонарь"
+            },
+            "broken-chronometer": {
+                "name": "Сломанный хронометр"
+            },
+            "corridor-map-fragment": {
+                "name": "Фрагмент карты коридора"
+            },
+            "gravity-stabilizer": {
+                "name": "Гравитационный стабилизатор"
+            },
+            "echo-recorder": {
+                "name": "Записыватель эха"
+            },
+            "temporal-dust": {
+                "name": "Временная пыль"
+            },
+            "magnetic-boots": {
+                "name": "Магнитные ботинки"
+            },
+            "bloodstained-tag": {
+                "name": "Окровавленный жетон"
+            },
+            "loop-shard": {
+                "name": "Осколок петли"
+            },
+            "synced-crystal": {
+                "name": "Синхронизированный кристалл"
+            },
+            "anomaly-probe": {
+                "name": "Аномальный зонд"
+            },
+            "coolant-sealant": {
+                "name": "Герметик хладагента"
+            },
+            "protocol-draft": {
+                "name": "Черновик протокола"
+            },
+            "temporal-capsule": {
+                "name": "Темпоральная капсула"
+            },
+            "loop-core-fragment": {
+                "name": "Фрагмент ядра петли"
+            },
+            "crew-diary": {
+                "name": "Дневник экипажа"
+            },
+            "faded-photograph": {
+                "name": "Выцветшая фотография"
+            },
+            "holo-lens": {
+                "name": "Голо-линза"
+            },
+            "captains-key": {
+                "name": "Ключ капитана"
+            },
+            "clarity-serum": {
+                "name": "Сыворотка ясности"
+            },
+            "emergency-medkit": {
+                "name": "Аварийная аптечка"
+            },
+            "memory-fragment": {
+                "name": "Фрагмент памяти"
+            }
+        },
+        "awakeningItemList": {
+            "mirror-shard": "осколок зеркала напоминает о чужом лице",
+            "memory-chip": "чип памяти хранит забытое",
+            "emergency-respirator": "респиратор облегчает дыхание",
+            "id-bracelet": "браслет на запястье шепчет чужое имя",
+            "multitool": "мультитул лежит в руке",
+            "crew-id-card": "карта доступа с вашим именем жжёт карман",
+            "used-stim-injector": "пустой инъектор напоминает о цене",
+            "ship-schematic": "схема корабля отпечаталась в памяти",
+            "emergency-flashlight": "фонарь готов разрезать тьму",
+            "broken-chronometer": "сломанный хронометр тикает невпопад",
+            "corridor-map-fragment": "обрывок карты шепчет о выходе",
+            "gravity-stabilizer": "стабилизатор удерживает вас в настоящем",
+            "echo-recorder": "записыватель хранит чужие голоса",
+            "temporal-dust": "временная пыль мерцает между пальцами",
+            "magnetic-boots": "магнитные ботинки держат на полу",
+            "bloodstained-tag": "окровавленный жетон жжёт ладонь",
+            "loop-shard": "осколок петли пульсирует в кармане",
+            "synced-crystal": "синхронизированный кристалл гудит в такт вашему пульсу",
+            "anomaly-probe": "зонд мерцает данными из несуществующего времени",
+            "coolant-sealant": "герметик холодит пальцы — и чуть искажает свет",
+            "protocol-draft": "черновик протокола описывает вашу судьбу чужим почерком",
+            "temporal-capsule": "капсула с частицей пульсирует между мгновениями",
+            "loop-core-fragment": "фрагмент ядра тяжёл, как ответственность",
+            "crew-diary": "дневник чужой жизни шепчет знакомым голосом",
+            "faded-photograph": "выцветшее фото хранит улыбку, которую вы не помните",
+            "holo-lens": "голо-линза показывает призраков прошлого",
+            "captains-key": "ключ капитана открывает двери и правду",
+            "clarity-serum": "сыворотка ясности обостряет разум ценой чувств",
+            "emergency-medkit": "аптечка с вашим именем ждала именно вас",
+            "memory-fragment": "фрагмент памяти пульсирует чужими воспоминаниями"
+        }
+    },
+
+    "en": {
+        "items": {
+            "mirror-shard": {
+                "name": "Mirror Shard"
+            },
+            "memory-chip": {
+                "name": "Memory Chip"
+            },
+            "emergency-respirator": {
+                "name": "Emergency Respirator"
+            },
+            "id-bracelet": {
+                "name": "ID Bracelet"
+            },
+            "multitool": {
+                "name": "Multitool"
+            },
+            "crew-id-card": {
+                "name": "Crew Access Card"
+            },
+            "used-stim-injector": {
+                "name": "Used Stim Injector"
+            },
+            "ship-schematic": {
+                "name": "Ship Schematic"
+            },
+            "emergency-flashlight": {
+                "name": "Emergency Flashlight"
+            },
+            "broken-chronometer": {
+                "name": "Broken Chronometer"
+            },
+            "corridor-map-fragment": {
+                "name": "Corridor Map Fragment"
+            },
+            "gravity-stabilizer": {
+                "name": "Gravity Stabilizer"
+            },
+            "echo-recorder": {
+                "name": "Echo Recorder"
+            },
+            "temporal-dust": {
+                "name": "Temporal Dust"
+            },
+            "magnetic-boots": {
+                "name": "Magnetic Boots"
+            },
+            "bloodstained-tag": {
+                "name": "Bloodstained Tag"
+            },
+            "loop-shard": {
+                "name": "Loop Shard"
+            },
+            "synced-crystal": {
+                "name": "Synced Crystal"
+            },
+            "anomaly-probe": {
+                "name": "Anomaly Probe"
+            },
+            "coolant-sealant": {
+                "name": "Coolant Sealant"
+            },
+            "protocol-draft": {
+                "name": "Protocol Draft"
+            },
+            "temporal-capsule": {
+                "name": "Temporal Capsule"
+            },
+            "loop-core-fragment": {
+                "name": "Loop Core Fragment"
+            },
+            "crew-diary": {
+                "name": "Crew Diary"
+            },
+            "faded-photograph": {
+                "name": "Faded Photograph"
+            },
+            "holo-lens": {
+                "name": "Holo-Lens"
+            },
+            "captains-key": {
+                "name": "Captain's Key"
+            },
+            "clarity-serum": {
+                "name": "Clarity Serum"
+            },
+            "emergency-medkit": {
+                "name": "Emergency Medkit"
+            },
+            "memory-fragment": {
+                "name": "Memory Fragment"
+            }
+        },
+        "awakeningItemList": {
+            "mirror-shard": "a mirror shard reminds you of a stranger's face",
+            "memory-chip": "a memory chip holds forgotten data",
+            "emergency-respirator": "a respirator eases your breathing",
+            "id-bracelet": "a bracelet on your wrist whispers a stranger's name",
+            "multitool": "a multitool rests in your hand",
+            "crew-id-card": "an access card with your name burns in your pocket",
+            "used-stim-injector": "an empty injector reminds you of the cost",
+            "ship-schematic": "the ship's schematic is etched in your memory",
+            "emergency-flashlight": "a flashlight ready to cut through darkness",
+            "broken-chronometer": "a broken chronometer ticks out of sync",
+            "corridor-map-fragment": "a map fragment whispers of an exit",
+            "gravity-stabilizer": "a stabilizer keeps you in the present",
+            "echo-recorder": "a recorder holds other people's voices",
+            "temporal-dust": "temporal dust shimmers between your fingers",
+            "magnetic-boots": "magnetic boots keep you grounded",
+            "bloodstained-tag": "a bloodstained tag burns your palm",
+            "loop-shard": "a loop shard pulses in your pocket",
+            "synced-crystal": "a synced crystal hums in tune with your pulse",
+            "anomaly-probe": "a probe flickers with data from nonexistent time",
+            "coolant-sealant": "sealant chills your fingers — and slightly bends light",
+            "protocol-draft": "a protocol draft describes your fate in someone else's handwriting",
+            "temporal-capsule": "a capsule with a particle pulses between moments",
+            "loop-core-fragment": "a core fragment weighs heavy as responsibility",
+            "crew-diary": "a diary of someone's life whispers in a familiar voice",
+            "faded-photograph": "a faded photo holds a smile you don't remember",
+            "holo-lens": "a holo-lens shows ghosts of the past",
+            "captains-key": "the captain's key opens doors and truth",
+            "clarity-serum": "clarity serum sharpens the mind at the cost of feelings",
+            "emergency-medkit": "a medkit with your name was waiting for you",
+            "memory-fragment": "a memory fragment pulses with someone else's memories"
+        }
+    },
+
+    "de": {
+        "items": {
+            "mirror-shard": {
+                "name": "Spiegelscherbe"
+            },
+            "memory-chip": {
+                "name": "Speicherchip"
+            },
+            "emergency-respirator": {
+                "name": "Notfall-Atemgerät"
+            },
+            "id-bracelet": {
+                "name": "ID-Armband"
+            },
+            "multitool": {
+                "name": "Multitool"
+            },
+            "crew-id-card": {
+                "name": "Crew-Zugangskarte"
+            },
+            "used-stim-injector": {
+                "name": "Gebrauchter Stim-Injektor"
+            },
+            "ship-schematic": {
+                "name": "Schiffsplan"
+            },
+            "emergency-flashlight": {
+                "name": "Notfall-Taschenlampe"
+            },
+            "broken-chronometer": {
+                "name": "Kaputtes Chronometer"
+            },
+            "corridor-map-fragment": {
+                "name": "Korridorkarten-Fragment"
+            },
+            "gravity-stabilizer": {
+                "name": "Gravitationsstabilisator"
+            },
+            "echo-recorder": {
+                "name": "Echo-Rekorder"
+            },
+            "temporal-dust": {
+                "name": "Temporalstaub"
+            },
+            "magnetic-boots": {
+                "name": "Magnetstiefel"
+            },
+            "bloodstained-tag": {
+                "name": "Blutbefleckte Marke"
+            },
+            "loop-shard": {
+                "name": "Schleifensplitter"
+            },
+            "synced-crystal": {
+                "name": "Synchronisierter Kristall"
+            },
+            "anomaly-probe": {
+                "name": "Anomalie-Sonde"
+            },
+            "coolant-sealant": {
+                "name": "Kühlmittel-Dichtmasse"
+            },
+            "protocol-draft": {
+                "name": "Protokoll-Entwurf"
+            },
+            "temporal-capsule": {
+                "name": "Temporalkapsel"
+            },
+            "loop-core-fragment": {
+                "name": "Schleifenkern-Fragment"
+            },
+            "crew-diary": {
+                "name": "Besatzungstagebuch"
+            },
+            "faded-photograph": {
+                "name": "Verblasstes Foto"
+            },
+            "holo-lens": {
+                "name": "Holo-Linse"
+            },
+            "captains-key": {
+                "name": "Kapitänsschlüssel"
+            },
+            "clarity-serum": {
+                "name": "Klarheitsserum"
+            },
+            "emergency-medkit": {
+                "name": "Notfall-Medikit"
+            },
+            "memory-fragment": {
+                "name": "Erinnerungsfragment"
+            }
+        },
+        "awakeningItemList": {
+            "mirror-shard": "eine Spiegelscherbe erinnert an ein fremdes Gesicht",
+            "memory-chip": "ein Speicherchip bewahrt Vergessenes",
+            "emergency-respirator": "ein Atemgerät erleichtert das Atmen",
+            "id-bracelet": "ein Armband am Handgelenk flüstert einen fremden Namen",
+            "multitool": "ein Multitool liegt in der Hand",
+            "crew-id-card": "eine Zugangskarte mit deinem Namen brennt in der Tasche",
+            "used-stim-injector": "ein leerer Injektor erinnert an den Preis",
+            "ship-schematic": "der Schiffsplan ist ins Gedächtnis eingebrannt",
+            "emergency-flashlight": "eine Taschenlampe bereit, die Dunkelheit zu durchschneiden",
+            "broken-chronometer": "ein kaputtes Chronometer tickt aus dem Takt",
+            "corridor-map-fragment": "ein Kartenfragment flüstert vom Ausgang",
+            "gravity-stabilizer": "ein Stabilisator hält dich in der Gegenwart",
+            "echo-recorder": "ein Rekorder bewahrt fremde Stimmen",
+            "temporal-dust": "Temporalstaub schimmert zwischen deinen Fingern",
+            "magnetic-boots": "Magnetstiefel halten dich am Boden",
+            "bloodstained-tag": "eine blutbefleckte Marke brennt in der Handfläche",
+            "loop-shard": "ein Schleifensplitter pulsiert in deiner Tasche",
+            "synced-crystal": "ein synchronisierter Kristall summt im Takt deines Pulses",
+            "anomaly-probe": "eine Sonde flackert mit Daten aus nicht existierender Zeit",
+            "coolant-sealant": "Dichtmasse kühlt deine Finger — und bricht leicht das Licht",
+            "protocol-draft": "ein Protokoll-Entwurf beschreibt dein Schicksal in fremder Handschrift",
+            "temporal-capsule": "eine Kapsel mit Partikel pulsiert zwischen Momenten",
+            "loop-core-fragment": "ein Kernfragment wiegt schwer wie Verantwortung",
+            "crew-diary": "ein Tagebuch eines fremden Lebens flüstert mit vertrauter Stimme",
+            "faded-photograph": "ein verblasstes Foto bewahrt ein Lächeln, an das du dich nicht erinnerst",
+            "holo-lens": "eine Holo-Linse zeigt Geister der Vergangenheit",
+            "captains-key": "der Kapitänsschlüssel öffnet Türen und Wahrheit",
+            "clarity-serum": "Klarheitsserum schärft den Verstand auf Kosten der Gefühle",
+            "emergency-medkit": "ein Medikit mit deinem Namen hat auf dich gewartet",
+            "memory-fragment": "ein Erinnerungsfragment pulsiert mit fremden Erinnerungen"
+        }
+    }
+}

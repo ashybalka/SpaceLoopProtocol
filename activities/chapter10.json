@@ -1,0 +1,240 @@
+[
+    {
+        "id": "recall-pre-loop-name",
+        "chapter": 10,
+        "duration": 100,
+        "maxTimes": 50,
+        "stats": {
+            "intelligence": 60,
+            "perception": 40
+        },
+        "basePower": 15000,
+        "unlocked": true
+    },
+    {
+        "id": "re-experience-childhood",
+        "chapter": 10,
+        "duration": 200,
+        "maxTimes": 20,
+        "stats": {
+            "perception": 50,
+            "intelligence": 30,
+            "endurance": 20
+        },
+        "basePower": 18000,
+        "unlocked": true
+    },
+    {
+        "id": "re-experience-betrayal",
+        "chapter": 10,
+        "duration": 300,
+        "maxTimes": 15,
+        "stats": {
+            "endurance": 60,
+            "intelligence": 40
+        },
+        "basePower": 20000,
+        "unlocked": true
+    },
+    {
+        "id": "feel-echoes-of-love",
+        "chapter": 10,
+        "duration": 250,
+        "maxTimes": 10,
+        "stats": {
+            "perception": 50,
+            "endurance": 50
+        },
+        "basePower": 22000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "re-experience-childhood": 10
+            }
+        }
+    },
+    {
+        "id": "question-reality-nature",
+        "chapter": 10,
+        "duration": 350,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 70,
+            "perception": 30
+        },
+        "basePower": 24000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "recall-pre-loop-name": 15
+            }
+        }
+    },
+    {
+        "id": "understand-the-contract",
+        "chapter": 10,
+        "duration": 500,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 60,
+            "perception": 40
+        },
+        "basePower": 25000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "recall-pre-loop-name": 20
+            }
+        }
+    },
+    {
+        "id": "accept-the-burden",
+        "chapter": 10,
+        "duration": 400,
+        "maxTimes": 5,
+        "stats": {
+            "endurance": 70,
+            "strength": 30
+        },
+        "basePower": 28000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "re-experience-betrayal": 10
+            }
+        }
+    },
+    {
+        "id": "forgive-yourself",
+        "chapter": 10,
+        "duration": 450,
+        "maxTimes": 5,
+        "stats": {
+            "endurance": 50,
+            "intelligence": 50
+        },
+        "basePower": 30000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "feel-echoes-of-love": 5
+            }
+        }
+    },
+    {
+        "id": "see-all-timelines",
+        "chapter": 10,
+        "duration": 600,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 40,
+            "intelligence": 40,
+            "endurance": 20
+        },
+        "basePower": 35000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "question-reality-nature": 5
+            }
+        }
+    },
+    {
+        "id": "final-choice-prepare",
+        "chapter": 10,
+        "duration": 1000,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 34,
+            "intelligence": 33,
+            "strength": 33
+        },
+        "basePower": 50000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "understand-the-contract": 5,
+                "see-all-timelines": 2
+            }
+        }
+    },
+    {
+        "id": "choose-freedom",
+        "chapter": 10,
+        "duration": 100,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 100
+        },
+        "basePower": 1,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "final-choice-prepare": 1
+            }
+        }
+    },
+    {
+        "id": "choose-eternity",
+        "chapter": 10,
+        "duration": 100,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 100
+        },
+        "basePower": 1,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "final-choice-prepare": 1
+            }
+        }
+    },
+    {
+        "id": "ending-break-loop",
+        "chapter": 10,
+        "duration": 3000,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 50,
+            "agility": 30,
+            "strength": 20
+        },
+        "basePower": 1,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "choose-freedom": 1
+            }
+        }
+    },
+    {
+        "id": "ending-stabilize-loop",
+        "chapter": 10,
+        "duration": 2000,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 50,
+            "intelligence": 30,
+            "perception": 20
+        },
+        "basePower": 1,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "choose-eternity": 1
+            }
+        }
+    }
+]

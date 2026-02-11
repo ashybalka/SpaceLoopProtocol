@@ -1,0 +1,377 @@
+[
+    {
+        "id": "explore-capsule",
+        "chapter": 1,
+        "duration": 25,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 150,
+            "intelligence": 25,
+            "agility": 25
+        },
+        "basePower": 2,
+        "unlocked": true,
+        "rewardOnComplete": {
+            "item": "mirror-shard"
+        }
+    },
+    {
+        "id": "stretch-muscles",
+        "chapter": 1,
+        "duration": 15,
+        "maxTimes": 5,
+        "stats": {
+            "agility": 100,
+            "endurance": 50,
+            "strength": 100
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-capsule": 1
+            }
+        }
+    },
+    {
+        "id": "meditate",
+        "chapter": 1,
+        "duration": 10,
+        "maxTimes": 10,
+        "stats": {
+            "endurance": 125,
+            "intelligence": 10,
+            "strength": 10,
+            "agility": 10
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-capsule": 2
+            }
+        }
+    },
+    {
+        "id": "explore-systems",
+        "chapter": 1,
+        "duration": 17,
+        "maxTimes": 4,
+        "stats": {
+            "intelligence": 100,
+            "endurance": 20,
+            "perception": 50
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-capsule": 3
+            }
+        }
+    },
+    {
+        "id": "examine-door",
+        "chapter": 1,
+        "duration": 25,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 100,
+            "strength": 20,
+            "agility": 40
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-capsule": 4
+            }
+        },
+        "rewardOnComplete": {
+            "item": "emergency-respirator"
+        }
+    },
+    {
+        "id": "test-reflexes",
+        "chapter": 1,
+        "duration": 23,
+        "maxTimes": 4,
+        "stats": {
+            "agility": 100,
+            "intelligence": 25,
+            "strength": 50
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "stretch-muscles": 3
+            }
+        }
+    },
+    {
+        "id": "concentrate",
+        "chapter": 1,
+        "duration": 19,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 100,
+            "perception": 10
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "meditate": 5
+            }
+        }
+    },
+    {
+        "id": "achieve-inner-peace",
+        "chapter": 1,
+        "duration": 100,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 100,
+            "intelligence": 100
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "meditate": 10
+            }
+        },
+        "reward": {
+            "oxygen": 75
+        },
+        "rewardOnComplete": {
+            "item": "memory-chip"
+        }
+    },
+    {
+        "id": "physical-exercise",
+        "chapter": 1,
+        "duration": 50,
+        "maxTimes": 10,
+        "stats": {
+            "strength": 150,
+            "agility": 150,
+            "endurance": 50
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "meditate": 10
+            }
+        }
+    },
+    {
+        "id": "examine-door-controls",
+        "chapter": 1,
+        "duration": 30,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 125,
+            "perception": 30,
+            "agility": 15
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "examine-door": 3
+            }
+        }
+    },
+    {
+        "id": "open-capsule",
+        "chapter": 1,
+        "duration": 300,
+        "maxTimes": 1,
+        "stats": {
+            "strength": 150,
+            "agility": 25,
+            "intelligence": 1
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "examine-door": 3
+            }
+        },
+        "excludes": [
+            "open-electronic-lock"
+        ]
+    },
+    {
+        "id": "push-physical-limits",
+        "chapter": 1,
+        "duration": 75,
+        "maxTimes": 6,
+        "stats": {
+            "strength": 150,
+            "endurance": 100,
+            "agility": 50
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "stretch-muscles": 5,
+                "physical-exercise": 5
+            }
+        }
+    },
+    {
+        "id": "recall-memory",
+        "chapter": 1,
+        "duration": 200,
+        "maxTimes": 4,
+        "stats": {
+            "intelligence": 100,
+            "agility": 100,
+            "perception": 100,
+            "strength": 100,
+            "endurance": 100
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "rewardOnComplete": {
+            "item": "id-bracelet"
+        },
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "concentrate": 4
+            }
+        }
+    },
+    {
+        "id": "unlock-systems",
+        "chapter": 1,
+        "duration": 225,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 150,
+            "perception": 20,
+            "agility": 20
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "explore-systems": 4
+            }
+        },
+        "reward": {
+            "oxygen": 100
+        }
+    },
+    {
+        "id": "force-door-shoulder",
+        "chapter": 1,
+        "duration": 30,
+        "maxTimes": 3,
+        "stats": {
+            "strength": 55,
+            "endurance": 30,
+            "agility": 15
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "push-physical-limits": 3,
+                "examine-door": 1
+            }
+        },
+        "reward": {
+            "oxygen": 25
+        }
+    },
+    {
+        "id": "open-electronic-lock",
+        "chapter": 1,
+        "duration": 75,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 40,
+            "agility": 25,
+            "strength": 25,
+            "perception": 10
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "unlock-systems": 1,
+                "examine-door-controls": 5
+            }
+        },
+        "excludes": [
+            "open-capsule"
+        ]
+    },
+    {
+        "id": "escape-capsule",
+        "chapter": 1,
+        "duration": 50,
+        "maxTimes": 1,
+        "stats": {
+            "agility": 100,
+            "strength": 5
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "open-capsule": 1,
+                "open-electronic-lock": 1
+            },
+            "logic": "or"
+        },
+        "reward": {
+            "switchChapter": 2
+        }
+    },
+    {
+        "id": "go-to-hall",
+        "chapter": 1,
+        "duration": 10,
+        "maxTimes": 999,
+        "automationThreshold": 5,
+        "stats": {
+            "agility": 100,
+            "strength": 10
+        },
+        "basePower": 2,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "escape-capsule": 1
+            }
+        },
+        "reward": {
+            "switchChapter": 2
+        }
+    }
+]

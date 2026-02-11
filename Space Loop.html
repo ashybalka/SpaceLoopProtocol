@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="time-display">
-        <div style="display: flex; align-items: center; position: relative;">
-            <div id="oxygen-label" style="flex: 1; text-align: center;">💨 <span data-i18n="ui.oxygen">Кислород (O2)</span>: <span id="loop-time">500</span><span data-i18n="time.seconds">с</span> / 500<span data-i18n="time.seconds">с</span></div>
-        </div>
-        <div class="time-bar">
-            <div class="time-fill" id="time-fill" style="width: 100%"></div>
-        </div>
-    </div>
-
     <div class="container">
+        <!-- Панель кислорода на всю ширину -->
+        <div class="time-display">
+            <div class="time-bar">
+                <div class="time-fill" id="time-fill" style="width: 100%"></div>
+                <div id="oxygen-label" class="oxygen-text">💨 <span data-i18n="ui.oxygen">Кислород (O2)</span>: <span id="loop-time">500</span><span data-i18n="time.seconds">с</span> / 500<span data-i18n="time.seconds">с</span></div>
+            </div>
+        </div>
         <!-- Левая панель: Статистика -->
         <div class="panel">
             <h2><span data-i18n="ui.stats">📊 ХАРАКТЕРИСТИКИ</span></h2>
@@ -95,6 +93,13 @@
                     <div class="stat-fill permanent" id="perception-perm-bar" style="width: 0%"></div>
                 </div>
             </div>
+
+            <!-- Инвентарь -->
+            <div class="inventory-section" id="inventory-section" style="display: none;">
+                <div class="inventory-title">🎒 <span data-i18n="ui.inventory">Инвентарь</span></div>
+                <div class="inventory-items" id="inventory-items"></div>
+            </div>
+
             <button id="settings-btn" class="settings-btn" onclick="openSettings()">⚙️ <span data-i18n="ui.settings">Настройки</span></button>
         </div>
 
@@ -102,21 +107,34 @@
         <div class="main-area">
             <div id="chapter-title" style="color: #00ddff; font-size: 18px; font-weight: bold; text-align: center; text-shadow: 0 0 10px #00ddff;">Глава 1: Капсула</div>
             <div class="activities-container" id="activities-container"></div>
+            <!-- Лог событий -->
+            <div class="panel log-panel">
+                <div class="log-header">
+                    <h2><span data-i18n="ui.eventLog">📝 ЛОГ СОБЫТИЙ</span></h2>
+                    <div class="log-filters">
+                        <button class="log-filter active" data-filter="all" title="Все">📋</button>
+                        <button class="log-filter active" data-filter="complete" title="Завершения">✓</button>
+                        <button class="log-filter active" data-filter="history" title="История">📜</button>
+                        <button class="log-filter active" data-filter="stat" title="Система">💫</button>
+                        <button class="log-filter active" data-filter="power" title="Разблокировки">🔓</button>
+                    </div>
+                </div>
+                <div id="log" style="font-size: 12px; max-height: 100px; overflow-y: auto;"></div>
+            </div>
         </div>
 
-        <!-- Правая панель: Лог и Автоматизация -->
+        <!-- Правая панель: Автоматизация -->
         <div class="right-panels">
             <div class="panel">
                 <h2><span data-i18n="ui.automation">⚙️ АВТОМАТИЗАЦИЯ</span></h2>
                 <div class="automation-section">
-                    <button id="auto-mode-btn" class="auto-btn" onclick="toggleAutoMode()">▶️ <span data-i18n="ui.start">Запустить</span></button>
+                    <div class="auto-controls">
+                        <button id="auto-mode-btn" class="auto-btn" onclick="toggleAutoMode()">▶️ <span data-i18n="ui.start">Запустить</span></button>
+                        <button id="auto-repeat-btn" class="auto-repeat-btn" onclick="toggleAutoRepeat()" title="Автозапуск при новой петле">🔁</button>
+                    </div>
                     <div class="automation-label"><span data-i18n="ui.queue">Очередь:</span></div>
                     <div id="automation-queue" class="automation-queue"></div>
                 </div>
-            </div>
-            <div class="panel">
-                <h2><span data-i18n="ui.eventLog">📝 ЛОГ СОБЫТИЙ</span></h2>
-                <div id="log" style="font-size: 12px; max-height: 300px; overflow-y: auto;"></div>
             </div>
         </div>
     </div>
@@ -137,12 +155,40 @@
                 </select>
             </div>
             <div class="settings-row">
+                <button class="reset-loop-btn" onclick="resetLoop()">🔁 <span data-i18n="ui.resetLoop">Сбросить петлю</span></button>
+            </div>
+            <div class="settings-row">
                 <button class="reset-btn" onclick="resetGame()">🔄 <span data-i18n="ui.resetGame">Сброс игры</span></button>
             </div>
             <button class="close-btn" onclick="closeSettings()" data-i18n="ui.close">Закрыть</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Inventory Tooltip -->
+    <div id="inventory-tooltip" class="inventory-tooltip-global"></div>
+
+    <!-- Item Found Modal -->
+    <div id="item-modal" class="modal-overlay">
+        <div class="modal-content item-modal-content">
+            <h2>🎁 <span data-i18n="ui.itemFound">Найден предмет!</span></h2>
+            <div class="item-display">
+                <div class="item-icon-large" id="item-modal-icon">🔧</div>
+                <div class="item-modal-name" id="item-modal-name">Мультитул</div>
+            </div>
+            <div class="item-modal-bonuses" id="item-modal-bonuses"></div>
+            <button class="close-btn" onclick="closeItemModal()" data-i18n="ui.take">Забрать</button>
+        </div>
+    </div>
+
+    <!-- Модульные скрипты (порядок важен!) -->
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/inventory.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/activities.js"></script>
+    <script src="scripts/automation.js"></script>
+    <script src="scripts/save.js"></script>
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>

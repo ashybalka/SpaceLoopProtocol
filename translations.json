@@ -10,13 +10,17 @@
             "stop": "Остановить",
             "oxygen": "Кислород (O2)",
             "resetGame": "Сброс игры",
+            "resetLoop": "Сбросить петлю",
             "completed": "выполнено",
             "loopExp": "Опыт петли",
             "permanent": "Постоянный",
             "level": "Ур.",
             "settings": "Настройки",
             "language": "Язык",
-            "close": "Закрыть"
+            "close": "Закрыть",
+            "inventory": "Инвентарь",
+            "itemFound": "Найден предмет!",
+            "take": "Забрать"
         },
         "stats": {
             "strength": "Сила",
@@ -36,7 +40,8 @@
             "inQueue": "В очереди",
             "addToQueue": "Добавить в очередь",
             "remainingCompletions": "Ещё {count} выполнений",
-            "unlocked": "Автоматизация разблокирована: {name}!"
+            "unlocked": "Автоматизация разблокирована: {name}!",
+            "autoRepeat": "Автозапуск при новой петле"
         },
         "log": {
             "activityCompleted": "✓ {name} завершена ({done}/{max})",
@@ -48,17 +53,27 @@
             "oxygenBonus": "💨 +{amount} кислорода!",
             "chapterOpened": "📖 Открыта: {chapter}!",
             "chapterMoved": "📍 Вы перешли: {chapter}",
-            "awakening": "Вы медленно приходите в сознание. Холодный воздух заполняет ваши легкие. Вокруг мигают синие индикаторы, слышны звуки жужжания неизвестного оборудования. Где вы? Что произошло?"
+            "awakening": "Вы медленно приходите в сознание. Холодный воздух заполняет ваши легкие. Вокруг мигают синие индикаторы, слышны звуки жужжания неизвестного оборудования. Где вы? Что произошло?",
+            "awakeningWithItems": "Снова эта капсула. Снова холод. Но кое-что изменилось — {items}. Петля продолжается.",
+            "itemFound": "🔧 Найден предмет: {item}!"
         },
         "chapters": {
             "1": "Глава 1: Капсула",
-            "2": "Глава 2: Зал гибернации"
+            "2": "Глава 2: Зал гибернации",
+            "3": "Глава 3: Коридор"
         },
         "dialogs": {
             "resetConfirm": "Вы уверены? Это удалит все сохранения и начнет игру заново."
         },
         "time": {
             "seconds": "с"
+        },
+        "logFilters": {
+            "all": "Все",
+            "completions": "Завершения",
+            "history": "История",
+            "system": "Система",
+            "unlocks": "Разблокировки"
         }
     },
 
@@ -73,13 +88,17 @@
             "stop": "Stop",
             "oxygen": "Oxygen (O2)",
             "resetGame": "Reset game",
+            "resetLoop": "Reset loop",
             "completed": "completed",
             "loopExp": "Loop XP",
             "permanent": "Permanent",
             "level": "Lv.",
             "settings": "Settings",
             "language": "Language",
-            "close": "Close"
+            "close": "Close",
+            "inventory": "Inventory",
+            "itemFound": "Item found!",
+            "take": "Take"
         },
         "stats": {
             "strength": "Strength",
@@ -99,7 +118,8 @@
             "inQueue": "In queue",
             "addToQueue": "Add to queue",
             "remainingCompletions": "{count} more completions",
-            "unlocked": "Automation unlocked: {name}!"
+            "unlocked": "Automation unlocked: {name}!",
+            "autoRepeat": "Auto-start on new loop"
         },
         "log": {
             "activityCompleted": "✓ {name} completed ({done}/{max})",
@@ -111,17 +131,27 @@
             "oxygenBonus": "💨 +{amount} oxygen!",
             "chapterOpened": "📖 Opened: {chapter}!",
             "chapterMoved": "📍 You moved to: {chapter}",
-            "awakening": "You slowly regain consciousness. Cold air fills your lungs. Blue indicators blink around you, and you hear the hum of unknown equipment. Where are you? What happened?"
+            "awakening": "You slowly regain consciousness. Cold air fills your lungs. Blue indicators blink around you, and you hear the hum of unknown equipment. Where are you? What happened?",
+            "awakeningWithItems": "This capsule again. The cold again. But something has changed — {items}. The loop continues.",
+            "itemFound": "🔧 Item found: {item}!"
         },
         "chapters": {
             "1": "Chapter 1: The Capsule",
-            "2": "Chapter 2: Hibernation Hall"
+            "2": "Chapter 2: Hibernation Hall",
+            "3": "Chapter 3: The Corridor"
         },
         "dialogs": {
             "resetConfirm": "Are you sure? This will delete all saves and restart the game."
         },
         "time": {
             "seconds": "s"
+        },
+        "logFilters": {
+            "all": "All",
+            "completions": "Completions",
+            "history": "History",
+            "system": "System",
+            "unlocks": "Unlocks"
         }
     },
 
@@ -136,13 +166,17 @@
             "stop": "Stoppen",
             "oxygen": "Sauerstoff (O2)",
             "resetGame": "Spiel zurücksetzen",
+            "resetLoop": "Schleife zurücksetzen",
             "completed": "abgeschlossen",
             "loopExp": "Schleifen-XP",
             "permanent": "Permanent",
             "level": "St.",
             "settings": "Einstellungen",
             "language": "Sprache",
-            "close": "Schließen"
+            "close": "Schließen",
+            "inventory": "Inventar",
+            "itemFound": "Gegenstand gefunden!",
+            "take": "Nehmen"
         },
         "stats": {
             "strength": "Stärke",
@@ -162,7 +196,8 @@
             "inQueue": "In Warteschlange",
             "addToQueue": "Zur Warteschlange hinzufügen",
             "remainingCompletions": "Noch {count} Abschlüsse",
-            "unlocked": "Automatisierung freigeschaltet: {name}!"
+            "unlocked": "Automatisierung freigeschaltet: {name}!",
+            "autoRepeat": "Autostart bei neuer Schleife"
         },
         "log": {
             "activityCompleted": "✓ {name} abgeschlossen ({done}/{max})",
@@ -174,17 +209,27 @@
             "oxygenBonus": "💨 +{amount} Sauerstoff!",
             "chapterOpened": "📖 Geöffnet: {chapter}!",
             "chapterMoved": "📍 Du bist umgezogen: {chapter}",
-            "awakening": "Du kommst langsam zu Bewusstsein. Kalte Luft füllt deine Lungen. Blaue Indikatoren blinken um dich herum, und du hörst das Summen unbekannter Geräte. Wo bist du? Was ist passiert?"
+            "awakening": "Du kommst langsam zu Bewusstsein. Kalte Luft füllt deine Lungen. Blaue Indikatoren blinken um dich herum, und du hörst das Summen unbekannter Geräte. Wo bist du? Was ist passiert?",
+            "awakeningWithItems": "Diese Kapsel wieder. Die Kälte wieder. Aber etwas hat sich verändert — {items}. Die Schleife geht weiter.",
+            "itemFound": "🔧 Gegenstand gefunden: {item}!"
         },
         "chapters": {
             "1": "Kapitel 1: Die Kapsel",
-            "2": "Kapitel 2: Hibernationshalle"
+            "2": "Kapitel 2: Hibernationshalle",
+            "3": "Kapitel 3: Der Korridor"
         },
         "dialogs": {
             "resetConfirm": "Bist du sicher? Dies wird alle Spielstände löschen und das Spiel neu starten."
         },
         "time": {
             "seconds": "s"
+        },
+        "logFilters": {
+            "all": "Alle",
+            "completions": "Abschlüsse",
+            "history": "Geschichte",
+            "system": "System",
+            "unlocks": "Freischaltungen"
         }
     }
 }

@@ -1,0 +1,233 @@
+[
+    {
+        "id": "climb-torn-bulkheads",
+        "chapter": 8,
+        "duration": 80,
+        "maxTimes": 20,
+        "stats": {
+            "strength": 60,
+            "agility": 40
+        },
+        "basePower": 800,
+        "unlocked": true
+    },
+    {
+        "id": "jump-over-void-cracks",
+        "chapter": 8,
+        "duration": 60,
+        "maxTimes": 30,
+        "stats": {
+            "agility": 70,
+            "strength": 30
+        },
+        "basePower": 750,
+        "unlocked": true
+    },
+    {
+        "id": "seal-hull-with-bare-hands",
+        "chapter": 8,
+        "duration": 200,
+        "maxTimes": 10,
+        "stats": {
+            "strength": 70,
+            "endurance": 30
+        },
+        "basePower": 1200,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "climb-torn-bulkheads": 10
+            }
+        },
+        "reward": {
+            "oxygen": 200
+        }
+    },
+    {
+        "id": "dodge-flying-debris",
+        "chapter": 8,
+        "duration": 40,
+        "maxTimes": 50,
+        "stats": {
+            "agility": 80,
+            "perception": 20
+        },
+        "basePower": 900,
+        "unlocked": true
+    },
+    {
+        "id": "navigate-non-euclidean-rooms",
+        "chapter": 8,
+        "duration": 250,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 60,
+            "perception": 40
+        },
+        "basePower": 1500,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "jump-over-void-cracks": 15
+            }
+        }
+    },
+    {
+        "id": "anchor-self-to-reality",
+        "chapter": 8,
+        "duration": 180,
+        "maxTimes": 15,
+        "stats": {
+            "endurance": 60,
+            "intelligence": 40
+        },
+        "basePower": 1300,
+        "unlocked": true,
+        "reward": {
+            "oxygen": 150
+        }
+    },
+    {
+        "id": "watch-stars-die-and-birth",
+        "chapter": 8,
+        "duration": 300,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 50,
+            "intelligence": 30,
+            "endurance": 20
+        },
+        "basePower": 2000,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "navigate-non-euclidean-rooms": 5
+            }
+        }
+    },
+    {
+        "id": "breath-thin-temporal-air",
+        "chapter": 8,
+        "duration": 100,
+        "maxTimes": 20,
+        "stats": {
+            "endurance": 80,
+            "strength": 20
+        },
+        "basePower": 1100,
+        "unlocked": true,
+        "reward": {
+            "oxygen": 100
+        }
+    },
+    {
+        "id": "repair-external-arrays",
+        "chapter": 8,
+        "duration": 350,
+        "maxTimes": 5,
+        "stats": {
+            "strength": 50,
+            "agility": 50
+        },
+        "basePower": 1800,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "seal-hull-with-bare-hands": 5
+            }
+        }
+    },
+    {
+        "id": "listen-to-cosmos-scream",
+        "chapter": 8,
+        "duration": 150,
+        "maxTimes": 10,
+        "stats": {
+            "perception": 60,
+            "endurance": 40
+        },
+        "basePower": 1400,
+        "unlocked": true
+    },
+    {
+        "id": "collect-strange-matter",
+        "chapter": 8,
+        "duration": 220,
+        "maxTimes": 8,
+        "stats": {
+            "agility": 70,
+            "perception": 30
+        },
+        "basePower": 1600,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "dodge-flying-debris": 20
+            }
+        }
+    },
+    {
+        "id": "predict-reality-shifts",
+        "chapter": 8,
+        "duration": 280,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 70,
+            "perception": 30
+        },
+        "basePower": 1900,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "watch-stars-die-and-birth": 3
+            }
+        }
+    },
+    {
+        "id": "balance-on-event-horizon",
+        "chapter": 8,
+        "duration": 400,
+        "maxTimes": 5,
+        "stats": {
+            "agility": 50,
+            "endurance": 50
+        },
+        "basePower": 2500,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "predict-reality-shifts": 5
+            }
+        }
+    },
+    {
+        "id": "reach-the-hub-entrance",
+        "chapter": 8,
+        "duration": 500,
+        "maxTimes": 1,
+        "stats": {
+            "strength": 40,
+            "endurance": 40,
+            "agility": 20
+        },
+        "basePower": 1,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "balance-on-event-horizon": 3
+            }
+        },
+        "reward": {
+            "switchChapter": 9,
+            "oxygen": 500
+        }
+    }
+]

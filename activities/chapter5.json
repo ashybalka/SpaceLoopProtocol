@@ -1,0 +1,297 @@
+[
+    {
+        "id": "return-to-tech-bay",
+        "chapter": 5,
+        "duration": 25,
+        "maxTimes": 999,
+        "automationThreshold": 5,
+        "stats": {
+            "agility": 500
+        },
+        "basePower": 32,
+        "unlocked": true,
+        "reward": {
+            "switchChapter": 4
+        }
+    },
+    {
+        "id": "scavenge-food-rations",
+        "chapter": 5,
+        "duration": 160,
+        "maxTimes": 30,
+        "stats": {
+            "perception": 300,
+            "agility": 200
+        },
+        "basePower": 32,
+        "unlocked": true,
+        "reward": {
+            "oxygen": 25
+        }
+    },
+    {
+        "id": "read-abandoned-diaries",
+        "chapter": 5,
+        "duration": 480,
+        "maxTimes": 10,
+        "stats": {
+            "intelligence": 250,
+            "perception": 250
+        },
+        "basePower": 32,
+        "unlocked": true,
+        "rewardOnComplete": {
+            "item": "crew-diary"
+        }
+    },
+    {
+        "id": "listen-to-white-noise",
+        "chapter": 5,
+        "duration": 240,
+        "maxTimes": 15,
+        "stats": {
+            "endurance": 350,
+            "intelligence": 150
+        },
+        "basePower": 32,
+        "unlocked": true
+    },
+    {
+        "id": "organize-belongings",
+        "chapter": 5,
+        "duration": 240,
+        "maxTimes": 10,
+        "stats": {
+            "agility": 350,
+            "perception": 150
+        },
+        "basePower": 32,
+        "unlocked": true
+    },
+    {
+        "id": "rest-in-crew-bunk",
+        "chapter": 5,
+        "duration": 1200,
+        "maxTimes": 10,
+        "stats": {
+            "endurance": 400,
+            "intelligence": 100
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "scavenge-food-rations": 5
+            }
+        }
+    },
+    {
+        "id": "examine-family-photos",
+        "chapter": 5,
+        "duration": 360,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 350,
+            "intelligence": 150
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "read-abandoned-diaries": 3
+            }
+        },
+        "rewardOnComplete": {
+            "item": "faded-photograph"
+        }
+    },
+    {
+        "id": "confront-hallucinations",
+        "chapter": 5,
+        "duration": 600,
+        "maxTimes": 10,
+        "stats": {
+            "endurance": 300,
+            "intelligence": 200
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "listen-to-white-noise": 10
+            }
+        },
+        "rewardOnComplete": {
+            "item": "clarity-serum"
+        }
+    },
+    {
+        "id": "find-hidden-medkit",
+        "chapter": 5,
+        "duration": 480,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 350,
+            "agility": 150
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "scavenge-food-rations": 15
+            }
+        },
+        "reward": {
+            "oxygen": 150
+        },
+        "rewardOnComplete": {
+            "item": "emergency-medkit"
+        }
+    },
+    {
+        "id": "trace-crew-movements",
+        "chapter": 5,
+        "duration": 600,
+        "maxTimes": 8,
+        "stats": {
+            "intelligence": 350,
+            "perception": 150
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "examine-family-photos": 3
+            }
+        }
+    },
+    {
+        "id": "self-administer-sedative",
+        "chapter": 5,
+        "duration": 200,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 300,
+            "endurance": 200
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "find-hidden-medkit": 1
+            }
+        }
+    },
+    {
+        "id": "repair-broken-holoprojector",
+        "chapter": 5,
+        "duration": 720,
+        "maxTimes": 3,
+        "stats": {
+            "intelligence": 300,
+            "agility": 200
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "trace-crew-movements": 4
+            }
+        },
+        "rewardOnComplete": {
+            "item": "holo-lens"
+        }
+    },
+    {
+        "id": "meditate-on-lost-names",
+        "chapter": 5,
+        "duration": 800,
+        "maxTimes": 5,
+        "stats": {
+            "endurance": 250,
+            "intelligence": 250
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "self-administer-sedative": 3
+            }
+        },
+        "reward": {
+            "oxygen": 100
+        },
+        "rewardOnComplete": {
+            "item": "memory-fragment"
+        }
+    },
+    {
+        "id": "watch-distorted-records",
+        "chapter": 5,
+        "duration": 800,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 300,
+            "intelligence": 200
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "repair-broken-holoprojector": 2
+            }
+        }
+    },
+    {
+        "id": "search-captains-office",
+        "chapter": 5,
+        "duration": 1000,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 450,
+            "perception": 50
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "watch-distorted-records": 3
+            }
+        },
+        "rewardOnComplete": {
+            "item": "captains-key"
+        }
+    },
+    {
+        "id": "decide-to-become-the-one",
+        "chapter": 5,
+        "duration": 2400,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 200,
+            "intelligence": 200,
+            "perception": 100
+        },
+        "basePower": 32,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "search-captains-office": 1
+            }
+        },
+        "reward": {
+            "switchChapter": 6
+        }
+    }
+]

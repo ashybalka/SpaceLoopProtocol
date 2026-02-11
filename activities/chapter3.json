@@ -1,0 +1,433 @@
+[
+    {
+        "id": "return-to-hall",
+        "chapter": 3,
+        "duration": 15,
+        "maxTimes": 999,
+        "automationThreshold": 5,
+        "stats": {
+            "agility": 180,
+            "strength": 20
+        },
+        "basePower": 8,
+        "unlocked": true,
+        "reward": {
+            "switchChapter": 2
+        }
+    },
+    {
+        "id": "walk-endless-corridor",
+        "chapter": 3,
+        "duration": 120,
+        "maxTimes": 20,
+        "stats": {
+            "endurance": 100,
+            "agility": 100
+        },
+        "basePower": 8,
+        "unlocked": true
+    },
+    {
+        "id": "count-steps",
+        "chapter": 3,
+        "duration": 60,
+        "maxTimes": 15,
+        "stats": {
+            "intelligence": 120,
+            "perception": 40,
+            "endurance": 40
+        },
+        "basePower": 8,
+        "unlocked": true
+    },
+    {
+        "id": "listen-to-corridor-hum",
+        "chapter": 3,
+        "duration": 90,
+        "maxTimes": 8,
+        "stats": {
+            "perception": 90,
+            "endurance": 70,
+            "intelligence": 40
+        },
+        "basePower": 8,
+        "unlocked": true
+    },
+    {
+        "id": "mark-walls-with-ink",
+        "chapter": 3,
+        "duration": 120,
+        "maxTimes": 10,
+        "stats": {
+            "agility": 100,
+            "perception": 100
+        },
+        "basePower": 8,
+        "unlocked": true
+    },
+    {
+        "id": "sprint-through-corridor",
+        "chapter": 3,
+        "duration": 180,
+        "maxTimes": 3,
+        "stats": {
+            "agility": 80,
+            "endurance": 70,
+            "strength": 50
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "walk-endless-corridor": 5
+            }
+        },
+        "reward": {
+            "oxygen": 40
+        }
+    },
+    {
+        "id": "examine-wall-scratches",
+        "chapter": 3,
+        "duration": 150,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 140,
+            "intelligence": 60
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "walk-endless-corridor": 10
+            }
+        }
+    },
+    {
+        "id": "test-gravity-fluctuations",
+        "chapter": 3,
+        "duration": 180,
+        "maxTimes": 10,
+        "stats": {
+            "agility": 100,
+            "strength": 70,
+            "endurance": 30
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "count-steps": 5
+            }
+        },
+        "rewardOnComplete": {
+            "item": "magnetic-boots"
+        }
+    },
+    {
+        "id": "search-for-echo",
+        "chapter": 3,
+        "duration": 135,
+        "maxTimes": 8,
+        "stats": {
+            "perception": 100,
+            "endurance": 70,
+            "strength": 30
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "examine-wall-scratches": 3,
+                "listen-to-corridor-hum": 5
+            }
+        },
+        "rewardOnComplete": {
+            "item": "echo-recorder"
+        }
+    },
+    {
+        "id": "watch-ink-fade",
+        "chapter": 3,
+        "duration": 300,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 100,
+            "intelligence": 60,
+            "endurance": 40
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "mark-walls-with-ink": 5
+            }
+        },
+        "rewardOnComplete": {
+            "item": "temporal-dust"
+        }
+    },
+    {
+        "id": "trace-old-bloodstains",
+        "chapter": 3,
+        "duration": 210,
+        "maxTimes": 5,
+        "stats": {
+            "perception": 120,
+            "intelligence": 40,
+            "endurance": 40
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "search-for-echo": 4
+            }
+        },
+        "rewardOnComplete": {
+            "item": "bloodstained-tag"
+        }
+    },
+    {
+        "id": "brace-against-gravity",
+        "chapter": 3,
+        "duration": 135,
+        "maxTimes": 8,
+        "stats": {
+            "strength": 100,
+            "endurance": 70,
+            "agility": 30
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "test-gravity-fluctuations": 3
+            }
+        }
+    },
+    {
+        "id": "recover-dropped-wrench",
+        "chapter": 3,
+        "duration": 90,
+        "maxTimes": 1,
+        "stats": {
+            "agility": 100,
+            "strength": 60,
+            "perception": 40
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "walk-endless-corridor": 15
+            }
+        },
+        "reward": {
+            "oxygen": 50
+        }
+    },
+    {
+        "id": "throw-object-forward",
+        "chapter": 3,
+        "duration": 145,
+        "maxTimes": 10,
+        "stats": {
+            "strength": 120,
+            "agility": 50,
+            "perception": 30
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "recover-dropped-wrench": 1
+            }
+        }
+    },
+    {
+        "id": "catch-object-from-behind",
+        "chapter": 3,
+        "duration": 145,
+        "maxTimes": 10,
+        "stats": {
+            "agility": 130,
+            "perception": 40,
+            "strength": 30
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "throw-object-forward": 5
+            }
+        }
+    },
+    {
+        "id": "find-scratched-message",
+        "chapter": 3,
+        "duration": 1500,
+        "maxTimes": 1,
+        "stats": {
+            "perception": 80,
+            "intelligence": 70,
+            "endurance": 50
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "examine-wall-scratches": 5,
+                "trace-old-bloodstains": 2
+            }
+        },
+        "rewardOnComplete": {
+            "item": "corridor-map-fragment"
+        }
+    },
+    {
+        "id": "identify-temporal-loophole",
+        "chapter": 3,
+        "duration": 360,
+        "maxTimes": 5,
+        "stats": {
+            "intelligence": 100,
+            "perception": 60,
+            "endurance": 40
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "catch-object-from-behind": 5
+            }
+        },
+        "rewardOnComplete": {
+            "item": "broken-chronometer"
+        }
+    },
+    {
+        "id": "collect-temporal-residue",
+        "chapter": 3,
+        "duration": 210,
+        "maxTimes": 3,
+        "stats": {
+            "perception": 70,
+            "agility": 60,
+            "strength": 40,
+            "endurance": 30
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "watch-ink-fade": 3,
+                "brace-against-gravity": 4
+            }
+        },
+        "rewardOnComplete": {
+            "item": "gravity-stabilizer"
+        }
+    },
+    {
+        "id": "anchor-in-present",
+        "chapter": 3,
+        "duration": 300,
+        "maxTimes": 5,
+        "stats": {
+            "endurance": 90,
+            "strength": 70,
+            "intelligence": 40
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "listen-to-corridor-hum": 8,
+                "brace-against-gravity": 5
+            }
+        },
+        "reward": {
+            "oxygen": 75
+        },
+        "rewardOnComplete": {
+            "item": "loop-shard"
+        }
+    },
+    {
+        "id": "dismantle-wall-panel",
+        "chapter": 3,
+        "duration": 450,
+        "maxTimes": 3,
+        "stats": {
+            "strength": 110,
+            "intelligence": 50,
+            "endurance": 40
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "identify-temporal-loophole": 3,
+                "anchor-in-present": 2
+            }
+        }
+    },
+    {
+        "id": "bypass-hallway-lock",
+        "chapter": 3,
+        "duration": 600,
+        "maxTimes": 1,
+        "stats": {
+            "intelligence": 100,
+            "strength": 60,
+            "agility": 40
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "dismantle-wall-panel": 1,
+                "find-scratched-message": 1
+            }
+        }
+    },
+    {
+        "id": "enter-tech-bay",
+        "chapter": 3,
+        "duration": 900,
+        "maxTimes": 1,
+        "stats": {
+            "endurance": 80,
+            "agility": 60,
+            "strength": 60
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "bypass-hallway-lock": 1
+            }
+        },
+        "reward": {
+            "switchChapter": 4
+        }
+    }
+]
