@@ -449,6 +449,28 @@ h2 {
     color: #ff8e53;
 }
 
+.demo-stub {
+    text-align: center;
+    padding: 40px 20px;
+    color: #00ff88;
+    border: 1px dashed rgba(0, 255, 136, 0.3);
+    border-radius: 8px;
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.demo-stub h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #00ddff;
+}
+
+.demo-stub p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #aaffcc;
+    opacity: 0.85;
+}
+
 .loop-btn {
     background: linear-gradient(135deg, #00ff88, #00ddff);
     border: 2px solid #00ff88;

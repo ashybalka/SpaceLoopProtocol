@@ -60,6 +60,18 @@ function renderActivities() {
         chapterTitle.textContent = getChapterName(game.currentChapter);
     }
 
+    // Заглушка для глав за пределами демо
+    if (game.currentChapter > 3) {
+        const demoDiv = document.createElement('div');
+        demoDiv.className = 'demo-stub';
+        demoDiv.innerHTML = `
+            <h2>${t('chapters.demoTitle')}</h2>
+            <p>${t('chapters.demoText').replace(/\n/g, '<br>')}</p>
+        `;
+        container.appendChild(demoDiv);
+        return;
+    }
+
     game.activities.forEach(activity => {
         if (activity.chapter !== game.currentChapter) return;
         if (!activity.unlocked) return;
