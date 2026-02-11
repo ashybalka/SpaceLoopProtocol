@@ -182,10 +182,19 @@ function applyTranslations() {
     if (resetBtn) {
         resetBtn.innerHTML = '🔄 ' + t('ui.resetGame');
     }
-    const closeBtn = document.querySelector('.close-btn');
+    const closeBtn = document.querySelector('#settings-modal .close-btn');
     if (closeBtn) {
         closeBtn.textContent = t('ui.close');
     }
+
+    // Все элементы с data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = t(key);
+        if (val && val !== key) {
+            el.textContent = val;
+        }
+    });
 
     // Кнопки фильтра лога
     const filterAll = document.querySelector('.log-filter[data-filter="all"]');
