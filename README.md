@@ -4,7 +4,7 @@ A browser-based incremental game set aboard the research vessel "Aurora", trappe
 
 ## How to Play
 
-Open `Space Loop.html` in any modern browser. No server required.
+Open `[Space Loop Protocol](https://ashybalka.github.io/SpaceLoopProtocol/)` in any modern browser.
 
 ## Game Mechanics
 
