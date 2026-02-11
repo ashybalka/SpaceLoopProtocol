@@ -235,7 +235,7 @@
                 "Вторая капсула. Система жизнеобеспечения частично работает. В резервуаре остался кислород — вы подключаетесь к системе.",
                 "В третьей капсуле кто-то оставил записку: «Если ты это читаешь — беги к отсеку D7». Кислородный резерв капсулы ещё не исчерпан.",
                 "Четвёртая капсула повреждена изнутри, но система подачи кислорода цела. Кто-то не успел им воспользоваться.",
-                "Последняя целая капсула. На дисплее мигает: «Аварийный протокол завершён». Вы забираете последний кислород из резервуара."
+                "Последняя целая капсула. На дисплее мигает: «Аварийный протокол завершён». В нише рядом с системой подачи — аварийный фонарь. Вы забираете его и последний кислород."
             ],
             "completeMessageNoItem": "Последняя капсула. Вы уже знаете, что здесь был фонарь — он уже с вами. Но кислород ещё остался."
         },
@@ -416,6 +416,7 @@
         "walk-endless-corridor": {
             "name": "Идти по коридору",
             "description": "Шагать вперёд по бесконечному коридору",
+            "unlockMessage": "Перед вами — длинный тёмный коридор. Стены одинаковые, потолок низкий. Единственный путь — вперёд.",
             "completeMessage": [
                 "Шаг, ещё шаг. Стены одинаковые. Потолок низкий. Тишина давит.",
                 "Вы идёте уже долго. Ощущение времени размывается.",
@@ -442,6 +443,7 @@
         "count-steps": {
             "name": "Считать шаги",
             "description": "Методично считать шаги, пытаясь измерить коридор",
+            "unlockMessage": "Если нельзя доверять глазам — можно доверять числам. Попробуйте считать шаги.",
             "completeMessage": [
                 "1... 2... 3... Счёт помогает сохранять рассудок.",
                 "247 шагов до первого поворота. Или до того места, где он должен быть.",
@@ -478,6 +480,7 @@
         "mark-walls-with-ink": {
             "name": "Пометить стены",
             "description": "Оставить метки на стенах чернилами",
+            "unlockMessage": "Если коридор повторяется — можно оставить метки. Тогда вы узнаете, что уже были здесь.",
             "completeMessage": [
                 "Крестик на стене. Теперь вы узнаете это место.",
                 "Стрелка вправо. Через двадцать шагов — стрелка. Вы её не рисовали.",
@@ -632,7 +635,8 @@
             "name": "Расшифровать послание на стенах",
             "description": "Собрать царапины и следы в единое сообщение",
             "unlockMessage": "Царапины и следы крови — не случайность. Это послание, разбитое на части.",
-            "completeMessage": "Царапины — карта. Кровь — маршрут. За стеновой панелью в секции 7 есть проход. Рядом с последним фрагментом — обрывок карты коридора."
+            "completeMessage": "Царапины — карта. Кровь — маршрут. За стеновой панелью в секции 7 есть проход. Рядом с последним фрагментом — обрывок карты коридора.",
+            "completeMessageNoItem": "Вы снова собираете послание. Те же царапины, тот же маршрут. Обрывок карты уже у вас — из прошлой петли."
         },
         "identify-temporal-loophole": {
             "name": "Обнаружить временную лакуну",
@@ -644,7 +648,8 @@
                 "Лакуна пульсирует. В ней нет звука. Абсолютная тишина.",
                 "Предмет зависает в лакуне. Вращается. Вылетает с другой стороны стены.",
                 "Лакуна — не баг. Она — шов. Место, где петля сшита. Рядом — сломанный хронометр."
-            ]
+            ],
+            "completeMessageNoItem": "Лакуна всё та же. Шов петли всё на месте. Сломанный хронометр уже у вас — его стрелки по-прежнему стоят."
         },
         "collect-temporal-residue": {
             "name": "Собрать временной осадок",
@@ -1046,7 +1051,8 @@
             "name": "Achieve inner peace",
             "description": "Reach complete inner balance",
             "unlockMessage": "You feel you've reached the limit of meditation. One last step remains...",
-            "completeMessage": "Absolute silence within. You are no longer afraid. Mind and body are one. You are ready for anything."
+            "completeMessage": "Absolute silence within. In that silence — an image. A tiny data chip in your palm. Where did it come from? A memory? Or was it always here?",
+            "completeMessageNoItem": "Absolute silence within. You search for that image — the data chip — but it's already yours. You took it earlier. In another loop."
         },
         "examine-door": {
             "name": "Examine door",
@@ -1055,8 +1061,9 @@
             "completeMessage": [
                 "The door is massive, hermetic. Three locks: mechanical, electronic, and emergency manual.",
                 "Scratches on the panel. Someone already tried to open the door from inside? Or outside?",
-                "You found a weak point — the seal is damaged in places. The mechanism is worn but might work."
-            ]
+                "Behind the panel — a niche. Inside — an emergency respirator. Old, but functional. Someone was preparing to escape."
+            ],
+            "completeMessageNoItem": "Behind the panel — an empty niche. No respirator. You already took it... in a past life. In a past loop."
         },
         "examine-door-controls": {
             "name": "Examine door controls",
@@ -1097,9 +1104,10 @@
             "completeMessage": [
                 "Flash! Spaceport, crowds of well-wishers. Your face on screen — 'Heroes of Humanity'.",
                 "You remember Captain Chen. Strict but fair. 'We'll return with the discovery of the century.'",
-                "Last dinner before hibernation. Laughter, toasts, hopes. Twelve crew members.",
-                "The moment of falling asleep. Cold of the cryochamber, last thought: 'See you in four years.' But something went wrong..."
-            ]
+                "Last dinner before hibernation. Laughter, toasts, hopes. One hundred and twenty crew members.",
+                "You look down — a bracelet on your wrist. The name on it seems familiar... but it's not your name. Or is it? Who were you before this?"
+            ],
+            "completeMessageNoItem": "You look down — bare wrist. The bracelet is already yours. You took it long ago. How many loops ago?"
         },
         "unlock-systems": {
             "name": "Activate systems",
@@ -1245,7 +1253,7 @@
                 "Second capsule. The life support system partially works. There's oxygen left in the reservoir — you connect to the system.",
                 "In the third capsule, someone left a note: 'If you're reading this — run to section D7'. The capsule's oxygen reserve is not yet depleted.",
                 "The fourth capsule is damaged from inside, but the oxygen supply system is intact. Someone didn't get to use it.",
-                "The last intact capsule. The display blinks: 'Emergency protocol complete'. You take the last oxygen from the reservoir."
+                "The last intact capsule. The display blinks: 'Emergency protocol complete'. In a compartment beside the supply system — an emergency flashlight. You take it and the last oxygen."
             ],
             "completeMessageNoItem": "Last capsule. You already know there was a flashlight here — it's already with you. But there's still oxygen left."
         },
@@ -1301,13 +1309,22 @@
             "name": "Search for supplies",
             "description": "Search the hall for useful items",
             "unlockMessage": "There should be emergency lockers with supplies between the capsules...",
-            "completeMessage": "You found an emergency locker. Inside — dry rations and a first aid kit. Supplies are depleted, but something remains."
+            "completeMessage": [
+                "The first locker is empty. But on the inside wall — a list: 'A.K. — took. M.L. — took. ??? — took.' The rest of the names are erased.",
+                "You find a medkit. Inside — strange medications labeled 'For memory stabilization'. Expiration date has passed... or hasn't it?",
+                "In the last locker — personal belongings. Photos, letters. Someone collected them deliberately. Why?"
+            ]
         },
         "find-crew-notes": {
             "name": "Find crew notes",
             "description": "Look for personal records and diaries of crew members",
             "unlockMessage": "You notice a tablet with a flickering screen in one of the capsules. Someone's personal diary?",
-            "completeMessage": "\"Day 847. We're stuck. The captain says hold on, but I see fear in his eyes...\" The entry ends abruptly."
+            "completeMessage": [
+                "'I'm no longer sure I'm writing this for the first time. The words feel familiar. But I continue — in case I forget next time...'",
+                "'The captain said he found a solution. A volunteer is needed. One person must stay. Forever. They vote tomorrow.'",
+                "'He agreed. He said he doesn't remember who he was before anyway. Maybe it's for the better. Forgive us.'",
+                "'Last entry. Protocol activated. We're leaving through the corridor. He stays. I hope he forgives us. Someday.'"
+            ]
         },
         "check-ventilation": {
             "name": "Check ventilation",
@@ -1417,6 +1434,7 @@
         "walk-endless-corridor": {
             "name": "Walk the corridor",
             "description": "Walk forward through the endless corridor",
+            "unlockMessage": "Before you — a long dark corridor. Same walls, low ceiling. The only way is forward.",
             "completeMessage": [
                 "Step after step. Same walls. Low ceiling. Pressing silence.",
                 "You've been walking for a while. Or have you? Time blurs.",
@@ -1443,6 +1461,7 @@
         "count-steps": {
             "name": "Count steps",
             "description": "Methodically count steps, trying to measure the corridor",
+            "unlockMessage": "If you can't trust your eyes — you can trust numbers. Try counting steps.",
             "completeMessage": [
                 "1... 2... 3... Counting helps keep your sanity.",
                 "247 steps to the first turn. Or where the turn should be.",
@@ -1479,6 +1498,7 @@
         "mark-walls-with-ink": {
             "name": "Mark the walls",
             "description": "Leave ink marks on the walls to map the corridor",
+            "unlockMessage": "If the corridor repeats — you can leave marks. Then you'll know if you've been here before.",
             "completeMessage": [
                 "An X on the wall. You'll recognize this spot now.",
                 "Arrow pointing right. Twenty steps later — an arrow. You didn't draw it.",
@@ -1633,7 +1653,8 @@
             "name": "Decipher wall message",
             "description": "Piece together scratches and bloodstains into a single message",
             "unlockMessage": "The scratches and bloodstains aren't random. It's a message, broken into parts.",
-            "completeMessage": "Scratches are a map. Blood is the route. Behind a wall panel in section 7 — a passage. Near the last fragment — a torn piece of a corridor map."
+            "completeMessage": "Scratches are a map. Blood is the route. Behind a wall panel in section 7 — a passage. Near the last fragment — a torn piece of a corridor map.",
+            "completeMessageNoItem": "You piece together the message again. Same scratches, same route. The map fragment is already yours — from a past loop."
         },
         "identify-temporal-loophole": {
             "name": "Identify temporal loophole",
@@ -1645,7 +1666,8 @@
                 "The loophole pulses. No sound inside it. Absolute silence.",
                 "Object hangs in the loophole. Rotates. Exits through the other side of the wall.",
                 "The loophole isn't a bug. It's a seam. Where the loop is stitched. Nearby — a broken chronometer."
-            ]
+            ],
+            "completeMessageNoItem": "The loophole is the same. The seam of the loop is still here. The broken chronometer is already yours — its hands still frozen."
         },
         "collect-temporal-residue": {
             "name": "Collect temporal residue",
@@ -2022,8 +2044,9 @@
                 "Die Wände sind mit Reif bedeckt. Kratzer an der Innenverkleidung. Jemand ist hier vor dir aufgewacht?",
                 "An der Wand — ein Panel mit Knöpfen und einem toten Bildschirm. Daneben — eine Notluke mit massiven Schlössern.",
                 "Unter der Decke — ein Lüftungsgitter. Kalte Luft strömt heraus. Das System funktioniert noch.",
-                "In der Ecke — Lebenserhaltungsschläuche. Einige sind abgetrennt. Der Kryoschlaf wurde notfallmäßig unterbrochen."
-            ]
+                "In der Ecke der Kapsel — eine Spiegelscherbe. Du blickst hinein und siehst ein fremdes Gesicht. Bist das... du? Du erinnerst dich nicht, so ausgesehen zu haben."
+            ],
+            "completeMessageNoItem": "In der Ecke — ein leerer Platz. Hier war einmal ein Spiegel. Du hast ihn genommen... in einer der vergangenen Schleifen."
         },
         "meditate": {
             "name": "Meditieren",
@@ -2046,7 +2069,8 @@
             "name": "Inneren Frieden finden",
             "description": "Vollständiges inneres Gleichgewicht erreichen",
             "unlockMessage": "Du spürst, dass du die Grenze der Meditation erreicht hast. Ein letzter Schritt bleibt...",
-            "completeMessage": "Absolute Stille in dir. Du hast keine Angst mehr. Geist und Körper sind eins. Du bist bereit für alles."
+            "completeMessage": "Absolute Stille in dir. In dieser Stille — ein Bild. Ein winziger Datenchip in deiner Handfläche. Woher kommt er? Eine Erinnerung? Oder war er schon immer hier?",
+            "completeMessageNoItem": "Absolute Stille in dir. Du suchst nach dem Bild — der Datenchip — aber er gehört dir bereits. Du hast ihn früher genommen. In einer anderen Schleife."
         },
         "examine-door": {
             "name": "Tür untersuchen",
@@ -2055,8 +2079,9 @@
             "completeMessage": [
                 "Die Tür ist massiv, hermetisch. Drei Schlösser: mechanisch, elektronisch und manueller Notfall.",
                 "Kratzer am Panel. Jemand hat bereits versucht, die Tür von innen zu öffnen? Oder von außen?",
-                "Du hast eine Schwachstelle gefunden — die Dichtung ist stellenweise beschädigt. Der Mechanismus ist abgenutzt, könnte aber funktionieren."
-            ]
+                "Hinter dem Panel — eine Nische. Darin — ein Notfall-Atemgerät. Alt, aber funktionsfähig. Jemand bereitete sich auf die Flucht vor."
+            ],
+            "completeMessageNoItem": "Hinter dem Panel — eine leere Nische. Kein Atemgerät. Du hast es bereits genommen... in einem früheren Leben. In einer früheren Schleife."
         },
         "examine-door-controls": {
             "name": "Türsteuerung untersuchen",
@@ -2097,9 +2122,10 @@
             "completeMessage": [
                 "Blitz! Raumhafen, Menschenmassen. Dein Gesicht auf dem Bildschirm — 'Helden der Menschheit'.",
                 "Du erinnerst dich an Kapitän Chen. Streng aber fair. 'Wir kehren mit der Entdeckung des Jahrhunderts zurück.'",
-                "Letztes Abendessen vor dem Winterschlaf. Lachen, Toasts, Hoffnungen. Zwölf Besatzungsmitglieder.",
-                "Der Moment des Einschlafens. Kälte der Kryokammer, letzter Gedanke: 'Wir sehen uns in vier Jahren.' Aber etwas ging schief..."
-            ]
+                "Letztes Abendessen vor dem Winterschlaf. Lachen, Toasts, Hoffnungen. Hundertundzwanzig Besatzungsmitglieder.",
+                "Du blickst hinab — ein Armband am Handgelenk. Der Name darauf kommt dir bekannt vor... aber es ist nicht dein Name. Oder doch? Wer warst du vorher?"
+            ],
+            "completeMessageNoItem": "Du blickst hinab — nacktes Handgelenk. Das Armband gehört dir bereits. Du hast es vor langer Zeit genommen. Wie viele Schleifen her?"
         },
         "unlock-systems": {
             "name": "Systeme aktivieren",
@@ -2245,7 +2271,7 @@
                 "Zweite Kapsel. Das Lebenserhaltungssystem funktioniert teilweise. Im Reservoir ist noch Sauerstoff — du verbindest dich mit dem System.",
                 "In der dritten Kapsel hat jemand eine Notiz hinterlassen: 'Wenn du das liest — lauf zu Sektion D7'. Die Sauerstoffreserve der Kapsel ist noch nicht erschöpft.",
                 "Die vierte Kapsel ist von innen beschädigt, aber das Sauerstoffversorgungssystem ist intakt. Jemand hatte keine Zeit, es zu benutzen.",
-                "Die letzte intakte Kapsel. Das Display blinkt: 'Notfallprotokoll abgeschlossen'. Du nimmst den letzten Sauerstoff aus dem Reservoir."
+                "Die letzte intakte Kapsel. Das Display blinkt: 'Notfallprotokoll abgeschlossen'. In einem Fach neben dem Versorgungssystem — eine Notfalltaschenlampe. Du nimmst sie und den letzten Sauerstoff."
             ],
             "completeMessageNoItem": "Letzte Kapsel. Du weißt bereits, dass hier eine Taschenlampe war — sie ist schon bei dir. Aber es ist noch Sauerstoff übrig."
         },
@@ -2265,13 +2291,21 @@
             "name": "Terminal finden",
             "description": "Ein Informationsterminal in der Halle finden",
             "unlockMessage": "Ein Bildschirm flackert in der hinteren Ecke der Halle — das scheint ein funktionierendes Terminal zu sein!",
-            "completeMessage": "Das Terminal funktioniert! Der Bildschirm flackert und zeigt Datenzeilen an. Das System lebt noch."
+            "completeMessage": [
+                "Das Terminal funktioniert! Der Bildschirm flackert und zeigt Datenzeilen. Überschrift: 'Expedition Aurora — Bordtagebuch'.",
+                "Du findest einen Abschnitt mit technischen Berichten. Erwähnungen von 'Zeitanomalie' und 'Kausalitätsinstabilität'. Was bedeutet das?",
+                "Ein geheimer Abschnitt im System: 'LOOP PROTOCOL'. Zugang gesperrt. Höhere Freigabestufe erforderlich."
+            ]
         },
         "read-logs": {
             "name": "Logs lesen",
             "description": "Die Einträge des Bordtagebuchs am Terminal studieren",
             "unlockMessage": "Das Terminal lädt... Zeilen aus dem Bordtagebuch erscheinen auf dem Bildschirm.",
-            "completeMessage": "\"Kritischer Navigationsfehler. Kollision unausweichlich. Notfallprotokoll aktiviert...\" Was ist hier passiert?"
+            "completeMessage": [
+                "'Tag 1. Eintritt in die Anomaliezone. Instrumente messen Unmögliches — die Zeit ist nicht mehr linear...'",
+                "'Tag 47. Besatzung berichtet von seltsamen Empfindungen. Déjà-vu. Gespräche, die schon stattfanden. Entscheidungen, die schon getroffen wurden...'",
+                "'Tag ???. Tageszähler defekt. Wir wissen nicht mehr, wie viel Zeit vergangen ist. Der Kapitän hat eine Entscheidung getroffen. Sie wählten einen...'"
+            ]
         },
         "activate-emergency-lights": {
             "name": "Notbeleuchtung aktivieren",
@@ -2283,19 +2317,32 @@
             "name": "Schäden untersuchen",
             "description": "Schäden an Wänden und Ausrüstung der Halle untersuchen",
             "unlockMessage": "Im Notlicht sind tiefe Risse in den Wänden und geschmolzene Paneele zu sehen.",
-            "completeMessage": "Die Schäden sind schwer. Einschlagspuren, geschmolzenes Metall. Das Schiff hat offensichtlich eine Katastrophe überlebt."
+            "completeMessage": [
+                "Die Schäden sind schwer, aber seltsam. Nicht wie ein Zusammenstoß — eher wie strukturelle Verzerrungen. Das Metall scheint 'gedehnt'.",
+                "An den Wänden Spuren, die sich nicht erklären lassen. Kratzer erscheinen und verschwinden, wenn du wegschaust. Oder bildest du es dir ein?",
+                "Du findest ein Schild: 'Achtung! Nicht länger als 10 Sekunden auf Schäden starren. Befehl des Kapitäns.' Was wussten sie?"
+            ]
         },
         "search-supplies": {
             "name": "Nach Vorräten suchen",
             "description": "Die Halle nach nützlichen Gegenständen durchsuchen",
             "unlockMessage": "Zwischen den Kapseln sollten Notfallschränke mit Vorräten sein...",
-            "completeMessage": "Du hast einen Notfallschrank gefunden. Darin — Trockenrationen und ein Erste-Hilfe-Set. Vorräte sind knapp, aber etwas bleibt übrig."
+            "completeMessage": [
+                "Der erste Schrank ist leer. Aber an der Innenwand — eine Liste: 'A.K. — genommen. M.L. — genommen. ??? — genommen.' Die restlichen Namen sind gelöscht.",
+                "Du findest einen Medizinschrank. Darin — seltsame Medikamente mit der Aufschrift 'Zur Gedächtnisstabilisierung'. Verfallsdatum abgelaufen... oder doch nicht?",
+                "Im letzten Schrank — persönliche Gegenstände. Fotos, Briefe. Jemand hat sie absichtlich gesammelt. Warum?"
+            ]
         },
         "find-crew-notes": {
             "name": "Crew-Notizen finden",
             "description": "Nach persönlichen Aufzeichnungen und Tagebüchern der Besatzung suchen",
             "unlockMessage": "Du bemerkst ein Tablet mit flackerndem Bildschirm in einer der Kapseln. Jemandes persönliches Tagebuch?",
-            "completeMessage": "\"Tag 847. Wir stecken fest. Der Kapitän sagt durchhalten, aber ich sehe Angst in seinen Augen...\" Der Eintrag bricht ab."
+            "completeMessage": [
+                "'Ich bin nicht mehr sicher, ob ich das zum ersten Mal schreibe. Die Worte kommen mir bekannt vor. Aber ich mache weiter — falls ich es nächstes Mal vergesse...'",
+                "'Der Kapitän sagte, er hat eine Lösung gefunden. Ein Freiwilliger wird gebraucht. Einer muss bleiben. Für immer. Morgen wird abgestimmt.'",
+                "'Er hat zugestimmt. Er sagte, er erinnere sich sowieso nicht, wer er vorher war. Vielleicht ist es besser so. Verzeiht uns.'",
+                "'Letzter Eintrag. Protokoll aktiviert. Wir gehen durch den Korridor. Er bleibt. Ich hoffe, er verzeiht uns. Irgendwann.'"
+            ]
         },
         "check-ventilation": {
             "name": "Belüftung prüfen",
@@ -2405,6 +2452,7 @@
         "walk-endless-corridor": {
             "name": "Durch den Korridor gehen",
             "description": "Vorwärts durch den endlosen Korridor schreiten",
+            "unlockMessage": "Vor dir — ein langer dunkler Korridor. Gleiche Wände, niedrige Decke. Der einzige Weg ist vorwärts.",
             "completeMessage": [
                 "Schritt für Schritt. Gleiche Wände. Niedrige Decke. Drückende Stille.",
                 "Du gehst schon lange. Oder? Das Zeitgefühl verschwimmt.",
@@ -2431,6 +2479,7 @@
         "count-steps": {
             "name": "Schritte zählen",
             "description": "Methodisch Schritte zählen, um den Korridor zu vermessen",
+            "unlockMessage": "Wenn du deinen Augen nicht trauen kannst — vertraue Zahlen. Versuch die Schritte zu zählen.",
             "completeMessage": [
                 "1... 2... 3... Zählen hilft, den Verstand zu bewahren.",
                 "247 Schritte bis zur ersten Biegung. Oder wo sie sein sollte.",
@@ -2467,6 +2516,7 @@
         "mark-walls-with-ink": {
             "name": "Wände markieren",
             "description": "Tintenmarkierungen an den Wänden hinterlassen",
+            "unlockMessage": "Wenn der Korridor sich wiederholt — kannst du Markierungen hinterlassen. Dann weißt du, ob du schon hier warst.",
             "completeMessage": [
                 "Ein X an der Wand. Du wirst diese Stelle wiedererkennen.",
                 "Pfeil nach rechts. Zwanzig Schritte weiter — ein Pfeil. Den hast du nicht gemalt.",
@@ -2621,7 +2671,8 @@
             "name": "Wandnachricht entziffern",
             "description": "Kratzer und Blutspuren zu einer Botschaft zusammensetzen",
             "unlockMessage": "Kratzer und Blut sind kein Zufall. Eine Nachricht, in Teile zerbrochen.",
-            "completeMessage": "Kratzer sind eine Karte. Blut ist die Route. Hinter einem Wandpaneel in Sektion 7 — ein Durchgang. Beim letzten Fragment — ein Stück einer Korridorkarte."
+            "completeMessage": "Kratzer sind eine Karte. Blut ist die Route. Hinter einem Wandpaneel in Sektion 7 — ein Durchgang. Beim letzten Fragment — ein Stück einer Korridorkarte.",
+            "completeMessageNoItem": "Du setzt die Nachricht erneut zusammen. Gleiche Kratzer, gleiche Route. Das Kartenfragment gehört dir bereits — aus einer früheren Schleife."
         },
         "identify-temporal-loophole": {
             "name": "Zeitliche Lücke finden",
@@ -2633,7 +2684,8 @@
                 "Die Lücke pulsiert. Kein Geräusch darin. Absolute Stille.",
                 "Gegenstand hängt in der Lücke. Rotiert. Kommt auf der anderen Seite der Wand heraus.",
                 "Die Lücke ist kein Fehler. Sie ist eine Naht. Wo die Schleife genäht ist. Daneben — ein kaputtes Chronometer."
-            ]
+            ],
+            "completeMessageNoItem": "Die Lücke ist dieselbe. Die Naht der Schleife ist noch da. Das kaputte Chronometer gehört dir bereits — seine Zeiger stehen immer noch."
         },
         "collect-temporal-residue": {
             "name": "Zeitrückstand sammeln",

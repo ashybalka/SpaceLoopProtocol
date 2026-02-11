@@ -62,7 +62,7 @@
             "2": "Глава 2: Зал гибернации",
             "3": "Глава 3: Коридор",
             "demoTitle": "Демо-версия",
-            "demoText": "Спасибо за игру! Это демо-версия Space Loop.\nРабота над продолжением ведётся — скоро откроются новые главы.\nСледите за обновлениями!"
+            "demoText": "Спасибо за игру! Это демо-версия Space Loop Protocol.\nРабота над продолжением ведётся — скоро откроются новые главы.\nСледите за обновлениями!"
         },
         "dialogs": {
             "resetConfirm": "Вы уверены? Это удалит все сохранения и начнет игру заново."
@@ -142,7 +142,7 @@
             "2": "Chapter 2: Hibernation Hall",
             "3": "Chapter 3: The Corridor",
             "demoTitle": "Demo Version",
-            "demoText": "Thanks for playing! This is a demo of Space Loop.\nNew chapters are in the works and coming soon.\nStay tuned for updates!"
+            "demoText": "Thanks for playing! This is a demo of Space Loop Protocol.\nNew chapters are in the works and coming soon.\nStay tuned for updates!"
         },
         "dialogs": {
             "resetConfirm": "Are you sure? This will delete all saves and restart the game."
@@ -222,7 +222,7 @@
             "2": "Kapitel 2: Hibernationshalle",
             "3": "Kapitel 3: Der Korridor",
             "demoTitle": "Demo-Version",
-            "demoText": "Danke fürs Spielen! Dies ist eine Demo von Space Loop.\nNeue Kapitel sind in Arbeit und kommen bald.\nBleibt dran!"
+            "demoText": "Danke fürs Spielen! Dies ist eine Demo von Space Loop Protocol.\nNeue Kapitel sind in Arbeit und kommen bald.\nBleibt dran!"
         },
         "dialogs": {
             "resetConfirm": "Bist du sicher? Dies wird alle Spielstände löschen und das Spiel neu starten."
