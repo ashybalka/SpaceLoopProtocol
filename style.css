@@ -973,46 +973,54 @@ h2 {
 /* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
     html, body {
-        overflow: auto;
-        overflow-x: hidden;
-        height: auto;
-        min-height: 100vh;
-        min-height: 100dvh;
+        overflow: hidden;
+        height: 100vh;
+        height: 100dvh;
     }
 
     body {
-        padding: 10px 8px 160px 8px;
+        padding: 10px 8px 0 8px;
+        display: flex;
+        flex-direction: column;
     }
 
     .container {
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        height: auto;
-        min-height: auto;
+        gap: 6px;
+        flex: 1;
+        min-height: 0;
     }
 
     .time-display {
-        position: sticky;
-        top: 0;
+        flex-shrink: 0;
         z-index: 50;
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-        padding: 4px 0;
     }
 
     .panel {
         height: auto;
-        overflow: visible;
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .panel .panel-scroll {
+        flex: 1;
+        overflow-y: auto;
+        min-height: 0;
     }
 
     .main-area {
-        overflow: visible;
+        /* 100dvh - oxygen(~40px) - log(~130px) - tabs(~48px) - padding/gaps(~30px) */
+        max-height: calc(100dvh - 250px);
+        overflow: hidden;
     }
 
     .activities-container {
         grid-template-columns: 1fr;
-        overflow: visible;
-        max-height: none;
+        flex: 1;
+        overflow-y: auto;
+        min-height: 0;
         gap: 6px;
     }
 
@@ -1129,6 +1137,16 @@ h2 {
 
     .main-area.mobile-visible {
         display: flex !important;
+    }
+
+    .scene {
+        padding: 10px;
+        flex-shrink: 0;
+    }
+
+    .scene-title {
+        font-size: 16px;
+        margin-bottom: 8px;
     }
 
     /* Time display always visible */
