@@ -134,8 +134,20 @@ function updateUI() {
     if (maxOxygenEl) {
         maxOxygenEl.textContent = game.loopTimeTotal.toFixed(1);
     }
-    document.getElementById('time-fill').style.width =
-        (game.loopTimeLeft / game.loopTimeTotal) * 100 + '%';
+    const oxygenPercent = game.loopTimeLeft / game.loopTimeTotal;
+    const timeFill = document.getElementById('time-fill');
+    timeFill.style.width = oxygenPercent * 100 + '%';
+
+    // Color: bright blue (100%) → yellow (50%) → red (0%)
+    const r = Math.round(oxygenPercent < 0.5 ? 255 : 255 - (oxygenPercent - 0.5) * 2 * 200);
+    const g = Math.round(oxygenPercent < 0.5 ? oxygenPercent * 2 * 200 : 200 - (oxygenPercent - 0.5) * 2 * 200);
+    const b = Math.round(oxygenPercent > 0.5 ? (oxygenPercent - 0.5) * 2 * 255 : 0);
+    timeFill.style.background = `rgb(${r}, ${g}, ${b})`;
+
+    // Border color matches
+    const timeBar = document.querySelector('.time-bar');
+    timeBar.style.borderColor = `rgba(${r}, ${g}, ${b}, 0.8)`;
+    timeBar.style.background = `rgba(${r}, ${g}, ${b}, 0.15)`;
 
     const buttons = document.querySelectorAll('.activity-btn');
     const visibleActivities = game.activities.filter(a => {

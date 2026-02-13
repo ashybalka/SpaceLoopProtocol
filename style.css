@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
     color: #00ff88;
     padding: 20px;
@@ -121,6 +121,7 @@ body {
 }
 
 h1 {
+    font-family: 'Orbitron', sans-serif;
     color: #00ff88;
     text-align: center;
     font-size: 24px;
@@ -129,6 +130,7 @@ h1 {
 }
 
 h2 {
+    font-family: 'Orbitron', sans-serif;
     color: #00ddff;
     font-size: 16px;
     margin-bottom: 10px;
@@ -156,6 +158,13 @@ h2 {
 .stat-name {
     color: #00ddff;
     font-weight: bold;
+}
+
+.stat-ico {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.1em;
+    display: inline-block;
 }
 
 .stat-value {
@@ -275,6 +284,7 @@ h2 {
 }
 
 .scene-title {
+    font-family: 'Orbitron', sans-serif;
     color: #00ddff;
     font-size: 20px;
     margin-bottom: 20px;
@@ -304,11 +314,15 @@ h2 {
 
 .time-fill {
     height: 100%;
-    background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+    background: #0088ff;
     transition: width 0.1s linear;
+    position: relative;
+    overflow: hidden;
 }
 
+
 .oxygen-text {
+    font-family: 'Orbitron', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -316,7 +330,7 @@ h2 {
     color: #fff;
     text-shadow: 0 0 4px #000, 0 0 8px #000;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     white-space: nowrap;
 }
 
@@ -339,7 +353,7 @@ h2 {
     padding: 14px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 11px;
     transition: all 0.2s;
     position: relative;
@@ -488,7 +502,7 @@ h2 {
     padding: 12px 20px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: 'Orbitron', sans-serif;
     font-weight: bold;
     margin-top: 15px;
     width: 100%;
@@ -556,7 +570,7 @@ h2 {
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 12px;
     font-weight: bold;
     transition: all 0.2s;
@@ -760,7 +774,7 @@ h2 {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 12px;
     margin-top: 8px;
     width: 100%;
@@ -873,7 +887,7 @@ h2 {
     color: #00ff88;
     padding: 8px 12px;
     border-radius: 4px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 12px;
     cursor: pointer;
 }
@@ -890,7 +904,7 @@ h2 {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 12px;
     width: 100%;
     transition: all 0.2s;
@@ -908,7 +922,7 @@ h2 {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 12px;
     width: 100%;
     transition: all 0.2s;
@@ -926,7 +940,7 @@ h2 {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Courier New', monospace;
+    font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 12px;
     width: 100%;
     margin-top: 10px;
