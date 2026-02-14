@@ -24,7 +24,14 @@
         <div class="time-display">
             <div class="time-bar">
                 <div class="time-fill" id="time-fill" style="width: 100%"></div>
-                <div id="oxygen-label" class="oxygen-text">💨 <span data-i18n="ui.oxygen">Кислород (O2)</span>: <span id="loop-time">500</span><span data-i18n="time.seconds">с</span> / 500<span data-i18n="time.seconds">с</span></div>
+                <div id="oxygen-label" class="oxygen-text">💨 <span data-i18n="ui.oxygen">Кислород (O2)</span>: <span id="loop-time">500</span><span data-i18n="time.seconds">с</span> / <span id="loop-time-max">500</span><span data-i18n="time.seconds">с</span> <span id="oxygen-save-badge" class="oxygen-save-badge" style="display:none"></span></div>
+            </div>
+            <div class="nitrogen-row">
+                <div class="nitrogen-bar">
+                    <div class="nitrogen-fill" id="nitrogen-fill"></div>
+                    <div class="nitrogen-text">🧪 <span data-i18n="ui.nitrogen">Азот (N₂)</span>: <span id="nitrogen-count">0</span> / <span id="nitrogen-max">500</span></div>
+                </div>
+                <button id="nitro-btn" class="nitro-btn" onclick="toggleNitro()">⚡ <span data-i18n="ui.nitro">НИТРО x10</span></button>
             </div>
         </div>
         <!-- Левая панель: Статистика -->
@@ -112,6 +119,15 @@
                     <div class="inventory-title">🎒 <span data-i18n="ui.inventory">Инвентарь</span></div>
                     <div class="inventory-items" id="inventory-items"></div>
                 </div>
+
+                <!-- Ресурсы -->
+                <div class="resources-section" id="resources-section" style="display: none;">
+                    <div class="resource-row">
+                        <span class="resource-icon">✨</span>
+                        <span class="resource-name" data-i18n="ui.temporalDust">Темпоральная пыль</span>
+                        <span class="resource-value" id="temporal-dust-count">0</span>
+                    </div>
+                </div>
             </div>
 
             <button id="settings-btn" class="settings-btn" onclick="openSettings()">⚙️ <span data-i18n="ui.settings">Настройки</span></button>
@@ -126,11 +142,11 @@
                 <div class="log-header">
                     <h2><span data-i18n="ui.eventLog">📝 ЛОГ СОБЫТИЙ</span></h2>
                     <div class="log-filters">
-                        <button class="log-filter active" data-filter="all" title="Все">📋</button>
-                        <button class="log-filter active" data-filter="complete" title="Завершения">✓</button>
-                        <button class="log-filter active" data-filter="history" title="История">📜</button>
-                        <button class="log-filter active" data-filter="stat" title="Система">💫</button>
-                        <button class="log-filter active" data-filter="power" title="Разблокировки">🔓</button>
+                        <button class="log-filter active" data-filter="all" data-i18n-title="ui.filterAll">📋</button>
+                        <button class="log-filter active" data-filter="complete" data-i18n-title="ui.filterComplete">✓</button>
+                        <button class="log-filter active" data-filter="history" data-i18n-title="ui.filterHistory">📜</button>
+                        <button class="log-filter active" data-filter="stat" data-i18n-title="ui.filterStat">💫</button>
+                        <button class="log-filter active" data-filter="power" data-i18n-title="ui.filterPower">🔓</button>
                     </div>
                 </div>
                 <div id="log" style="font-size: 12px; max-height: 100px; overflow-y: auto;"></div>
@@ -144,7 +160,7 @@
                 <div class="automation-section">
                     <div class="auto-controls">
                         <button id="auto-mode-btn" class="auto-btn" onclick="toggleAutoMode()">▶️ <span data-i18n="ui.start">Запустить</span></button>
-                        <button id="auto-repeat-btn" class="auto-repeat-btn" onclick="toggleAutoRepeat()" title="Автозапуск при новой петле">🔁</button>
+                        <button id="auto-repeat-btn" class="auto-repeat-btn" onclick="toggleAutoRepeat()" data-i18n-title="automation.autoRepeat">🔁</button>
                     </div>
                     <div class="automation-label"><span data-i18n="ui.queue">Очередь:</span></div>
                     <div id="automation-queue" class="automation-queue"></div>
@@ -168,6 +184,10 @@
                     <option value="de">Deutsch</option>
                 </select>
             </div>
+            <div class="settings-row save-row">
+                <button class="export-btn" onclick="exportSave()">📤 <span data-i18n="ui.exportSave">Экспорт</span></button>
+                <button class="import-btn" onclick="importSave()">📥 <span data-i18n="ui.importSave">Импорт</span></button>
+            </div>
             <div class="settings-row">
                 <button class="reset-loop-btn" onclick="resetLoop()">🔁 <span data-i18n="ui.resetLoop">Сбросить петлю</span></button>
             </div>
@@ -177,6 +197,12 @@
             <button class="close-btn" onclick="closeSettings()" data-i18n="ui.close">Закрыть</button>
         </div>
     </div>
+
+    <!-- Oxygen Save Tooltip -->
+    <div id="oxygen-save-tooltip" class="oxygen-save-tooltip"></div>
+
+    <!-- Stat Bonus Tooltip -->
+    <div id="stat-bonus-tooltip" class="stat-bonus-tooltip"></div>
 
     <!-- Inventory Tooltip -->
     <div id="inventory-tooltip" class="inventory-tooltip-global"></div>
@@ -195,14 +221,14 @@
     </div>
 
     <!-- Модульные скрипты (порядок важен!) -->
-    <script src="scripts/i18n.js"></script>
-    <script src="scripts/game.js"></script>
-    <script src="scripts/inventory.js"></script>
-    <script src="scripts/ui.js"></script>
-    <script src="scripts/activities.js"></script>
-    <script src="scripts/automation.js"></script>
-    <script src="scripts/save.js"></script>
-    <script src="scripts/settings.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/i18n.js?v=20"></script>
+    <script src="scripts/game.js?v=20"></script>
+    <script src="scripts/inventory.js?v=20"></script>
+    <script src="scripts/ui.js?v=20"></script>
+    <script src="scripts/activities.js?v=20"></script>
+    <script src="scripts/automation.js?v=20"></script>
+    <script src="scripts/save.js?v=20"></script>
+    <script src="scripts/settings.js?v=20"></script>
+    <script src="scripts/main.js?v=20"></script>
 </body>
 </html>

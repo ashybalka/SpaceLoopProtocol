@@ -172,7 +172,47 @@ h2 {
     font-weight: bold;
 }
 
+.stat-item-bonus {
+    color: #ffcc00;
+    font-weight: bold;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.stat-bonus-tooltip {
+    display: none;
+    position: fixed;
+    width: max-content;
+    background: rgba(5, 10, 20, 0.97);
+    border: 1px solid rgba(255, 204, 0, 0.4);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #ddd;
+    white-space: nowrap;
+    z-index: 10000;
+    font-family: 'Space Mono', monospace;
+    pointer-events: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), 0 0 8px rgba(255, 204, 0, 0.15);
+}
+
+.stat-bonus-tooltip .tooltip-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 2px 0;
+    line-height: 1.4;
+}
+
+.stat-bonus-tooltip .tooltip-value {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
 .stat-sublabel {
+    display: flex;
+    align-items: center;
     color: #00ddff;
     font-size: 10px;
     margin-top: 4px;
@@ -198,6 +238,38 @@ h2 {
 
 .stat-fill.permanent {
     background: linear-gradient(90deg, #ffd700, #ffaa00);
+}
+
+/* Resources section */
+.resources-section {
+    margin-top: 8px;
+    padding: 6px 8px;
+    background: rgba(180, 130, 255, 0.1);
+    border: 1px solid rgba(180, 130, 255, 0.3);
+    border-radius: 4px;
+}
+
+.resource-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.resource-icon {
+    font-size: 16px;
+}
+
+.resource-name {
+    color: #b482ff;
+    font-size: 11px;
+    flex: 1;
+}
+
+.resource-value {
+    color: #e0c0ff;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(180, 130, 255, 0.5);
 }
 
 /* Inventory section */
@@ -308,7 +380,6 @@ h2 {
     background: rgba(0, 255, 136, 0.2);
     border: 1px solid #00ff88;
     border-radius: 3px;
-    overflow: hidden;
     position: relative;
 }
 
@@ -316,8 +387,10 @@ h2 {
     height: 100%;
     background: #0088ff;
     transition: width 0.1s linear;
-    position: relative;
-    overflow: hidden;
+    border-radius: 3px 0 0 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
@@ -332,6 +405,124 @@ h2 {
     font-weight: bold;
     font-size: 13px;
     white-space: nowrap;
+    z-index: 2;
+}
+
+.oxygen-save-badge {
+    color: #00ff64;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.oxygen-save-tooltip {
+    display: none;
+    position: fixed;
+    width: max-content;
+    background: rgba(5, 10, 20, 0.97);
+    border: 1px solid rgba(0, 255, 100, 0.4);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #ddd;
+    white-space: nowrap;
+    z-index: 10000;
+    font-family: 'Space Mono', monospace;
+    pointer-events: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), 0 0 8px rgba(0, 255, 100, 0.15);
+}
+
+.oxygen-save-tooltip .tooltip-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 2px 0;
+    line-height: 1.4;
+}
+
+.oxygen-save-tooltip .tooltip-value {
+    color: #00ff64;
+    font-weight: bold;
+}
+
+.nitrogen-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.nitrogen-bar {
+    flex: 1;
+    position: relative;
+    height: 22px;
+    background: rgba(0, 200, 255, 0.08);
+    border: 1px solid rgba(0, 200, 255, 0.25);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.nitrogen-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: rgba(0, 200, 255, 0.3);
+    transition: width 0.3s ease;
+}
+
+.nitrogen-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #66ccff;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.nitro-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #ffaa00;
+    background: rgba(255, 170, 0, 0.15);
+    color: #ffaa00;
+    transition: all 0.2s;
+}
+
+.nitro-btn:hover {
+    background: rgba(255, 170, 0, 0.3);
+    box-shadow: 0 0 8px rgba(255, 170, 0, 0.4);
+}
+
+.nitro-btn.nitro-active {
+    background: rgba(255, 170, 0, 0.4);
+    box-shadow: 0 0 12px rgba(255, 170, 0, 0.6), inset 0 0 8px rgba(255, 170, 0, 0.2);
+    color: #fff;
+    animation: nitro-pulse 0.5s ease-in-out infinite alternate;
+}
+
+.nitro-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    box-shadow: none;
+}
+
+@keyframes nitro-pulse {
+    from { box-shadow: 0 0 8px rgba(255, 170, 0, 0.4); }
+    to { box-shadow: 0 0 16px rgba(255, 170, 0, 0.8); }
 }
 
 .activities-container {
@@ -913,6 +1104,29 @@ h2 {
 .reset-loop-btn:hover {
     background: rgba(0, 170, 255, 0.4);
     box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+}
+
+.save-row {
+    display: flex;
+    gap: 8px;
+}
+
+.export-btn, .import-btn {
+    background: rgba(0, 221, 255, 0.15);
+    border: 1px solid #00ddff;
+    color: #00ddff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 12px;
+    flex: 1;
+    transition: all 0.2s;
+}
+
+.export-btn:hover, .import-btn:hover {
+    background: rgba(0, 221, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 221, 255, 0.4);
 }
 
 .reset-btn {

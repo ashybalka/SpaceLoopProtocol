@@ -52,6 +52,29 @@ function initScaling() {
     window.addEventListener('resize', updateZoom);
 }
 
+// =============== ОФФЛАЙН ПРИ НЕАКТИВНОЙ ВКЛАДКЕ ===============
+
+let tabHiddenAt = null;
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        tabHiddenAt = Date.now();
+        saveGame();
+    } else if (tabHiddenAt) {
+        const offlineSeconds = (Date.now() - tabHiddenAt) / 1000;
+        tabHiddenAt = null;
+        lastTimestamp = performance.now();
+        if (offlineSeconds > 10) {
+            const earned = Math.floor(offlineSeconds / 10);
+            const added = Math.min(earned, game.maxNitrogen - game.nitrogen);
+            if (added > 0) {
+                game.nitrogen = Math.min(game.nitrogen + added, game.maxNitrogen);
+                addLog(t('log.offlineNitrogen', { amount: added, time: formatOfflineTime(offlineSeconds) }), 'power');
+            }
+        }
+    }
+});
+
 // =============== ИНИЦИАЛИЗАЦИЯ ===============
 
 async function init() {
@@ -63,6 +86,8 @@ async function init() {
     renderAutomationQueue();
     updateUI();
     initLogFilters();
+    initOxygenSaveTooltip();
+    initStatBonusTooltip();
     startAutoSave();
     initMobileTabs();
     initScaling();

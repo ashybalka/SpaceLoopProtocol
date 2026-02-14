@@ -100,6 +100,7 @@ function renderAutomationQueue() {
     const repeatBtn = document.getElementById('auto-repeat-btn');
     if (repeatBtn) {
         repeatBtn.classList.toggle('active', game.autoRepeat);
+        repeatBtn.title = t('automation.autoRepeat');
     }
 
     container.innerHTML = '';
