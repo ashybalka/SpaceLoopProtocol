@@ -14,7 +14,10 @@ function startAutoSave() {
     }, 15000);
 }
 
+let _importingFlag = false;
+
 function saveGame() {
+    if (_importingFlag) return;
     localStorage.setItem('cryoCapsuleGame', JSON.stringify({
         stats: game.stats,
         isLoopActive: game.isLoopActive,
@@ -36,7 +39,11 @@ function saveGame() {
         isAutoMode: game.isAutoMode,
         autoRepeat: game.autoRepeat,
         previousLoopLog: game.previousLoopLog,
-        inventory: game.inventory
+        inventory: game.inventory,
+        temporalDust: game.temporalDust,
+        oxygenSavePercent: game.oxygenSavePercent,
+        nitrogen: game.nitrogen,
+        lastOnlineTimestamp: Date.now()
     }));
 
     const indicator = document.getElementById('save-indicator');
@@ -114,9 +121,37 @@ function loadGame() {
             game.previousLoopLog = data.previousLoopLog;
         }
         if (data.inventory && Array.isArray(data.inventory)) {
-            game.inventory = data.inventory;
+            game.inventory = data.inventory.map(savedItem => {
+                const def = ITEMS[savedItem.id];
+                if (def) {
+                    savedItem.bonuses = { ...def.bonuses };
+                }
+                return savedItem;
+            });
             renderInventory();
         }
+        if (data.temporalDust !== undefined) {
+            game.temporalDust = data.temporalDust;
+        }
+        if (data.oxygenSavePercent !== undefined) {
+            game.oxygenSavePercent = data.oxygenSavePercent;
+        }
+        if (data.nitrogen !== undefined) {
+            game.nitrogen = data.nitrogen;
+        }
+        // Оффлайн-начисление азота
+        if (data.lastOnlineTimestamp) {
+            const offlineSeconds = (Date.now() - data.lastOnlineTimestamp) / 1000;
+            if (offlineSeconds > 10) {
+                const earned = Math.floor(offlineSeconds / 10);
+                const added = Math.min(earned, game.maxNitrogen - game.nitrogen);
+                if (added > 0) {
+                    game.nitrogen = Math.min(game.nitrogen + added, game.maxNitrogen);
+                    addLog(t('log.offlineNitrogen', { amount: added, time: formatOfflineTime(offlineSeconds) }), 'power');
+                }
+            }
+        }
+        game.lastOnlineTimestamp = Date.now();
         addLog(t('log.saveLoaded'), 'stat');
         renderAutomationQueue();
 
@@ -126,6 +161,14 @@ function loadGame() {
     } else {
         startLoop();
     }
+}
+
+function formatOfflineTime(seconds) {
+    if (seconds < 60) return Math.floor(seconds) + 's';
+    if (seconds < 3600) return Math.floor(seconds / 60) + 'm';
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    return h + 'h ' + m + 'm';
 }
 
 function resetGame() {

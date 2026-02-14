@@ -8,7 +8,7 @@
         "stats": {
             "agility": 300
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": true,
         "reward": {
             "switchChapter": 3
@@ -17,13 +17,13 @@
     {
         "id": "reboot-subsystems",
         "chapter": 4,
-        "duration": 150,
-        "maxTimes": 20,
+        "duration": 600,
+        "maxTimes": 10,
         "stats": {
-            "intelligence": 225,
+            "intelligence": 125,
             "perception": 75
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": true
     },
     {
@@ -35,36 +35,39 @@
             "strength": 210,
             "endurance": 90
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": true
     },
     {
         "id": "monitor-echo-interference",
         "chapter": 4,
-        "duration": 180,
+        "duration": 400,
         "maxTimes": 15,
         "stats": {
             "perception": 100,
             "intelligence": 75,
             "agility": 25
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": true
     },
     {
         "id": "synchronize-breath-with-engine",
         "chapter": 4,
-        "duration": 150,
+        "duration": 350,
         "maxTimes": 10,
         "stats": {
             "endurance": 125,
             "intelligence": 10,
             "perception": 15
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": true,
         "reward": {
             "oxygen": 15
+        },
+        "rewardOnComplete": {
+            "oxygenSavePercent": 5
         }
     },
     {
@@ -76,7 +79,7 @@
             "intelligence": 270,
             "perception": 30
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -97,7 +100,7 @@
             "agility": 240,
             "intelligence": 60
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -118,7 +121,7 @@
             "strength": 180,
             "endurance": 120
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -139,7 +142,7 @@
             "intelligence": 210,
             "perception": 90
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -160,7 +163,7 @@
             "agility": 210,
             "intelligence": 90
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -178,7 +181,7 @@
             "perception": 240,
             "intelligence": 60
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -191,6 +194,29 @@
         }
     },
     {
+        "id": "gather-temporal-dust",
+        "chapter": 4,
+        "duration": 45,
+        "maxTimes": 20,
+        "durationScale": 1.1,
+        "stats": {
+            "perception": 180,
+            "intelligence": 90,
+            "agility": 30
+        },
+        "basePower": 64,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityComplete",
+            "activityId": {
+                "isolate-temporal-particle": 1
+            }
+        },
+        "reward": {
+            "temporalDust": 1
+        }
+    },
+    {
         "id": "study-loop-blueprints",
         "chapter": 4,
         "duration": 600,
@@ -199,7 +225,7 @@
             "intelligence": 240,
             "perception": 60
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -220,7 +246,7 @@
             "intelligence": 210,
             "agility": 90
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -238,7 +264,7 @@
             "strength": 150,
             "endurance": 150
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -257,7 +283,7 @@
             "agility": 75,
             "perception": 45
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",
@@ -281,7 +307,7 @@
             "agility": 180,
             "endurance": 120
         },
-        "basePower": 16,
+        "basePower": 64,
         "unlocked": false,
         "unlockTrigger": {
             "type": "activityComplete",

@@ -20,7 +20,8 @@ const ITEMS = {
         id: 'emergency-respirator',
         icon: '😷',
         bonuses: {
-            enduranceExp: 0.35
+            enduranceExp: 0.35,
+            oxygenSavePercent: 5
         }
     },
     'id-bracelet': {
@@ -150,6 +151,11 @@ function addItemToInventory(itemId) {
         bonuses: { ...itemDef.bonuses }
     });
 
+    // Лог о бонусе экономии кислорода
+    if (itemDef.bonuses.oxygenSavePercent) {
+        addLog(t('log.oxygenSave', { percent: itemDef.bonuses.oxygenSavePercent, total: getTotalOxygenSave() }), 'power');
+    }
+
     renderInventory();
     showItemModal(itemId);
     return true;
@@ -157,6 +163,20 @@ function addItemToInventory(itemId) {
 
 function hasItem(itemId) {
     return game.inventory.some(i => i.id === itemId);
+}
+
+function getItemOxygenSave() {
+    let bonus = 0;
+    for (const item of game.inventory) {
+        if (item.bonuses && item.bonuses.oxygenSavePercent) {
+            bonus += item.bonuses.oxygenSavePercent;
+        }
+    }
+    return bonus;
+}
+
+function getTotalOxygenSave() {
+    return game.oxygenSavePercent + getItemOxygenSave();
 }
 
 function getExpBonus(statKey) {
@@ -227,6 +247,9 @@ function getItemBonusText(item) {
     }
     if (item.bonuses.perceptionExp) {
         lines.push(`+${Math.round(item.bonuses.perceptionExp * 100)}% ${t('stats.perception')} XP`);
+    }
+    if (item.bonuses.oxygenSavePercent) {
+        lines.push(`-${item.bonuses.oxygenSavePercent}% ${t('ui.oxygen')}`);
     }
     return lines.join('<br>');
 }

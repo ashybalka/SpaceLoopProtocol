@@ -708,7 +708,12 @@
                 "Энергосеть частично восстановлена. Мигают панели, о которых вы даже не знали.",
                 "Система жизнеобеспечения подаёт признаки жизни. Воздух стал чуть чище.",
                 "Навигационный модуль выдаёт ошибку: «Координаты не существуют». Странно.",
-                "Подсистема мониторинга запущена. На экране — данные, которые не должны быть возможны."
+                "Подсистема мониторинга запущена. На экране — данные, которые не должны быть возможны.",
+                "Система терморегуляции перезагружена. Температура стабилизируется... но показания двоятся.",
+                "Коммуникационный модуль активен. Он принимает сигнал — ваш собственный голос, но с задержкой в минус три часа.",
+                "Ядро ИИ частично восстановлено. Первое, что оно сказало: «Мы уже встречались».",
+                "Гравитационный контур в норме. Хотя на секунду вы почувствовали, как пол стал потолком.",
+                "Все доступные системы перезагружены. Осталось 12%, которые отказываются запускаться — они словно ждут чего-то."
             ]
         },
         "tighten-magnetic-bolts": {
@@ -729,7 +734,17 @@
                 "Вы записали паттерн. Он напоминает... сердцебиение? Нет, это что-то другое.",
                 "Сигнал временами содержит фрагменты данных. Они выглядят как логи — из будущего.",
                 "Помехи усилились. На мгновение вы увидели на экране своё собственное лицо.",
-                "Эхо становится яснее. Вы начинаете различать в нём структуру."
+                "Эхо становится яснее. Вы начинаете различать в нём структуру.",
+                "Частота помех сместилась. Теперь они совпадают с вашим пульсом. Совпадение?",
+                "На спектрограмме — двойной сигнал. Один идёт из аномалии, второй... изнутри корабля.",
+                "Вы расшифровали фрагмент. Это координаты. Ваши текущие координаты. Записанные три дня назад.",
+                "Помехи ненадолго прекратились. В тишине вы услышали шёпот — свой собственный голос.",
+                "Эхо содержит метки времени. Все они — из будущего, которое ещё не наступило.",
+                "Сигнал стал бинарным. Вы декодировали первое слово: «ПОМНИ».",
+                "Интерференция образует визуальный паттерн. Он похож на карту — карту того, чего ещё нет.",
+                "Помехи резонируют с корпусом. Стены вибрируют в такт — корабль словно разговаривает.",
+                "Вы поймали петлю в сигнале: он повторяется каждые 144 секунды. Точно как часы.",
+                "Последний замер. Эхо содержит полный лог ваших действий — включая этот момент."
             ]
         },
         "synchronize-breath-with-engine": {
@@ -739,7 +754,13 @@
                 "Вдох — гудение усиливается. Выдох — затихает. Странная гармония.",
                 "Ваше сердцебиение совпало с ритмом двигателя. На мгновение вы стали частью корабля.",
                 "Кислород расходуется эффективнее. Тело нашло оптимальный ритм.",
-                "Двигатель словно отвечает вам. Или вы подстраиваетесь под него — кто кем управляет?"
+                "Двигатель словно отвечает вам. Или вы подстраиваетесь под него — кто кем управляет?",
+                "Вибрация корпуса проходит сквозь вас волнами. Каждый выдох экономит драгоценные секунды.",
+                "Вы перестали чувствовать границу между своим дыханием и пульсом двигателя. Это пугает.",
+                "Лёгкие наполняются в такт с реактором. Датчики кислорода показывают аномально низкий расход.",
+                "На мгновение вам показалось, что двигатель дышит за вас. Потом ощущение прошло.",
+                "Ритм стал автоматическим. Вы больше не думаете о дыхании — тело помнит само.",
+                "Полная синхронизация. Вы и двигатель — единый организм. Кислород почти не тратится."
             ]
         },
         "calibrate-atomic-clock": {
@@ -806,6 +827,33 @@
             "completeMessage": [
                 "Частица захвачена. Она существует одновременно в трёх моментах времени. Мерцает.",
                 "Вторая частица стабильнее. В её структуре — информация. Данные, записанные самим временем."
+            ]
+        },
+        "gather-temporal-dust": {
+            "name": "Собрать темпоральную пыль",
+            "description": "Аккуратно собрать мерцающие частицы из зоны аномалии",
+            "unlockMessage": "После изоляции частицы вы замечаете: вокруг аномалии оседает мерцающая пыль. Её можно собрать.",
+            "completeMessage": [
+                "Пыль мерцает в ваших руках. Она тёплая и слегка вибрирует, словно помнит другое время.",
+                "Ещё горсть. Каждая крупинка — застывший момент из другой петли.",
+                "Сбор становится сложнее. Пыль словно ускользает, зная, что вы придёте.",
+                "Вы научились предугадывать, где пыль осядет. Но она тоже адаптируется.",
+                "Пыль становится плотнее и тяжелее. В ней — концентрированное время.",
+                "Каждая новая порция требует больше усилий. Аномалия не хочет отдавать свои следы.",
+                "Вы чувствуете покалывание в пальцах. Пыль меняет тех, кто её собирает.",
+                "Мерцание усиливается. Иногда вы видите в пыли отражения... других версий себя.",
+                "Сбор превращается в медитацию. Вы и пыль — части одного процесса.",
+                "Десятая горсть. Пыль пульсирует в ритме вашего сердца.",
+                "Воздух вокруг дрожит. Каждая частица — крошечная петля внутри большой.",
+                "Вы начинаете понимать структуру пыли. В ней — язык времени.",
+                "Сбор требует всё больше концентрации. Но награда того стоит.",
+                "Пыль становится почти жидкой. Она течёт сквозь пальцы, оставляя следы.",
+                "Вы улавливаете закономерность: пыль появляется там, где петля «трётся» о реальность.",
+                "Шестнадцатая порция. Ваши руки светятся в темноте от накопленной пыли.",
+                "Аномалия сопротивляется. Но вы сильнее.",
+                "Почти всё. Оставшаяся пыль — самая ценная. Самая концентрированная.",
+                "Предпоследний сбор. Вы чувствуете, что знаете каждую частицу по имени.",
+                "Последняя горсть. В ваших руках — квинтэссенция времени. Теперь у вас есть сила менять петлю."
             ]
         },
         "study-loop-blueprints": {
@@ -1726,7 +1774,12 @@
                 "Power grid partially restored. Panels you didn't know existed are flickering.",
                 "Life support showing signs of life. The air is slightly cleaner.",
                 "Navigation module throws an error: 'Coordinates do not exist.' Strange.",
-                "Monitoring subsystem online. The screen shows data that shouldn't be possible."
+                "Monitoring subsystem online. The screen shows data that shouldn't be possible.",
+                "Thermal regulation rebooted. Temperature stabilizing... but the readings are doubled.",
+                "Communication module active. It's receiving a signal — your own voice, but with a minus three-hour delay.",
+                "AI core partially restored. The first thing it said: 'We've met before.'",
+                "Gravitational circuit nominal. Though for a second, you felt the floor become the ceiling.",
+                "All available systems rebooted. 12% remain that refuse to start — as if they're waiting for something."
             ]
         },
         "tighten-magnetic-bolts": {
@@ -1747,7 +1800,17 @@
                 "You recorded the pattern. It resembles... a heartbeat? No, it's something else.",
                 "The signal sometimes contains data fragments. They look like logs — from the future.",
                 "Interference intensified. For a moment, you saw your own face on the screen.",
-                "The echo becomes clearer. You begin to discern structure within it."
+                "The echo becomes clearer. You begin to discern structure within it.",
+                "The interference frequency shifted. Now it matches your pulse. Coincidence?",
+                "The spectrogram shows a double signal. One comes from the anomaly, the other... from inside the ship.",
+                "You deciphered a fragment. Coordinates. Your current coordinates. Recorded three days ago.",
+                "The interference briefly stopped. In the silence, you heard a whisper — your own voice.",
+                "The echo contains timestamps. All of them are from a future that hasn't happened yet.",
+                "The signal went binary. You decoded the first word: 'REMEMBER.'",
+                "The interference forms a visual pattern. It resembles a map — a map of something that doesn't exist yet.",
+                "The interference resonates with the hull. The walls vibrate in rhythm — the ship seems to be talking.",
+                "You caught a loop in the signal: it repeats every 144 seconds. Exactly like the clock.",
+                "Final reading. The echo contains a full log of your actions — including this very moment."
             ]
         },
         "synchronize-breath-with-engine": {
@@ -1757,7 +1820,13 @@
                 "Inhale — the hum intensifies. Exhale — it fades. A strange harmony.",
                 "Your heartbeat synced with the engine rhythm. For a moment, you became part of the ship.",
                 "Oxygen consumption is more efficient. Your body found the optimal rhythm.",
-                "The engine seems to respond to you. Or are you adapting to it — who controls whom?"
+                "The engine seems to respond to you. Or are you adapting to it — who controls whom?",
+                "Hull vibrations pass through you in waves. Each exhale saves precious seconds.",
+                "You stopped feeling the boundary between your breath and the engine's pulse. It's unsettling.",
+                "Your lungs fill in sync with the reactor. Oxygen sensors show anomalously low consumption.",
+                "For a moment it felt like the engine was breathing for you. Then the sensation passed.",
+                "The rhythm became automatic. You no longer think about breathing — your body remembers.",
+                "Full synchronization. You and the engine are one organism. Oxygen is barely consumed."
             ]
         },
         "calibrate-atomic-clock": {
@@ -1824,6 +1893,33 @@
             "completeMessage": [
                 "Particle captured. It exists simultaneously in three moments of time. It shimmers.",
                 "Second particle is more stable. In its structure — information. Data written by time itself."
+            ]
+        },
+        "gather-temporal-dust": {
+            "name": "Gather temporal dust",
+            "description": "Carefully collect shimmering particles from the anomaly zone",
+            "unlockMessage": "After isolating the particle, you notice: shimmering dust settles around the anomaly. It can be collected.",
+            "completeMessage": [
+                "The dust shimmers in your hands. It's warm and vibrates slightly, as if remembering another time.",
+                "Another handful. Each grain is a frozen moment from another loop.",
+                "Collection gets harder. The dust seems to slip away, knowing you'll come.",
+                "You've learned to predict where the dust will settle. But it adapts too.",
+                "The dust grows denser and heavier. Concentrated time within.",
+                "Each new portion demands more effort. The anomaly doesn't want to give up its traces.",
+                "You feel tingling in your fingers. The dust changes those who collect it.",
+                "The shimmer intensifies. Sometimes you see reflections in the dust... other versions of yourself.",
+                "Collection becomes meditation. You and the dust are parts of one process.",
+                "Tenth handful. The dust pulses to the rhythm of your heartbeat.",
+                "The air trembles around you. Each particle is a tiny loop within the larger one.",
+                "You begin to understand the dust's structure. Within it — the language of time.",
+                "Collection requires ever more concentration. But the reward is worth it.",
+                "The dust becomes almost liquid. It flows through your fingers, leaving traces.",
+                "You detect a pattern: dust appears where the loop 'rubs' against reality.",
+                "Sixteenth portion. Your hands glow in the dark from accumulated dust.",
+                "The anomaly resists. But you are stronger.",
+                "Almost done. The remaining dust is the most valuable. The most concentrated.",
+                "Second to last collection. You feel you know each particle by name.",
+                "The last handful. In your hands — the quintessence of time. Now you have the power to change the loop."
             ]
         },
         "study-loop-blueprints": {
@@ -2744,7 +2840,12 @@
                 "Stromnetz teilweise wiederhergestellt. Panels, von denen du nichts wusstest, flackern.",
                 "Lebenserhaltung zeigt Lebenszeichen. Die Luft ist etwas sauberer.",
                 "Navigationsmodul gibt Fehler aus: 'Koordinaten existieren nicht.' Seltsam.",
-                "Überwachungssubsystem online. Der Bildschirm zeigt Daten, die nicht möglich sein sollten."
+                "Überwachungssubsystem online. Der Bildschirm zeigt Daten, die nicht möglich sein sollten.",
+                "Wärmeregulierung neu gestartet. Temperatur stabilisiert sich... aber die Werte sind verdoppelt.",
+                "Kommunikationsmodul aktiv. Es empfängt ein Signal — deine eigene Stimme, aber mit minus drei Stunden Verzögerung.",
+                "KI-Kern teilweise wiederhergestellt. Das Erste, was er sagte: 'Wir haben uns schon getroffen.'",
+                "Gravitationskreislauf nominal. Obwohl du für eine Sekunde spürtest, wie der Boden zur Decke wurde.",
+                "Alle verfügbaren Systeme neu gestartet. 12% weigern sich zu starten — als ob sie auf etwas warten."
             ]
         },
         "tighten-magnetic-bolts": {
@@ -2765,7 +2866,17 @@
                 "Du hast das Muster aufgezeichnet. Es ähnelt... einem Herzschlag? Nein, es ist etwas anderes.",
                 "Das Signal enthält zeitweise Datenfragmente. Sie sehen aus wie Logs — aus der Zukunft.",
                 "Störungen verstärkt. Für einen Moment sahst du dein eigenes Gesicht auf dem Bildschirm.",
-                "Das Echo wird klarer. Du beginnst, eine Struktur darin zu erkennen."
+                "Das Echo wird klarer. Du beginnst, eine Struktur darin zu erkennen.",
+                "Die Störfrequenz hat sich verschoben. Jetzt stimmt sie mit deinem Puls überein. Zufall?",
+                "Das Spektrogramm zeigt ein Doppelsignal. Eines kommt von der Anomalie, das andere... aus dem Schiffsinneren.",
+                "Du hast ein Fragment entschlüsselt. Koordinaten. Deine aktuellen Koordinaten. Vor drei Tagen aufgezeichnet.",
+                "Die Störungen hörten kurz auf. In der Stille hörtest du ein Flüstern — deine eigene Stimme.",
+                "Das Echo enthält Zeitstempel. Alle stammen aus einer Zukunft, die noch nicht eingetreten ist.",
+                "Das Signal wurde binär. Du hast das erste Wort dekodiert: 'ERINNERE.'",
+                "Die Interferenz bildet ein visuelles Muster. Es ähnelt einer Karte — einer Karte von etwas, das noch nicht existiert.",
+                "Die Störungen resonieren mit dem Rumpf. Die Wände vibrieren im Takt — das Schiff scheint zu sprechen.",
+                "Du hast eine Schleife im Signal erfasst: Es wiederholt sich alle 144 Sekunden. Genau wie die Uhr.",
+                "Letzte Messung. Das Echo enthält ein vollständiges Protokoll deiner Handlungen — einschließlich dieses Moments."
             ]
         },
         "synchronize-breath-with-engine": {
@@ -2775,7 +2886,13 @@
                 "Einatmen — das Summen verstärkt sich. Ausatmen — es lässt nach. Eine seltsame Harmonie.",
                 "Dein Herzschlag synchronisierte sich mit dem Triebwerksrhythmus. Für einen Moment wurdest du Teil des Schiffs.",
                 "Sauerstoffverbrauch ist effizienter. Dein Körper fand den optimalen Rhythmus.",
-                "Das Triebwerk scheint dir zu antworten. Oder passt du dich an — wer steuert wen?"
+                "Das Triebwerk scheint dir zu antworten. Oder passt du dich an — wer steuert wen?",
+                "Rumpfvibrationen durchlaufen dich in Wellen. Jedes Ausatmen spart kostbare Sekunden.",
+                "Du spürst die Grenze zwischen deinem Atem und dem Puls des Triebwerks nicht mehr. Es beunruhigt.",
+                "Deine Lungen füllen sich im Takt mit dem Reaktor. Sauerstoffsensoren zeigen anomal niedrigen Verbrauch.",
+                "Einen Moment lang fühlte es sich an, als würde das Triebwerk für dich atmen. Dann verging das Gefühl.",
+                "Der Rhythmus wurde automatisch. Du denkst nicht mehr ans Atmen — dein Körper erinnert sich.",
+                "Volle Synchronisation. Du und das Triebwerk seid ein Organismus. Sauerstoff wird kaum verbraucht."
             ]
         },
         "calibrate-atomic-clock": {
@@ -2842,6 +2959,33 @@
             "completeMessage": [
                 "Partikel eingefangen. Es existiert gleichzeitig in drei Zeitmomenten. Es schimmert.",
                 "Zweites Partikel ist stabiler. In seiner Struktur — Information. Von der Zeit selbst geschriebene Daten."
+            ]
+        },
+        "gather-temporal-dust": {
+            "name": "Temporalen Staub sammeln",
+            "description": "Vorsichtig schimmernde Partikel aus der Anomaliezone sammeln",
+            "unlockMessage": "Nach der Isolierung des Partikels bemerkst du: Schimmernder Staub setzt sich um die Anomalie ab. Er kann gesammelt werden.",
+            "completeMessage": [
+                "Der Staub schimmert in deinen Händen. Er ist warm und vibriert leicht, als erinnere er sich an eine andere Zeit.",
+                "Eine weitere Handvoll. Jedes Korn ist ein eingefrorener Moment aus einer anderen Schleife.",
+                "Das Sammeln wird schwieriger. Der Staub scheint zu wissen, dass du kommst.",
+                "Du hast gelernt vorherzusagen, wo sich der Staub absetzt. Aber er passt sich auch an.",
+                "Der Staub wird dichter und schwerer. Konzentrierte Zeit darin.",
+                "Jede neue Portion erfordert mehr Aufwand. Die Anomalie will ihre Spuren nicht hergeben.",
+                "Du spürst ein Kribbeln in den Fingern. Der Staub verändert diejenigen, die ihn sammeln.",
+                "Das Schimmern verstärkt sich. Manchmal siehst du Spiegelungen im Staub... andere Versionen von dir.",
+                "Sammeln wird zur Meditation. Du und der Staub seid Teile eines Prozesses.",
+                "Zehnte Handvoll. Der Staub pulsiert im Rhythmus deines Herzschlags.",
+                "Die Luft zittert um dich herum. Jedes Partikel ist eine winzige Schleife in der größeren.",
+                "Du beginnst die Struktur des Staubs zu verstehen. Darin — die Sprache der Zeit.",
+                "Sammeln erfordert immer mehr Konzentration. Aber die Belohnung ist es wert.",
+                "Der Staub wird fast flüssig. Er fließt durch deine Finger und hinterlässt Spuren.",
+                "Du erkennst ein Muster: Staub erscheint dort, wo die Schleife an der Realität 'reibt'.",
+                "Sechzehnte Portion. Deine Hände leuchten im Dunkeln vom angesammelten Staub.",
+                "Die Anomalie wehrt sich. Aber du bist stärker.",
+                "Fast geschafft. Der verbleibende Staub ist der wertvollste. Der konzentrierteste.",
+                "Vorletzte Sammlung. Du hast das Gefühl, jedes Partikel beim Namen zu kennen.",
+                "Die letzte Handvoll. In deinen Händen — die Quintessenz der Zeit. Jetzt hast du die Kraft, die Schleife zu verändern."
             ]
         },
         "study-loop-blueprints": {

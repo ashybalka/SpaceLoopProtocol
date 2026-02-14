@@ -2,6 +2,102 @@
 
 let logFilters = { all: true, complete: true, history: true, stat: true, power: true };
 
+// Тултип для экономии кислорода (делегирование — бейдж создаётся динамически)
+function initOxygenSaveTooltip() {
+    const tooltip = document.getElementById('oxygen-save-tooltip');
+    if (!tooltip) return;
+
+    document.addEventListener('mouseover', (e) => {
+        const badge = e.target.closest('#oxygen-save-badge');
+        if (!badge) return;
+
+        const lines = [];
+        if (game.oxygenSavePercent > 0) {
+            lines.push(`<div class="tooltip-line"><span>${t('ui.oxygenSaveActivity')}</span><span class="tooltip-value">-${game.oxygenSavePercent}%</span></div>`);
+        }
+        for (const item of game.inventory) {
+            if (item.bonuses && item.bonuses.oxygenSavePercent) {
+                const name = t('items.' + item.id + '.name');
+                lines.push(`<div class="tooltip-line"><span>${name}</span><span class="tooltip-value">-${item.bonuses.oxygenSavePercent}%</span></div>`);
+            }
+        }
+        if (lines.length > 0) {
+            tooltip.innerHTML = lines.join('');
+            // Show offscreen first to measure height
+            tooltip.style.left = '-9999px';
+            tooltip.style.top = '-9999px';
+            tooltip.style.display = 'block';
+            const tooltipH = tooltip.offsetHeight;
+            const tooltipW = tooltip.offsetWidth;
+            const rect = badge.getBoundingClientRect();
+            // Position above the badge, centered horizontally
+            let left = rect.left + rect.width / 2 - tooltipW / 2;
+            let top = rect.top - tooltipH - 8;
+            // If doesn't fit above, show below
+            if (top < 4) top = rect.bottom + 8;
+            // Keep within viewport horizontally
+            left = Math.max(4, Math.min(left, window.innerWidth - tooltipW - 4));
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('#oxygen-save-badge')) {
+            tooltip.style.display = 'none';
+        }
+    });
+}
+
+// Тултип для бонусов предметов на статах
+function initStatBonusTooltip() {
+    const tooltip = document.getElementById('stat-bonus-tooltip');
+    if (!tooltip) return;
+
+    document.addEventListener('mouseover', (e) => {
+        const badge = e.target.closest('.stat-item-bonus');
+        if (!badge || !badge.dataset.stat) return;
+
+        const statKey = badge.dataset.stat;
+        const stat = game.stats[statKey];
+        const bonusKey = statKey + 'Exp';
+        const lines = [];
+        // Perm level bonus
+        if (stat && stat.permLevel > 0) {
+            const permMult = Math.pow(1.10, stat.permLevel);
+            lines.push(`<div class="tooltip-line"><span>${t('ui.permanent')} ${t('ui.level')} ${stat.permLevel}</span><span class="tooltip-value">x${permMult.toFixed(2)}</span></div>`);
+        }
+        // Item bonuses
+        for (const item of game.inventory) {
+            if (item.bonuses && item.bonuses[bonusKey]) {
+                const name = t('items.' + item.id + '.name');
+                lines.push(`<div class="tooltip-line"><span>${name}</span><span class="tooltip-value">+${Math.round(item.bonuses[bonusKey] * 100)}%</span></div>`);
+            }
+        }
+        if (lines.length > 0) {
+            tooltip.innerHTML = lines.join('');
+            tooltip.style.left = '-9999px';
+            tooltip.style.top = '-9999px';
+            tooltip.style.display = 'block';
+            const tooltipH = tooltip.offsetHeight;
+            const tooltipW = tooltip.offsetWidth;
+            const rect = badge.getBoundingClientRect();
+            let left = rect.right + 8;
+            let top = rect.top + rect.height / 2 - tooltipH / 2;
+            if (left + tooltipW > window.innerWidth - 4) left = rect.left - tooltipW - 8;
+            top = Math.max(4, Math.min(top, window.innerHeight - tooltipH - 4));
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('.stat-item-bonus')) {
+            tooltip.style.display = 'none';
+        }
+    });
+}
+
 // Названия глав
 function getChapterName(chapterNum) {
     return t(`chapters.${chapterNum}`) || `Chapter ${chapterNum}`;
@@ -104,10 +200,6 @@ function addLog(message, type = 'default') {
     row.style.display = visible ? '' : 'none';
 
     logDiv.insertBefore(row, logDiv.firstChild);
-
-    while (logDiv.children.length > 15) {
-        logDiv.removeChild(logDiv.lastChild);
-    }
 }
 
 // Обновление UI
@@ -122,17 +214,80 @@ function updateUI() {
         document.getElementById(`${statKey}-loop-exp`).textContent = `${Math.floor(stat.loopExp)}/${Math.floor(loopExpNeeded)}`;
         document.getElementById(`${statKey}-loop-bar`).style.width = `${loopExpProgress}%`;
 
+        // Exp multiplier badge (items + perm level)
+        const loopSublabel = document.getElementById(`${statKey}-loop-exp`).parentNode;
+        let bonusBadge = document.getElementById(`${statKey}-item-bonus`);
+        const itemBonus = getExpBonus(statKey);
+        const permMultiplier = Math.pow(1.10, stat.permLevel);
+        const totalMultiplier = (1 + itemBonus) * permMultiplier;
+        if (totalMultiplier > 1.001) {
+            if (!bonusBadge) {
+                bonusBadge = document.createElement('span');
+                bonusBadge.id = `${statKey}-item-bonus`;
+                bonusBadge.className = 'stat-item-bonus';
+                bonusBadge.dataset.stat = statKey;
+                loopSublabel.appendChild(bonusBadge);
+            }
+            bonusBadge.textContent = `x${totalMultiplier.toFixed(2)}`;
+            bonusBadge.style.display = '';
+        } else if (bonusBadge) {
+            bonusBadge.style.display = 'none';
+        }
+
         const permExpNeeded = 100 * Math.pow(1.5, stat.permLevel);
         const permExpProgress = (stat.permExp / permExpNeeded) * 100;
         document.getElementById(`${statKey}-perm-exp`).textContent = `${Math.floor(stat.permExp)}/${Math.floor(permExpNeeded)}`;
         document.getElementById(`${statKey}-perm-bar`).style.width = `${permExpProgress}%`;
     });
 
+    // Ресурсы (темпоральная пыль)
+    const resourcesSection = document.getElementById('resources-section');
+    const dustCount = document.getElementById('temporal-dust-count');
+    if (resourcesSection && dustCount) {
+        resourcesSection.style.display = game.temporalDust > 0 ? 'block' : 'none';
+        dustCount.textContent = game.temporalDust;
+    }
+
+    // Азот и нитро
+    const nitrogenCount = document.getElementById('nitrogen-count');
+    const nitrogenMax = document.getElementById('nitrogen-max');
+    const nitrogenFill = document.getElementById('nitrogen-fill');
+    const nitroBtn = document.getElementById('nitro-btn');
+    if (nitrogenCount) nitrogenCount.textContent = Math.floor(game.nitrogen);
+    if (nitrogenMax) nitrogenMax.textContent = game.maxNitrogen;
+    if (nitrogenFill) {
+        nitrogenFill.style.width = (game.nitrogen / game.maxNitrogen * 100) + '%';
+    }
+    if (nitroBtn) {
+        nitroBtn.classList.toggle('nitro-active', game.isNitroActive);
+        nitroBtn.disabled = game.nitrogen <= 0 && !game.isNitroActive;
+    }
+
     const timeRemaining = game.loopTimeLeft;
     document.getElementById('loop-time').textContent = timeRemaining.toFixed(1);
     const maxOxygenEl = document.getElementById('loop-time-max');
     if (maxOxygenEl) {
         maxOxygenEl.textContent = game.loopTimeTotal.toFixed(1);
+    }
+    // Бейдж экономии кислорода (создаём динамически если нет)
+    let oxygenSaveBadge = document.getElementById('oxygen-save-badge');
+    if (!oxygenSaveBadge) {
+        const label = document.getElementById('oxygen-label');
+        if (label) {
+            oxygenSaveBadge = document.createElement('span');
+            oxygenSaveBadge.id = 'oxygen-save-badge';
+            oxygenSaveBadge.className = 'oxygen-save-badge';
+            label.appendChild(oxygenSaveBadge);
+        }
+    }
+    if (oxygenSaveBadge) {
+        const totalSave = getTotalOxygenSave();
+        if (totalSave > 0) {
+            oxygenSaveBadge.style.display = '';
+            oxygenSaveBadge.textContent = ` (-${totalSave}%)`;
+        } else {
+            oxygenSaveBadge.style.display = 'none';
+        }
     }
     const oxygenPercent = game.loopTimeLeft / game.loopTimeTotal;
     const timeFill = document.getElementById('time-fill');
@@ -170,7 +325,8 @@ function updateUI() {
         const statsWithWeights = getStatsWithWeights(a);
         const weightedLevel = statsWithWeights.reduce((sum, { statKey, weight }) =>
             sum + (game.stats[statKey]?.level || 0) * weight, 0);
-        const effectiveDuration = a.duration * Math.pow(0.97, weightedLevel);
+        const scaledDuration = a.durationScale ? a.duration * Math.pow(a.durationScale, a.timesDone) : a.duration;
+        const effectiveDuration = scaledDuration * Math.pow(0.97, weightedLevel);
         const remainingTime = Math.max(0, effectiveDuration - a.elapsed).toFixed(1);
 
         btn.classList.toggle('activity-active', a.isActive);

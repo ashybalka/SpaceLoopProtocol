@@ -140,7 +140,7 @@ function applyTranslations() {
     if (oxygenText) {
         const timeSpan = document.getElementById('loop-time');
         const maxOxygen = game.loopTimeTotal.toFixed(1);
-        oxygenText.innerHTML = `💨 ${t('ui.oxygen')}: <span id="loop-time">${timeSpan?.textContent || maxOxygen}</span>${t('time.seconds')} / <span id="loop-time-max">${maxOxygen}</span>${t('time.seconds')}`;
+        oxygenText.innerHTML = `💨 ${t('ui.oxygen')}: <span id="loop-time">${timeSpan?.textContent || maxOxygen}</span>${t('time.seconds')} / <span id="loop-time-max">${maxOxygen}</span>${t('time.seconds')} <span id="oxygen-save-badge" class="oxygen-save-badge" style="display:none"></span>`;
     }
 
     // Автоматизация
@@ -207,4 +207,13 @@ function applyTranslations() {
     if (filterHistory) filterHistory.title = t('logFilters.history');
     if (filterStat) filterStat.title = t('logFilters.system');
     if (filterPower) filterPower.title = t('logFilters.unlocks');
+
+    // Все элементы с data-i18n-title
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+        const key = el.getAttribute('data-i18n-title');
+        const val = t(key);
+        if (val && val !== key) {
+            el.title = val;
+        }
+    });
 }

@@ -96,7 +96,8 @@ function renderActivities() {
         }).join(' ');
         const weightedLevel = statsWithWeights.reduce((sum, { statKey, weight }) =>
             sum + (game.stats[statKey]?.level || 0) * weight, 0);
-        const effectiveDuration = activity.duration * Math.pow(0.97, weightedLevel);
+        const scaledDuration = activity.durationScale ? activity.duration * Math.pow(activity.durationScale, activity.timesDone) : activity.duration;
+        const effectiveDuration = scaledDuration * Math.pow(0.97, weightedLevel);
         const progress = Math.min(activity.elapsed / effectiveDuration, 1) * 100;
         const remainingTime = Math.max(0, effectiveDuration - activity.elapsed).toFixed(1);
 
@@ -262,6 +263,10 @@ function completeActivity(a) {
                 addLog(t('log.itemFound', { item: t('items.' + a.reward.item + '.name') }), 'power');
             }
         }
+        if (a.reward.temporalDust) {
+            game.temporalDust += a.reward.temporalDust;
+            addLog(t('log.temporalDust', { amount: a.reward.temporalDust, total: game.temporalDust }), 'power');
+        }
         if (a.reward.switchChapter) {
             const targetChapter = a.reward.switchChapter;
             if (!game.unlockedChapters.includes(targetChapter)) {
@@ -290,6 +295,10 @@ function completeActivity(a) {
             if (a.rewardOnComplete.oxygen) {
                 addLog(t('log.oxygenBonus', { amount: a.rewardOnComplete.oxygen }), 'power');
                 game.loopTimeLeft = Math.min(game.loopTimeLeft + a.rewardOnComplete.oxygen, game.loopTimeTotal);
+            }
+            if (a.rewardOnComplete.oxygenSavePercent) {
+                game.oxygenSavePercent += a.rewardOnComplete.oxygenSavePercent;
+                addLog(t('log.oxygenSave', { percent: a.rewardOnComplete.oxygenSavePercent, total: getTotalOxygenSave() }), 'power');
             }
         }
     }

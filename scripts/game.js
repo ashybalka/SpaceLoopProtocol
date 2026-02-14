@@ -33,7 +33,17 @@ const game = {
     autoRepeat: false,
 
     // Инвентарь
-    inventory: []
+    inventory: [],
+
+    // Ресурсы (постоянные, сохраняются между петлями)
+    temporalDust: 0,
+    oxygenSavePercent: 0, // % экономии кислорода (постоянный бонус)
+
+    // Азот (оффлайн-ресурс)
+    nitrogen: 0,
+    maxNitrogen: 500,
+    isNitroActive: false,
+    lastOnlineTimestamp: Date.now()
 };
 
 const statIcons = {
@@ -163,9 +173,23 @@ function gameLoop(now) {
         }
 
         const hasActive = game.activities.some(a => a.isActive);
+
+        // Нитро-режим: x10 скорость, расходует азот (только при активных активностях)
+        if (game.isNitroActive && game.nitrogen > 0 && hasActive) {
+            const nitrogenCost = realDt; // 1 азот за 1 реальную секунду
+            game.nitrogen = Math.max(0, game.nitrogen - nitrogenCost);
+            dt *= 10;
+            if (game.nitrogen <= 0) {
+                game.isNitroActive = false;
+            }
+        } else if (game.isNitroActive && game.nitrogen <= 0) {
+            game.isNitroActive = false;
+        }
+
         let oxygenDepleted = false;
         if (hasActive && game.loopTimeLeft > 0) {
-            game.loopTimeLeft = Math.max(0, game.loopTimeLeft - dt);
+            const oxygenDt = dt * (1 - getTotalOxygenSave() / 100);
+            game.loopTimeLeft = Math.max(0, game.loopTimeLeft - oxygenDt);
             game.loopElapsed += dt;
             game.realElapsed += realDt;
             oxygenDepleted = game.loopTimeLeft <= 0;
@@ -221,7 +245,8 @@ function gameLoop(now) {
                     weightedLevel += stat.level * weight;
                 });
 
-                const effectiveDuration = a.duration * Math.pow(0.97, weightedLevel);
+                const scaledDuration = a.durationScale ? a.duration * Math.pow(a.durationScale, a.timesDone) : a.duration;
+                const effectiveDuration = scaledDuration * Math.pow(0.97, weightedLevel);
                 a.elapsed += dt;
 
                 if (a.elapsed >= effectiveDuration) {
@@ -239,4 +264,12 @@ function gameLoop(now) {
 
     updateUI();
     requestAnimationFrame(gameLoop);
+}
+
+function toggleNitro() {
+    if (game.isNitroActive) {
+        game.isNitroActive = false;
+    } else if (game.nitrogen > 0) {
+        game.isNitroActive = true;
+    }
 }

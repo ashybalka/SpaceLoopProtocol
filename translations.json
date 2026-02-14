@@ -9,6 +9,7 @@
             "start": "Запустить",
             "stop": "Остановить",
             "oxygen": "Кислород (O2)",
+            "oxygenSaveActivity": "Синхронизация дыхания",
             "resetGame": "Сброс игры",
             "resetLoop": "Сбросить петлю",
             "completed": "выполнено",
@@ -20,7 +21,12 @@
             "close": "Закрыть",
             "inventory": "Инвентарь",
             "itemFound": "Найден предмет!",
-            "take": "Забрать"
+            "take": "Забрать",
+            "temporalDust": "Темпоральная пыль",
+            "exportSave": "Экспорт",
+            "importSave": "Импорт",
+            "nitrogen": "Азот (N₂)",
+            "nitro": "НИТРО x10"
         },
         "stats": {
             "strength": "Сила",
@@ -41,7 +47,12 @@
             "addToQueue": "Добавить в очередь",
             "remainingCompletions": "Ещё {count} выполнений",
             "unlocked": "Автоматизация разблокирована: {name}!",
-            "autoRepeat": "Автозапуск при новой петле"
+            "autoRepeat": "Автозапуск при новой петле",
+            "moveUp": "Вверх",
+            "moveDown": "Вниз",
+            "repeatMinus": "Уменьшить повторы",
+            "repeatPlus": "Увеличить повторы",
+            "remove": "Удалить"
         },
         "log": {
             "activityCompleted": "✓ {name} завершена ({done}/{max})",
@@ -55,17 +66,23 @@
             "chapterMoved": "📍 Вы перешли: {chapter}",
             "awakening": "Вы медленно приходите в сознание. Холодный воздух заполняет ваши легкие. Вокруг мигают синие индикаторы, слышны звуки жужжания неизвестного оборудования. Где вы? Что произошло?",
             "awakeningWithItems": "Снова эта капсула. Снова холод. Но кое-что изменилось — {items}. Петля продолжается.",
-            "itemFound": "🔧 Найден предмет: {item}!"
+            "itemFound": "🔧 Найден предмет: {item}!",
+            "temporalDust": "✨ +{amount} темпоральной пыли! (всего: {total})",
+            "offlineNitrogen": "🧪 Оффлайн-бонус: +{amount} азота ({time})",
+            "oxygenSave": "🫁 Расход кислорода снижен на {percent}%! (всего: -{total}%)"
         },
         "chapters": {
             "1": "Глава 1: Капсула",
             "2": "Глава 2: Зал гибернации",
             "3": "Глава 3: Коридор",
+            "4": "Глава 4: Технический отсек",
             "demoTitle": "Демо-версия",
             "demoText": "Спасибо за игру! Это демо-версия Space Loop Protocol.\nРабота над продолжением ведётся — скоро откроются новые главы.\nСледите за обновлениями!"
         },
         "dialogs": {
-            "resetConfirm": "Вы уверены? Это удалит все сохранения и начнет игру заново."
+            "resetConfirm": "Вы уверены? Это удалит все сохранения и начнет игру заново.",
+            "importConfirm": "Загрузить сохранение из файла? Текущий прогресс будет заменён.",
+            "importError": "Ошибка: файл повреждён или имеет неверный формат."
         },
         "time": {
             "seconds": "с"
@@ -89,6 +106,7 @@
             "start": "Start",
             "stop": "Stop",
             "oxygen": "Oxygen (O2)",
+            "oxygenSaveActivity": "Breath synchronization",
             "resetGame": "Reset game",
             "resetLoop": "Reset loop",
             "completed": "completed",
@@ -100,7 +118,12 @@
             "close": "Close",
             "inventory": "Inventory",
             "itemFound": "Item found!",
-            "take": "Take"
+            "take": "Take",
+            "temporalDust": "Temporal Dust",
+            "exportSave": "Export",
+            "importSave": "Import",
+            "nitrogen": "Nitrogen (N₂)",
+            "nitro": "NITRO x10"
         },
         "stats": {
             "strength": "Strength",
@@ -121,7 +144,12 @@
             "addToQueue": "Add to queue",
             "remainingCompletions": "{count} more completions",
             "unlocked": "Automation unlocked: {name}!",
-            "autoRepeat": "Auto-start on new loop"
+            "autoRepeat": "Auto-start on new loop",
+            "moveUp": "Move up",
+            "moveDown": "Move down",
+            "repeatMinus": "Decrease repeats",
+            "repeatPlus": "Increase repeats",
+            "remove": "Remove"
         },
         "log": {
             "activityCompleted": "✓ {name} completed ({done}/{max})",
@@ -135,17 +163,23 @@
             "chapterMoved": "📍 You moved to: {chapter}",
             "awakening": "You slowly regain consciousness. Cold air fills your lungs. Blue indicators blink around you, and you hear the hum of unknown equipment. Where are you? What happened?",
             "awakeningWithItems": "This capsule again. The cold again. But something has changed — {items}. The loop continues.",
-            "itemFound": "🔧 Item found: {item}!"
+            "itemFound": "🔧 Item found: {item}!",
+            "temporalDust": "✨ +{amount} temporal dust! (total: {total})",
+            "offlineNitrogen": "🧪 Offline bonus: +{amount} nitrogen ({time})",
+            "oxygenSave": "🫁 Oxygen consumption reduced by {percent}%! (total: -{total}%)"
         },
         "chapters": {
             "1": "Chapter 1: The Capsule",
             "2": "Chapter 2: Hibernation Hall",
             "3": "Chapter 3: The Corridor",
+            "4": "Chapter 4: Tech Bay",
             "demoTitle": "Demo Version",
             "demoText": "Thanks for playing! This is a demo of Space Loop Protocol.\nNew chapters are in the works and coming soon.\nStay tuned for updates!"
         },
         "dialogs": {
-            "resetConfirm": "Are you sure? This will delete all saves and restart the game."
+            "resetConfirm": "Are you sure? This will delete all saves and restart the game.",
+            "importConfirm": "Load save from file? Current progress will be replaced.",
+            "importError": "Error: file is corrupted or has an invalid format."
         },
         "time": {
             "seconds": "s"
@@ -169,6 +203,7 @@
             "start": "Starten",
             "stop": "Stoppen",
             "oxygen": "Sauerstoff (O2)",
+            "oxygenSaveActivity": "Atemsynchronisation",
             "resetGame": "Spiel zurücksetzen",
             "resetLoop": "Schleife zurücksetzen",
             "completed": "abgeschlossen",
@@ -180,7 +215,12 @@
             "close": "Schließen",
             "inventory": "Inventar",
             "itemFound": "Gegenstand gefunden!",
-            "take": "Nehmen"
+            "take": "Nehmen",
+            "temporalDust": "Temporaler Staub",
+            "exportSave": "Exportieren",
+            "importSave": "Importieren",
+            "nitrogen": "Stickstoff (N₂)",
+            "nitro": "NITRO x10"
         },
         "stats": {
             "strength": "Stärke",
@@ -201,7 +241,12 @@
             "addToQueue": "Zur Warteschlange hinzufügen",
             "remainingCompletions": "Noch {count} Abschlüsse",
             "unlocked": "Automatisierung freigeschaltet: {name}!",
-            "autoRepeat": "Autostart bei neuer Schleife"
+            "autoRepeat": "Autostart bei neuer Schleife",
+            "moveUp": "Nach oben",
+            "moveDown": "Nach unten",
+            "repeatMinus": "Wiederholungen verringern",
+            "repeatPlus": "Wiederholungen erhöhen",
+            "remove": "Entfernen"
         },
         "log": {
             "activityCompleted": "✓ {name} abgeschlossen ({done}/{max})",
@@ -215,17 +260,23 @@
             "chapterMoved": "📍 Du bist umgezogen: {chapter}",
             "awakening": "Du kommst langsam zu Bewusstsein. Kalte Luft füllt deine Lungen. Blaue Indikatoren blinken um dich herum, und du hörst das Summen unbekannter Geräte. Wo bist du? Was ist passiert?",
             "awakeningWithItems": "Diese Kapsel wieder. Die Kälte wieder. Aber etwas hat sich verändert — {items}. Die Schleife geht weiter.",
-            "itemFound": "🔧 Gegenstand gefunden: {item}!"
+            "itemFound": "🔧 Gegenstand gefunden: {item}!",
+            "temporalDust": "✨ +{amount} temporaler Staub! (gesamt: {total})",
+            "offlineNitrogen": "🧪 Offline-Bonus: +{amount} Stickstoff ({time})",
+            "oxygenSave": "🫁 Sauerstoffverbrauch um {percent}% gesenkt! (gesamt: -{total}%)"
         },
         "chapters": {
             "1": "Kapitel 1: Die Kapsel",
             "2": "Kapitel 2: Hibernationshalle",
             "3": "Kapitel 3: Der Korridor",
+            "4": "Kapitel 4: Technischer Bereich",
             "demoTitle": "Demo-Version",
             "demoText": "Danke fürs Spielen! Dies ist eine Demo von Space Loop Protocol.\nNeue Kapitel sind in Arbeit und kommen bald.\nBleibt dran!"
         },
         "dialogs": {
-            "resetConfirm": "Bist du sicher? Dies wird alle Spielstände löschen und das Spiel neu starten."
+            "resetConfirm": "Bist du sicher? Dies wird alle Spielstände löschen und das Spiel neu starten.",
+            "importConfirm": "Spielstand aus Datei laden? Der aktuelle Fortschritt wird ersetzt.",
+            "importError": "Fehler: Datei ist beschädigt oder hat ein ungültiges Format."
         },
         "time": {
             "seconds": "s"
