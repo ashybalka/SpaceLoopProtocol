@@ -1,7 +1,7 @@
 // =============== СИСТЕМА ЛОКАЛИЗАЦИИ ===============
 let translations = {};
 let activityTranslations = {};
-let currentLang = 'ru';
+let currentLang = detectLanguage();
 
 // Определяем язык системы
 function detectLanguage() {
@@ -216,4 +216,6 @@ function applyTranslations() {
             el.title = val;
         }
     });
+
+    document.body.style.opacity = '1';
 }

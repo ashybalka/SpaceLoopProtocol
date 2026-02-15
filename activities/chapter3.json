@@ -1,16 +1,42 @@
 [
     {
-        "id": "return-to-hall",
+        "id": "return-through-door",
         "chapter": 3,
-        "duration": 15,
+        "duration": 50,
         "maxTimes": 999,
         "automationThreshold": 5,
         "stats": {
-            "agility": 180,
-            "strength": 20
+            "agility": 100
         },
         "basePower": 8,
-        "unlocked": true,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityTotalComplete",
+            "activityId": {
+                "force-corridor-door": 1
+            }
+        },
+        "reward": {
+            "switchChapter": 2
+        }
+    },
+    {
+        "id": "return-through-vents",
+        "chapter": 3,
+        "duration": 50,
+        "maxTimes": 999,
+        "automationThreshold": 5,
+        "stats": {
+            "agility": 100
+        },
+        "basePower": 8,
+        "unlocked": false,
+        "unlockTrigger": {
+            "type": "activityTotalComplete",
+            "activityId": {
+                "crawl-through-vents": 1
+            }
+        },
         "reward": {
             "switchChapter": 2
         }

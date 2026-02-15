@@ -74,7 +74,7 @@
             "completeMessage": [
                 "Вы на космическом корабле. Это точно. Но какой это корабль? И куда он летит?",
                 "«Аврора» — название всплывает само. Исследовательское судно. Дальняя экспедиция.",
-                "Цель — система Тау Кита. Четыре световых года от Земли. Вы должны были спать всю дорогу.",
+                "Цель — система Тау Кита. Двенадцать световых лет от Земли. Вы должны были спать всю дорогу.",
                 "Что-то пошло не так. Вы проснулись раньше срока. Почему? Авария? Саботаж?",
                 "Нужно найти терминал. Нужно узнать, что случилось с кораблём и экипажем."
             ]
@@ -395,6 +395,18 @@
             "unlockMessage": "Усиленная вентиляция открыла доступ к техническим шахтам. Тесно, но пролезть можно...",
             "completeMessage": "Вы ползёте в темноте. Металл скрежещет. Впереди — свет. Вы выбираетесь в коридор с другой стороны заблокированной двери."
         },
+        "go-through-door": {
+            "name": "Пройти через дверь",
+            "description": "Пройти в коридор через открытую дверь",
+            "unlockMessage": "Дверь уже взломана — путь в коридор свободен.",
+            "completeMessage": "Вы проходите через знакомую дверь. Скрежет механизма уже не пугает."
+        },
+        "go-through-vents": {
+            "name": "Пролезть через вентиляцию",
+            "description": "Пролезть в коридор через вентиляционные шахты",
+            "unlockMessage": "Вентиляционная шахта знакома — вы уже проползали здесь.",
+            "completeMessage": "Вы ползёте по знакомому маршруту. Темнота, скрежет, свет впереди. Коридор."
+        },
         "recover-data-chip": {
             "name": "Извлечь чип данных",
             "description": "Найти и извлечь чип данных из уцелевшей капсулы",
@@ -408,10 +420,17 @@
             "completeMessage": "Данные совпали. Протокол петли — не авария. Это решение. Кто-то должен был остаться, чтобы остальные ушли. Добровольно? Файл повреждён. Но одно имя читается чётко — ваше.",
             "completeMessageNoItem": "Вы снова видите данные. Схема корабля уже у вас — вы забрали её раньше. Но истина всё та же: ваше имя в протоколе."
         },
-        "return-to-hall": {
-            "name": "Вернуться в зал",
-            "description": "Вернуться обратно в зал гибернации",
-            "completeMessage": "Вы возвращаетесь в зал гибернации. Пустые капсулы смотрят на вас, как всегда."
+        "return-through-door": {
+            "name": "Вернуться через дверь",
+            "description": "Пройти обратно через взломанную дверь коридора",
+            "unlockMessage": "Дверь, которую вы взломали, всё ещё открыта. Можно вернуться.",
+            "completeMessage": "Вы проходите через дверь обратно. Скрежет механизма звучит уже привычно."
+        },
+        "return-through-vents": {
+            "name": "Вернуться через вентиляцию",
+            "description": "Проползти обратно через вентиляционные шахты",
+            "unlockMessage": "Вентиляционная шахта всё ещё открыта. Тесно, но путь знакомый.",
+            "completeMessage": "Вы ползёте обратно через шахту. В темноте металл знакомо скрежещет под руками."
         },
         "walk-endless-corridor": {
             "name": "Идти по коридору",
@@ -1140,7 +1159,7 @@
             "completeMessage": [
                 "You're on a spaceship. That's certain. But which ship? And where is it going?",
                 "'Aurora' — the name surfaces. Research vessel. Deep space expedition.",
-                "Destination — Tau Ceti system. Four light years from Earth. You were supposed to sleep the whole way.",
+                "Destination — Tau Ceti system. Twelve light years from Earth. You were supposed to sleep the whole way.",
                 "Something went wrong. You woke up early. Why? Accident? Sabotage?",
                 "Need to find a terminal. Need to find out what happened to the ship and crew."
             ]
@@ -1461,6 +1480,18 @@
             "unlockMessage": "The boosted ventilation opened access to maintenance shafts. Tight, but passable...",
             "completeMessage": "You crawl in darkness. Metal screeches. Light ahead. You emerge in the corridor on the other side of the locked door."
         },
+        "go-through-door": {
+            "name": "Go through door",
+            "description": "Pass through the opened corridor door",
+            "unlockMessage": "The door is already forced open — the corridor awaits.",
+            "completeMessage": "You pass through the familiar door. The screech of the mechanism no longer startles you."
+        },
+        "go-through-vents": {
+            "name": "Crawl through vents",
+            "description": "Crawl into the corridor through the ventilation shafts",
+            "unlockMessage": "The ventilation shaft is familiar — you've crawled through before.",
+            "completeMessage": "You crawl the familiar route. Darkness, screeching, light ahead. The corridor."
+        },
         "recover-data-chip": {
             "name": "Recover data chip",
             "description": "Find and extract a data chip from an intact capsule",
@@ -1474,10 +1505,17 @@
             "completeMessage": "Data matched. The loop protocol wasn't an accident. It was a decision. Someone had to stay so others could leave. Voluntarily? File corrupted. But one name is clear — yours.",
             "completeMessageNoItem": "You see the data again. The ship schematic is already with you — you took it earlier. But the truth remains: your name is in the protocol."
         },
-        "return-to-hall": {
-            "name": "Return to hall",
-            "description": "Return back to the hibernation hall",
-            "completeMessage": "You return to the hibernation hall. The empty capsules stare at you, as always."
+        "return-through-door": {
+            "name": "Return through door",
+            "description": "Go back through the forced corridor door",
+            "unlockMessage": "The door you forced open is still ajar. You can go back.",
+            "completeMessage": "You pass through the door again. The screech of the mechanism sounds familiar now."
+        },
+        "return-through-vents": {
+            "name": "Return through vents",
+            "description": "Crawl back through the ventilation shafts",
+            "unlockMessage": "The ventilation shaft is still open. Tight, but the path is familiar.",
+            "completeMessage": "You crawl back through the shaft. In the darkness, the metal screeches familiarly under your hands."
         },
         "walk-endless-corridor": {
             "name": "Walk the corridor",
@@ -2206,7 +2244,7 @@
             "completeMessage": [
                 "Du bist auf einem Raumschiff. Das ist sicher. Aber welches Schiff? Und wohin fliegt es?",
                 "'Aurora' — der Name taucht auf. Forschungsschiff. Tiefraum-Expedition.",
-                "Ziel — Tau-Ceti-System. Vier Lichtjahre von der Erde. Du solltest die ganze Zeit schlafen.",
+                "Ziel — Tau-Ceti-System. Zwölf Lichtjahre von der Erde. Du solltest die ganze Zeit schlafen.",
                 "Etwas ist schiefgelaufen. Du bist zu früh aufgewacht. Warum? Unfall? Sabotage?",
                 "Muss ein Terminal finden. Muss herausfinden, was mit dem Schiff und der Besatzung passiert ist."
             ]
@@ -2527,6 +2565,18 @@
             "unlockMessage": "Die verstärkte Belüftung hat Zugang zu Wartungsschächten geöffnet. Eng, aber passierbar...",
             "completeMessage": "Du kriechst in der Dunkelheit. Metall kreischt. Licht voraus. Du kommst auf der anderen Seite der verschlossenen Tür im Korridor heraus."
         },
+        "go-through-door": {
+            "name": "Durch die Tür gehen",
+            "description": "Durch die geöffnete Korridortür gehen",
+            "unlockMessage": "Die Tür ist bereits aufgebrochen — der Korridor wartet.",
+            "completeMessage": "Du gehst durch die vertraute Tür. Das Knirschen des Mechanismus erschreckt dich nicht mehr."
+        },
+        "go-through-vents": {
+            "name": "Durch Lüftung kriechen",
+            "description": "Durch die Lüftungsschächte in den Korridor kriechen",
+            "unlockMessage": "Der Lüftungsschacht ist vertraut — du bist schon durchgekrochen.",
+            "completeMessage": "Du kriechst die vertraute Route. Dunkelheit, Kreischen, Licht voraus. Der Korridor."
+        },
         "recover-data-chip": {
             "name": "Datenchip bergen",
             "description": "Einen Datenchip aus einer intakten Kapsel finden und extrahieren",
@@ -2540,10 +2590,17 @@
             "completeMessage": "Daten abgeglichen. Das Loop-Protokoll war kein Unfall. Es war eine Entscheidung. Jemand musste bleiben, damit andere gehen konnten. Freiwillig? Datei beschädigt. Aber ein Name ist klar lesbar — deiner.",
             "completeMessageNoItem": "Du siehst die Daten erneut. Der Schiffsplan ist bereits bei dir — du hast ihn früher genommen. Aber die Wahrheit bleibt: dein Name steht im Protokoll."
         },
-        "return-to-hall": {
-            "name": "Zurück zur Halle",
-            "description": "Zurück zur Hibernationshalle",
-            "completeMessage": "Du kehrst in die Hibernationshalle zurück. Die leeren Kapseln starren dich an, wie immer."
+        "return-through-door": {
+            "name": "Durch die Tür zurück",
+            "description": "Durch die aufgebrochene Korridortür zurückgehen",
+            "unlockMessage": "Die Tür, die du aufgebrochen hast, steht noch offen. Du kannst zurück.",
+            "completeMessage": "Du gehst wieder durch die Tür. Das Knirschen des Mechanismus klingt schon vertraut."
+        },
+        "return-through-vents": {
+            "name": "Durch Lüftung zurück",
+            "description": "Durch die Lüftungsschächte zurückkriechen",
+            "unlockMessage": "Der Lüftungsschacht ist noch offen. Eng, aber der Weg ist bekannt.",
+            "completeMessage": "Du kriechst zurück durch den Schacht. In der Dunkelheit kreischt das Metall vertraut unter deinen Händen."
         },
         "walk-endless-corridor": {
             "name": "Durch den Korridor gehen",

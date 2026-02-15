@@ -123,7 +123,7 @@ function renderActivities() {
             <div class="act-stats">${statIconsStr}</div>
             <div class="act-timer">⏱️ ${remainingTime}${timeSuffix} / ${effectiveDuration.toFixed(1)}${timeSuffix}</div>
             <div class="act-desc">${activityDesc}</div>
-            <div class="act-completed">${activity.timesDone}/${activity.maxTimes} ${t('ui.completed')}</div>
+            <div class="act-completed">${activity.timesDone}/${activity.maxTimes >= 999 ? '∞' : activity.maxTimes} ${t('ui.completed')}</div>
             <div class="activity-progress">
                 <div class="activity-progress-bar" data-id="${activity.id}" style="width: ${progress}%"></div>
             </div>
@@ -177,11 +177,12 @@ function checkUnlockTriggers() {
 
         const trigger = activity.unlockTrigger;
 
-        if (trigger.type === 'activityComplete') {
+        if (trigger.type === 'activityComplete' || trigger.type === 'activityTotalComplete') {
             const requirements = trigger.activityId;
+            const useTotal = trigger.type === 'activityTotalComplete';
             const check = (id, times) => {
                 const target = game.activities.find(a => a.id === id);
-                return target && target.timesDone >= times;
+                return target && (useTotal ? target.totalCompletions : target.timesDone) >= times;
             };
 
             const entries = Object.entries(requirements);
@@ -213,7 +214,7 @@ function completeActivity(a) {
         addLog(t('automation.unlocked', { name: activityName }), 'power');
     }
 
-    addLog(t('log.activityCompleted', { name: activityName, done: a.timesDone, max: a.maxTimes }), 'complete');
+    addLog(t('log.activityCompleted', { name: activityName, done: a.timesDone, max: a.maxTimes >= 999 ? '∞' : a.maxTimes }), 'complete');
 
     let completeMsg = tActivity(a.id, 'completeMessage');
 
