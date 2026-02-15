@@ -157,6 +157,8 @@ function loadGame() {
 
         if (game.isLoopActive && game.loopTimeLeft <= 0) {
             endLoop();
+        } else if (!game.isLoopActive) {
+            startLoop();
         }
     } else {
         startLoop();

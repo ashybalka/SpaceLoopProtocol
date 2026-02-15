@@ -136,8 +136,8 @@ function endLoop() {
     addLog(t('log.loopEnded'), 'power');
     addLog(t('log.progressSaved'), 'stat');
 
-    saveGame();
     startLoop();
+    saveGame();
 }
 
 // Главный игровой цикл

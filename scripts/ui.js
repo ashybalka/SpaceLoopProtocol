@@ -346,7 +346,7 @@ function updateUI() {
 
         const counterEl = btn.children[4];
         if (counterEl) {
-            counterEl.innerHTML = `${a.timesDone}/${a.maxTimes} ${t('ui.completed')}`;
+            counterEl.innerHTML = `${a.timesDone}/${a.maxTimes >= 999 ? '∞' : a.maxTimes} ${t('ui.completed')}`;
         }
     });
 }
