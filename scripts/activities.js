@@ -306,11 +306,19 @@ function completeActivity(a) {
 
     // Обработка очереди автоматизации
     if (game.isAutoMode) {
-        const queueItem = game.automationQueue.find(q => q.activityId === a.id);
-        if (queueItem) {
+        const queueItem = game.automationQueue[game.currentQueueIndex];
+        if (queueItem && queueItem.activityId === a.id) {
             queueItem.completedInQueue += 1;
             if (queueItem.completedInQueue >= queueItem.repeatCount || a.timesDone >= a.maxTimes) {
-                game.currentQueueIndex = (game.currentQueueIndex + 1) % game.automationQueue.length;
+                const isLastItem = game.currentQueueIndex === game.automationQueue.length - 1;
+                if (isLastItem && !game.autoRepeat) {
+                    game.isAutoMode = false;
+                    game.currentQueueIndex = 0;
+                    game.automationQueue.forEach(q => q.completedInQueue = 0);
+                    updateAutoModeButton();
+                } else {
+                    game.currentQueueIndex = (game.currentQueueIndex + 1) % game.automationQueue.length;
+                }
             }
             a.isActive = false;
             renderAutomationQueue();

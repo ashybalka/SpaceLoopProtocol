@@ -216,11 +216,39 @@ function renderInventory() {
                 <div class="item-name">${t('items.' + item.id + '.name')}</div>
                 <div class="item-bonus">${getItemBonusText(item)}</div>
             `;
+
             const rect = itemEl.getBoundingClientRect();
-            tooltip.style.left = (rect.right + 10) + 'px';
-            tooltip.style.top = (rect.top + rect.height / 2) + 'px';
-            tooltip.style.transform = 'translateY(-50%)';
             tooltip.style.display = 'block';
+
+            // Измеряем размер тултипа после отображения
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            let left = rect.right + 10;
+            let top = rect.top + rect.height / 2;
+            let transform = 'translateY(-50%)';
+
+            // Если тултип выходит за правую границу, показываем слева
+            if (left + tooltipRect.width > viewportWidth - 10) {
+                left = rect.left - tooltipRect.width - 10;
+            }
+
+            // Если тултип выходит за нижнюю границу, сдвигаем вверх
+            if (top + tooltipRect.height / 2 > viewportHeight - 10) {
+                top = viewportHeight - tooltipRect.height - 10;
+                transform = 'none';
+            }
+
+            // Если тултип выходит за верхнюю границу, сдвигаем вниз
+            if (top - tooltipRect.height / 2 < 10) {
+                top = 10;
+                transform = 'none';
+            }
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+            tooltip.style.transform = transform;
         });
 
         itemEl.addEventListener('mouseleave', () => {
