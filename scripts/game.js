@@ -250,6 +250,12 @@ function gameLoop(now) {
                 a.elapsed += dt;
 
                 if (a.elapsed >= effectiveDuration) {
+                    // Возвращаем кислород за неиспользованную часть dt
+                    const excessDt = a.elapsed - effectiveDuration;
+                    if (excessDt > 0) {
+                        const refund = excessDt * (1 - getTotalOxygenSave() / 100);
+                        game.loopTimeLeft = Math.min(game.loopTimeLeft + refund, game.loopTimeTotal);
+                    }
                     a.elapsed = 0;
                     completeActivity(a);
                     renderActivities();

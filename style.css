@@ -13,12 +13,35 @@ html, body {
 }
 
 body {
-    font-family: 'Space Mono', 'Courier New', monospace;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-    color: #00ff88;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     padding: 20px;
     box-sizing: border-box;
     transition: opacity 0.3s ease;
+
+    /* CSS Variables for theming - Default (Space) theme */
+    --bg-from: #0a0e27;
+    --bg-to: #1a1f3a;
+    --text-primary: #00ff88;
+    --text-secondary: #00ddff;
+    --panel-bg: rgba(10, 20, 40, 0.8);
+    --border-color: #00ff88;
+    --shadow-color: rgba(0, 255, 136, 0.2);
+    --shadow-glow: rgba(0, 255, 136, 0.3);
+
+    background: linear-gradient(135deg, var(--bg-from) 0%, var(--bg-to) 100%);
+    color: var(--text-primary);
+}
+
+/* Theme: Dark */
+body.theme-dark {
+    --bg-from: #000000;
+    --bg-to: #1a1a1a;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --panel-bg: rgba(20, 20, 20, 0.9);
+    --border-color: #404040;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --shadow-glow: rgba(255, 255, 255, 0.15);
 }
 
 .container {
@@ -39,13 +62,17 @@ body {
     overflow: hidden;
 }
 
+.mobile-settings-panel {
+    display: none; /* Hidden on desktop, shown only on mobile with .mobile-visible */
+}
+
 .panel {
-    background: rgba(10, 20, 40, 0.8);
-    border: 2px solid #00ff88;
+    background: var(--panel-bg);
+    border: 2px solid var(--text-primary);
     border-radius: 8px;
     padding: 12px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 20px var(--shadow-color);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -96,8 +123,8 @@ body {
 
 .log-filter {
     background: rgba(0, 255, 136, 0.1);
-    border: 1px solid rgba(0, 255, 136, 0.3);
-    color: #00ff88;
+    border: 1px solid var(--shadow-glow);
+    color: var(--text-primary);
     width: 26px;
     height: 26px;
     border-radius: 4px;
@@ -113,71 +140,90 @@ body {
 
 .log-filter.active {
     opacity: 1;
-    background: rgba(0, 255, 136, 0.2);
-    border-color: #00ff88;
+    background: var(--shadow-color);
+    border-color: var(--text-primary);
 }
 
 .log-filter:hover {
-    background: rgba(0, 255, 136, 0.3);
+    background: var(--shadow-glow);
 }
 
 h1 {
     font-family: 'Orbitron', sans-serif;
-    color: #00ff88;
+    color: var(--text-primary);
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px #00ff88;
+    text-shadow: 0 0 10px var(--text-primary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 h2 {
     font-family: 'Orbitron', sans-serif;
-    color: #00ddff;
+    color: var(--text-secondary);
     font-size: 16px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #00ff88;
+    border-bottom: 1px solid var(--text-primary);
     padding-bottom: 5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .stat-block {
     margin-bottom: 0;
     padding-bottom: 2px;
-    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    border-bottom: 1px solid var(--shadow-color);
 }
 
 .stat-block:last-child {
     border-bottom: none;
 }
 
-.stat-line {
+.stat-header {
     display: flex;
     justify-content: space-between;
-    margin: 2px 0;
-    font-size: 13px;
+    align-items: center;
+    margin-bottom: 4px;
 }
 
 .stat-name {
-    color: #00ddff;
+    color: var(--text-secondary);
     font-weight: bold;
+    font-size: 13px;
 }
 
-.stat-ico {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.1em;
-    display: inline-block;
-}
-
-.stat-value {
-    color: #00ff88;
-    font-weight: bold;
-}
-
-.stat-item-bonus {
+.stat-multiplier {
     color: #ffcc00;
     font-weight: bold;
-    margin-left: auto;
+    font-size: 12px;
     cursor: pointer;
+}
+
+.stat-row {
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+    font-size: 11px;
+    margin: 2px 0;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+.stat-exp {
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    font-weight: bold;
+}
+
+.stat-lvl {
+    color: var(--text-secondary);
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.7;
 }
 
 .stat-bonus-tooltip {
@@ -192,7 +238,7 @@ h2 {
     color: #ddd;
     white-space: nowrap;
     z-index: 10000;
-    font-family: 'Space Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     pointer-events: none;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), 0 0 8px rgba(255, 204, 0, 0.15);
 }
@@ -214,7 +260,7 @@ h2 {
 .stat-sublabel {
     display: flex;
     align-items: center;
-    color: #00ddff;
+    color: var(--text-secondary);
     font-size: 10px;
     margin-top: 4px;
     margin-bottom: 1px;
@@ -224,8 +270,8 @@ h2 {
 .stat-bar {
     width: 100%;
     height: 6px;
-    background: rgba(0, 255, 136, 0.2);
-    border: 1px solid #00ff88;
+    background: var(--shadow-color);
+    border: 1px solid var(--text-primary);
     margin: 2px 0;
     border-radius: 3px;
     overflow: hidden;
@@ -233,7 +279,7 @@ h2 {
 
 .stat-fill {
     height: 100%;
-    background: linear-gradient(90deg, #00ff88, #00ddff);
+    background: linear-gradient(90deg, var(--text-primary), var(--text-secondary));
     transition: width 0.3s ease;
 }
 
@@ -289,22 +335,25 @@ h2 {
 }
 
 .inventory-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 32px);
+    gap: 5px;
+    max-height: 130px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px;
 }
 
 .inventory-item {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background: rgba(255, 215, 0, 0.15);
     border: 1px solid #ffd700;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     transition: all 0.2s;
     position: relative;
@@ -323,6 +372,7 @@ h2 {
     border-radius: 4px;
     padding: 8px 12px;
     min-width: 150px;
+    max-width: 300px;
     z-index: 10000;
     display: none;
     font-size: 11px;
@@ -335,19 +385,21 @@ h2 {
     color: #ffd700;
     font-weight: bold;
     margin-bottom: 5px;
-    white-space: nowrap;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .inventory-tooltip-global .item-bonus {
-    color: #00ff88;
+    color: var(--text-primary);
     font-size: 10px;
-    white-space: nowrap;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .scene {
     flex: 0 0 auto;
     background: rgba(20, 30, 60, 0.6);
-    border: 2px solid #00ddff;
+    border: 2px solid var(--text-secondary);
     border-radius: 8px;
     padding: 30px;
     display: flex;
@@ -358,14 +410,14 @@ h2 {
 
 .scene-title {
     font-family: 'Orbitron', sans-serif;
-    color: #00ddff;
+    color: var(--text-secondary);
     font-size: 20px;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px #00ddff;
+    text-shadow: 0 0 10px var(--text-secondary);
 }
 
 .scene-description {
-    color: #00ff88;
+    color: var(--text-primary);
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -378,8 +430,8 @@ h2 {
 .time-bar {
     width: 100%;
     height: 28px;
-    background: rgba(0, 255, 136, 0.2);
-    border: 1px solid #00ff88;
+    background: var(--shadow-color);
+    border: 1px solid var(--text-primary);
     border-radius: 3px;
     position: relative;
 }
@@ -406,6 +458,7 @@ h2 {
     font-weight: bold;
     font-size: 13px;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
     z-index: 2;
 }
 
@@ -428,7 +481,7 @@ h2 {
     color: #ddd;
     white-space: nowrap;
     z-index: 10000;
-    font-family: 'Space Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     pointer-events: none;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7), 0 0 8px rgba(0, 255, 100, 0.15);
 }
@@ -487,6 +540,7 @@ h2 {
     color: #66ccff;
     font-size: 11px;
     font-weight: bold;
+    font-variant-numeric: tabular-nums;
     z-index: 1;
 }
 
@@ -540,12 +594,12 @@ h2 {
 
 .activity-btn {
     background: rgba(0, 255, 136, 0.1);
-    border: 1px solid #00ff88;
-    color: #00ff88;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
     padding: 14px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 11px;
     transition: all 0.2s;
     position: relative;
@@ -561,8 +615,8 @@ h2 {
 }
 
 .activity-btn:hover:not(:disabled) {
-    background: rgba(0, 255, 136, 0.2);
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    background: var(--shadow-color);
+    box-shadow: 0 0 10px var(--shadow-glow);
 }
 
 .activity-btn:disabled {
@@ -575,7 +629,7 @@ h2 {
 .activity-progress {
     width: 100%;
     height: 4px;
-    background: rgba(0, 255, 136, 0.2);
+    background: var(--shadow-color);
     margin-top: 8px;
     border-radius: 2px;
     overflow: hidden;
@@ -583,13 +637,13 @@ h2 {
 
 .activity-progress-bar {
     height: 100%;
-    background: #00ff88;
+    background: var(--text-primary);
     transition: width 0.1s linear;
 }
 
 .activity-active {
     background: rgba(0, 221, 255, 0.2);
-    border-color: #00ddff;
+    border-color: var(--text-secondary);
     box-shadow: 0 0 15px rgba(0, 221, 255, 0.4);
 }
 
@@ -601,7 +655,7 @@ h2 {
     font-size: 11px;
     padding: 4px 6px;
     background: rgba(0, 255, 136, 0.05);
-    border-left: 2px solid #00ff88;
+    border-left: 2px solid var(--text-primary);
     border-radius: 2px;
     margin-bottom: 2px;
     align-items: center;
@@ -612,7 +666,7 @@ h2 {
 }
 
 .log-row.stat {
-    border-left-color: #00ddff;
+    border-left-color: var(--text-secondary);
 }
 
 .log-row.complete {
@@ -623,12 +677,14 @@ h2 {
     color: #666;
     font-family: monospace;
     font-size: 10px;
+    font-variant-numeric: tabular-nums;
 }
 
 .log-time {
     color: #888;
     font-family: monospace;
     font-size: 10px;
+    font-variant-numeric: tabular-nums;
 }
 
 .log-diff {
@@ -638,7 +694,7 @@ h2 {
 }
 
 .log-diff.diff-faster {
-    color: #00ff88;
+    color: var(--text-primary);
 }
 
 .log-diff.diff-slower {
@@ -650,7 +706,7 @@ h2 {
 }
 
 .log-text {
-    color: #00ff88;
+    color: var(--text-primary);
 }
 
 .log-row.power .log-text {
@@ -658,7 +714,7 @@ h2 {
 }
 
 .log-row.stat .log-text {
-    color: #00ddff;
+    color: var(--text-secondary);
 }
 
 .log-row.complete .log-text {
@@ -668,8 +724,8 @@ h2 {
 .demo-stub {
     text-align: center;
     padding: 40px 20px;
-    color: #00ff88;
-    border: 1px dashed rgba(0, 255, 136, 0.3);
+    color: var(--text-primary);
+    border: 1px dashed var(--shadow-glow);
     border-radius: 8px;
     background: rgba(0, 255, 136, 0.05);
 }
@@ -677,7 +733,7 @@ h2 {
 .demo-stub h2 {
     font-size: 20px;
     margin-bottom: 16px;
-    color: #00ddff;
+    color: var(--text-secondary);
 }
 
 .demo-stub p {
@@ -688,8 +744,8 @@ h2 {
 }
 
 .loop-btn {
-    background: linear-gradient(135deg, #00ff88, #00ddff);
-    border: 2px solid #00ff88;
+    background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+    border: 2px solid var(--text-primary);
     color: #000;
     padding: 12px 20px;
     border-radius: 4px;
@@ -725,12 +781,12 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #00ff88;
+    background: var(--text-primary);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #00ddff;
+    background: var(--text-secondary);
 }
 
 /* Стили автоматизации */
@@ -744,7 +800,7 @@ h2 {
 }
 
 .automation-label {
-    color: #00ddff;
+    color: var(--text-secondary);
     font-size: 11px;
     margin-top: 8px;
     opacity: 0.8;
@@ -756,13 +812,13 @@ h2 {
 }
 
 .auto-btn {
-    background: rgba(0, 255, 136, 0.2);
-    border: 1px solid #00ff88;
-    color: #00ff88;
+    background: var(--shadow-color);
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 12px;
     font-weight: bold;
     transition: all 0.2s;
@@ -770,8 +826,8 @@ h2 {
 }
 
 .auto-btn:hover {
-    background: rgba(0, 255, 136, 0.3);
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    background: var(--shadow-glow);
+    box-shadow: 0 0 10px var(--shadow-glow);
 }
 
 .auto-btn.active {
@@ -782,8 +838,8 @@ h2 {
 
 .auto-repeat-btn {
     background: rgba(0, 221, 255, 0.2);
-    border: 1px solid #00ddff;
-    color: #00ddff;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
     padding: 8px 10px;
     border-radius: 4px;
     cursor: pointer;
@@ -814,7 +870,7 @@ h2 {
 
 .queue-item {
     background: rgba(0, 255, 136, 0.1);
-    border: 1px solid rgba(0, 255, 136, 0.3);
+    border: 1px solid var(--shadow-glow);
     border-radius: 4px;
     padding: 6px 8px;
     font-size: 11px;
@@ -822,7 +878,7 @@ h2 {
 
 .queue-item.queue-active {
     background: rgba(0, 221, 255, 0.2);
-    border-color: #00ddff;
+    border-color: var(--text-secondary);
     box-shadow: 0 0 8px rgba(0, 221, 255, 0.3);
 }
 
@@ -839,7 +895,7 @@ h2 {
 }
 
 .queue-item-name {
-    color: #00ff88;
+    color: var(--text-primary);
     font-weight: bold;
 }
 
@@ -854,9 +910,9 @@ h2 {
 }
 
 .queue-item-controls button {
-    background: rgba(0, 255, 136, 0.2);
-    border: 1px solid #00ff88;
-    color: #00ff88;
+    background: var(--shadow-color);
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
     width: 22px;
     height: 22px;
     border-radius: 3px;
@@ -897,12 +953,12 @@ h2 {
 
 .act-name {
     font-weight: bold;
-    color: #00ff88;
+    color: var(--text-primary);
     font-size: 16px;
 }
 
 .act-stats {
-    color: #00ddff;
+    color: var(--text-secondary);
     font-size: 13px;
     margin-bottom: 2px;
 }
@@ -911,10 +967,11 @@ h2 {
     color: #aaffcc;
     font-size: 12px;
     margin-bottom: 3px;
+    font-variant-numeric: tabular-nums;
 }
 
 .act-desc {
-    color: #00ff88;
+    color: var(--text-primary);
     font-size: 12px;
     line-height: 1.3;
     opacity: 0.8;
@@ -924,6 +981,7 @@ h2 {
 .act-completed {
     color: #ffaa00;
     font-size: 11px;
+    font-variant-numeric: tabular-nums;
     margin-bottom: 3px;
 }
 
@@ -954,19 +1012,19 @@ h2 {
 }
 
 .auto-indicator.in-queue {
-    color: #00ff88;
-    background: rgba(0, 255, 136, 0.2);
+    color: var(--text-primary);
+    background: var(--shadow-color);
 }
 
 /* Settings button */
 .settings-btn {
     background: rgba(0, 221, 255, 0.2);
-    border: 1px solid #00ddff;
-    color: #00ddff;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 12px;
     margin-top: 8px;
     width: 100%;
@@ -995,7 +1053,7 @@ h2 {
 
 .modal-content {
     background: rgba(10, 20, 40, 0.95);
-    border: 2px solid #00ddff;
+    border: 2px solid var(--text-secondary);
     border-radius: 8px;
     padding: 25px;
     min-width: 300px;
@@ -1004,10 +1062,10 @@ h2 {
 }
 
 .modal-content h2 {
-    color: #00ddff;
+    color: var(--text-secondary);
     margin-bottom: 20px;
     text-align: center;
-    border-bottom: 1px solid #00ddff;
+    border-bottom: 1px solid var(--text-secondary);
     padding-bottom: 10px;
 }
 
@@ -1055,7 +1113,7 @@ h2 {
 }
 
 .item-modal-bonuses .bonus-line {
-    color: #00ff88;
+    color: var(--text-primary);
     font-size: 13px;
     margin: 5px 0;
 }
@@ -1069,24 +1127,24 @@ h2 {
 }
 
 .settings-row label {
-    color: #00ff88;
+    color: var(--text-primary);
     font-size: 14px;
 }
 
 .settings-row select {
     background: rgba(0, 255, 136, 0.1);
-    border: 1px solid #00ff88;
-    color: #00ff88;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
     padding: 8px 12px;
     border-radius: 4px;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 12px;
     cursor: pointer;
 }
 
 .settings-row select:focus {
     outline: none;
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 0 10px var(--shadow-glow);
 }
 
 .reset-loop-btn {
@@ -1096,7 +1154,7 @@ h2 {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 12px;
     width: 100%;
     transition: all 0.2s;
@@ -1114,12 +1172,12 @@ h2 {
 
 .export-btn, .import-btn {
     background: rgba(0, 221, 255, 0.15);
-    border: 1px solid #00ddff;
-    color: #00ddff;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 12px;
     flex: 1;
     transition: all 0.2s;
@@ -1137,7 +1195,7 @@ h2 {
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 12px;
     width: 100%;
     transition: all 0.2s;
@@ -1149,13 +1207,13 @@ h2 {
 }
 
 .close-btn {
-    background: rgba(0, 255, 136, 0.2);
-    border: 1px solid #00ff88;
-    color: #00ff88;
+    background: var(--shadow-color);
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 12px;
     width: 100%;
     margin-top: 10px;
@@ -1231,12 +1289,38 @@ h2 {
         flex: 1;
         min-height: 0;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
     .panel .panel-scroll {
         flex: 1;
         overflow-y: auto;
+        overflow-x: hidden;
         min-height: 0;
+        padding-bottom: 50px;
+    }
+
+    /* Compact inventory on mobile */
+    .inventory-section {
+        margin-top: 8px;
+    }
+
+    .inventory-items {
+        grid-template-columns: repeat(auto-fill, 28px);
+        gap: 4px;
+        max-height: 70px;
+    }
+
+    .inventory-item {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+
+    .inventory-title {
+        font-size: 11px;
+        margin-bottom: 6px;
     }
 
     .main-area {
@@ -1318,7 +1402,7 @@ h2 {
         right: 0;
         z-index: 100;
         background: rgba(10, 14, 39, 0.95);
-        border-top: 2px solid #00ff88;
+        border-top: 2px solid var(--text-primary);
         justify-content: stretch;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -1328,7 +1412,7 @@ h2 {
         flex: 1;
         background: none;
         border: none;
-        color: #00ff88;
+        color: var(--text-primary);
         font-size: 22px;
         padding: 12px 0;
         cursor: pointer;
@@ -1339,23 +1423,26 @@ h2 {
     .mobile-tab.active {
         opacity: 1;
         background: rgba(0, 255, 136, 0.15);
-        box-shadow: 0 -2px 10px rgba(0, 255, 136, 0.3);
+        box-shadow: 0 -2px 10px var(--shadow-glow);
     }
 
     /* Tab content visibility */
     .panel:not(.log-panel),
     .main-area,
-    .right-panels {
+    .right-panels,
+    .mobile-settings-panel {
         display: none !important;
     }
 
     .panel.mobile-visible,
     .main-area.mobile-visible,
-    .right-panels.mobile-visible {
+    .right-panels.mobile-visible,
+    .mobile-settings-panel.mobile-visible {
         display: flex !important;
     }
 
-    .right-panels.mobile-visible .panel {
+    .right-panels.mobile-visible .panel,
+    .mobile-settings-panel.mobile-visible .panel {
         display: flex !important;
         width: 100%;
     }
@@ -1413,8 +1500,25 @@ h2 {
     .activity-progress { grid-area: progress; }
 
     .settings-btn {
-        margin-top: 10px;
-        position: static;
+        display: none !important;
+    }
+
+    .mobile-settings-panel {
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .mobile-settings-panel .panel {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mobile-settings-content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
     h2 {

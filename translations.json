@@ -26,7 +26,10 @@
             "exportSave": "Экспорт",
             "importSave": "Импорт",
             "nitrogen": "Азот (N₂)",
-            "nitro": "НИТРО x10"
+            "nitro": "НИТРО x10",
+            "theme": "Тема",
+            "themeDefault": "По умолчанию",
+            "themeDark": "Тёмная"
         },
         "stats": {
             "strength": "Сила",
@@ -123,7 +126,10 @@
             "exportSave": "Export",
             "importSave": "Import",
             "nitrogen": "Nitrogen (N₂)",
-            "nitro": "NITRO x10"
+            "nitro": "NITRO x10",
+            "theme": "Theme",
+            "themeDefault": "Default",
+            "themeDark": "Dark"
         },
         "stats": {
             "strength": "Strength",
@@ -220,7 +226,10 @@
             "exportSave": "Exportieren",
             "importSave": "Importieren",
             "nitrogen": "Stickstoff (N₂)",
-            "nitro": "NITRO x10"
+            "nitro": "NITRO x10",
+            "theme": "Design",
+            "themeDefault": "Standard",
+            "themeDark": "Dunkel"
         },
         "stats": {
             "strength": "Stärke",

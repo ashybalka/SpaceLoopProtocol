@@ -5,12 +5,13 @@ function initMobileTabs() {
     const panelLeft = document.querySelector('.panel');         // stats
     const mainArea = document.querySelector('.main-area');      // activities
     const rightPanels = document.querySelector('.right-panels'); // automation
-    const settingsBtn = document.getElementById('settings-btn');
+    const mobileSettings = document.querySelector('.mobile-settings-panel'); // settings
 
     const sections = {
         stats: panelLeft,
         activities: mainArea,
-        automation: rightPanels
+        automation: rightPanels,
+        settings: mobileSettings
     };
 
     function switchTab(tabName) {
@@ -18,8 +19,10 @@ function initMobileTabs() {
         Object.entries(sections).forEach(([key, el]) => {
             if (el) el.classList.toggle('mobile-visible', key === tabName);
         });
-        // Settings button visible with stats
-        if (settingsBtn) settingsBtn.classList.toggle('mobile-visible', tabName === 'stats');
+        // Sync settings values when opening settings tab
+        if (tabName === 'settings' && typeof syncSettingsValues === 'function') {
+            syncSettingsValues();
+        }
     }
 
     tabs.forEach(tab => {
@@ -32,22 +35,24 @@ function initMobileTabs() {
 
 // =============== МАСШТАБИРОВАНИЕ ===============
 
-function initScaling() {
-    const BASE_WIDTH = 1500; // дизайн рассчитан на эту ширину
+// Глобальная функция обновления зума
+function updateZoom() {
+    const BASE_WIDTH = 1500;
     const MIN_ZOOM = 0.65;
     const MAX_ZOOM = 1.4;
     const MOBILE_BREAKPOINT = 768;
 
-    function updateZoom() {
-        const w = window.innerWidth;
-        if (w <= MOBILE_BREAKPOINT) {
-            document.body.style.zoom = '';
-            return;
-        }
-        const zoom = Math.min(Math.max(w / BASE_WIDTH, MIN_ZOOM), MAX_ZOOM);
-        document.body.style.zoom = zoom;
+    const w = window.innerWidth;
+    let zoom = 1;
+
+    if (w > MOBILE_BREAKPOINT) {
+        zoom = Math.min(Math.max(w / BASE_WIDTH, MIN_ZOOM), MAX_ZOOM);
     }
 
+    document.body.style.zoom = zoom;
+}
+
+function initScaling() {
     updateZoom();
     window.addEventListener('resize', updateZoom);
 }
@@ -89,8 +94,13 @@ async function init() {
     initOxygenSaveTooltip();
     initStatBonusTooltip();
     startAutoSave();
+    initTheme();
     initMobileTabs();
     initScaling();
+    // Sync mobile settings values on init
+    if (typeof syncSettingsValues === 'function') {
+        syncSettingsValues();
+    }
 }
 
 // Запуск игры

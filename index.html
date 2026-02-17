@@ -8,15 +8,16 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=44">
 </head>
 <body style="opacity:0">
     <!-- Mobile Tab Bar -->
     <div class="mobile-tabs" id="mobile-tabs">
         <button class="mobile-tab active" data-tab="stats">📊</button>
         <button class="mobile-tab" data-tab="activities">⚡</button>
-        <button class="mobile-tab" data-tab="automation">⚙️</button>
+        <button class="mobile-tab" data-tab="automation">🤖</button>
+        <button class="mobile-tab" data-tab="settings">⚙️</button>
     </div>
 
     <div class="container">
@@ -40,75 +41,115 @@
                 <h2><span data-i18n="ui.stats">📊 ХАРАКТЕРИСТИКИ</span></h2>
 
                 <div class="stat-block">
-                    <div class="stat-line">
+                    <div class="stat-header">
                         <span class="stat-name">💪 Сила</span>
-                        <span class="stat-value" id="strength-level">Ур. 0</span>
+                        <span class="stat-multiplier" id="strength-multiplier">x1.00</span>
                     </div>
-                    <div class="stat-sublabel">Опыт петли: <span id="strength-loop-exp">0/100</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.loopExp">Loop XP:</span>
+                        <span class="stat-exp" id="strength-loop-exp">0/100</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="strength-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill" id="strength-loop-bar" style="width: 0%"></div>
                     </div>
-                    <div class="stat-sublabel">Постоянный: <span id="strength-perm-exp">0/1000</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.permanent">Permanent:</span>
+                        <span class="stat-exp" id="strength-perm-exp">0/1000</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="strength-perm-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill permanent" id="strength-perm-bar" style="width: 0%"></div>
                     </div>
                 </div>
 
                 <div class="stat-block">
-                    <div class="stat-line">
+                    <div class="stat-header">
                         <span class="stat-name">🧠 Интеллект</span>
-                        <span class="stat-value" id="intelligence-level">Ур. 0</span>
+                        <span class="stat-multiplier" id="intelligence-multiplier">x1.00</span>
                     </div>
-                    <div class="stat-sublabel">Опыт петли: <span id="intelligence-loop-exp">0/100</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.loopExp">Loop XP:</span>
+                        <span class="stat-exp" id="intelligence-loop-exp">0/100</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="intelligence-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill" id="intelligence-loop-bar" style="width: 0%"></div>
                     </div>
-                    <div class="stat-sublabel">Постоянный: <span id="intelligence-perm-exp">0/1000</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.permanent">Permanent:</span>
+                        <span class="stat-exp" id="intelligence-perm-exp">0/1000</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="intelligence-perm-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill permanent" id="intelligence-perm-bar" style="width: 0%"></div>
                     </div>
                 </div>
 
                 <div class="stat-block">
-                    <div class="stat-line">
+                    <div class="stat-header">
                         <span class="stat-name">🎯 Ловкость</span>
-                        <span class="stat-value" id="agility-level">Ур. 0</span>
+                        <span class="stat-multiplier" id="agility-multiplier">x1.00</span>
                     </div>
-                    <div class="stat-sublabel">Опыт петли: <span id="agility-loop-exp">0/100</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.loopExp">Loop XP:</span>
+                        <span class="stat-exp" id="agility-loop-exp">0/100</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="agility-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill" id="agility-loop-bar" style="width: 0%"></div>
                     </div>
-                    <div class="stat-sublabel">Постоянный: <span id="agility-perm-exp">0/1000</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.permanent">Permanent:</span>
+                        <span class="stat-exp" id="agility-perm-exp">0/1000</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="agility-perm-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill permanent" id="agility-perm-bar" style="width: 0%"></div>
                     </div>
                 </div>
 
                 <div class="stat-block">
-                    <div class="stat-line">
+                    <div class="stat-header">
                         <span class="stat-name">❤️ Выносливость</span>
-                        <span class="stat-value" id="endurance-level">Ур. 0</span>
+                        <span class="stat-multiplier" id="endurance-multiplier">x1.00</span>
                     </div>
-                    <div class="stat-sublabel">Опыт петли: <span id="endurance-loop-exp">0/100</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.loopExp">Loop XP:</span>
+                        <span class="stat-exp" id="endurance-loop-exp">0/100</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="endurance-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill" id="endurance-loop-bar" style="width: 0%"></div>
                     </div>
-                    <div class="stat-sublabel">Постоянный: <span id="endurance-perm-exp">0/1000</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.permanent">Permanent:</span>
+                        <span class="stat-exp" id="endurance-perm-exp">0/1000</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="endurance-perm-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill permanent" id="endurance-perm-bar" style="width: 0%"></div>
                     </div>
                 </div>
 
                 <div class="stat-block">
-                    <div class="stat-line">
+                    <div class="stat-header">
                         <span class="stat-name">👁️ Восприятие</span>
-                        <span class="stat-value" id="perception-level">Ур. 0</span>
+                        <span class="stat-multiplier" id="perception-multiplier">x1.00</span>
                     </div>
-                    <div class="stat-sublabel">Опыт петли: <span id="perception-loop-exp">0/100</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.loopExp">Loop XP:</span>
+                        <span class="stat-exp" id="perception-loop-exp">0/100</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="perception-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill" id="perception-loop-bar" style="width: 0%"></div>
                     </div>
-                    <div class="stat-sublabel">Постоянный: <span id="perception-perm-exp">0/1000</span></div>
+                    <div class="stat-row">
+                        <span class="stat-label" data-i18n="ui.permanent">Permanent:</span>
+                        <span class="stat-exp" id="perception-perm-exp">0/1000</span>
+                        <span class="stat-lvl"><span data-i18n="ui.level">Lvl.</span> <span id="perception-perm-level">0</span></span>
+                    </div>
                     <div class="stat-bar">
                         <div class="stat-fill permanent" id="perception-perm-bar" style="width: 0%"></div>
                     </div>
@@ -156,7 +197,7 @@
         <!-- Правая панель: Автоматизация -->
         <div class="right-panels">
             <div class="panel">
-                <h2><span data-i18n="ui.automation">⚙️ АВТОМАТИЗАЦИЯ</span></h2>
+                <h2><span data-i18n="ui.automation">🤖 АВТОМАТИЗАЦИЯ</span></h2>
                 <div class="automation-section">
                     <div class="auto-controls">
                         <button id="auto-mode-btn" class="auto-btn" onclick="toggleAutoMode()">▶️ <span data-i18n="ui.start">Запустить</span></button>
@@ -164,6 +205,42 @@
                     </div>
                     <div class="automation-label"><span data-i18n="ui.queue">Очередь:</span></div>
                     <div id="automation-queue" class="automation-queue"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Settings Panel -->
+        <div class="mobile-settings-panel">
+            <div class="panel">
+                <div class="panel-scroll">
+                    <h2>⚙️ <span data-i18n="ui.settings">Настройки</span></h2>
+                    <div class="mobile-settings-content">
+                        <div class="settings-row">
+                            <label data-i18n="ui.language">Язык</label>
+                            <select id="mobile-lang-select" onchange="onLanguageChange()">
+                                <option value="ru">Русский</option>
+                                <option value="en">English</option>
+                                <option value="de">Deutsch</option>
+                            </select>
+                        </div>
+                        <div class="settings-row">
+                            <label data-i18n="ui.theme">Тема</label>
+                            <select id="mobile-theme-select" onchange="onThemeChange()">
+                                <option value="default" data-i18n="ui.themeDefault">По умолчанию</option>
+                                <option value="dark" data-i18n="ui.themeDark">Тёмная</option>
+                            </select>
+                        </div>
+                        <div class="settings-row save-row">
+                            <button class="export-btn" onclick="exportSave()">📤 <span data-i18n="ui.exportSave">Экспорт</span></button>
+                            <button class="import-btn" onclick="importSave()">📥 <span data-i18n="ui.importSave">Импорт</span></button>
+                        </div>
+                        <div class="settings-row">
+                            <button class="reset-loop-btn" onclick="resetLoop()">🔁 <span data-i18n="ui.resetLoop">Сбросить петлю</span></button>
+                        </div>
+                        <div class="settings-row">
+                            <button class="reset-btn" onclick="resetGame()">🔄 <span data-i18n="ui.resetGame">Сбросить игру</span></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,6 +259,13 @@
                     <option value="ru">Русский</option>
                     <option value="en">English</option>
                     <option value="de">Deutsch</option>
+                </select>
+            </div>
+            <div class="settings-row">
+                <label data-i18n="ui.theme">Тема</label>
+                <select id="theme-select" onchange="onThemeChange()">
+                    <option value="default" data-i18n="ui.themeDefault">По умолчанию</option>
+                    <option value="dark" data-i18n="ui.themeDark">Тёмная</option>
                 </select>
             </div>
             <div class="settings-row save-row">
@@ -221,14 +305,14 @@
     </div>
 
     <!-- Модульные скрипты (порядок важен!) -->
-    <script src="scripts/i18n.js?v=21"></script>
-    <script src="scripts/game.js?v=21"></script>
-    <script src="scripts/inventory.js?v=21"></script>
-    <script src="scripts/ui.js?v=21"></script>
-    <script src="scripts/activities.js?v=21"></script>
-    <script src="scripts/automation.js?v=21"></script>
-    <script src="scripts/save.js?v=21"></script>
-    <script src="scripts/settings.js?v=21"></script>
-    <script src="scripts/main.js?v=21"></script>
+    <script src="scripts/i18n.js?v=30"></script>
+    <script src="scripts/game.js?v=29"></script>
+    <script src="scripts/inventory.js?v=29"></script>
+    <script src="scripts/ui.js?v=33"></script>
+    <script src="scripts/activities.js?v=30"></script>
+    <script src="scripts/automation.js?v=29"></script>
+    <script src="scripts/save.js?v=29"></script>
+    <script src="scripts/settings.js?v=31"></script>
+    <script src="scripts/main.js?v=31"></script>
 </body>
 </html>

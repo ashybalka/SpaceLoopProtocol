@@ -99,6 +99,10 @@ function setLanguage(lang) {
         renderActivities();
         renderAutomationQueue();
         updateUI();
+        // Sync mobile settings panel
+        if (typeof syncSettingsValues === 'function') {
+            syncSettingsValues();
+        }
     }
 }
 
@@ -107,31 +111,15 @@ function applyTranslations() {
     // Заголовки панелей
     document.querySelector('.panel h2').textContent = '📊 ' + t('ui.stats');
     document.querySelector('.log-panel h2').textContent = '📝 ' + t('ui.eventLog');
-    document.querySelector('.right-panels .panel h2').textContent = '⚙️ ' + t('ui.automation');
+    document.querySelector('.right-panels .panel h2').textContent = '🤖 ' + t('ui.automation');
 
     // Названия статов с иконками из переводов
     const statKeys = ['strength', 'intelligence', 'agility', 'endurance', 'perception'];
-    document.querySelectorAll('.stat-name').forEach(el => {
-        const statKey = el.closest('.stat-block')?.querySelector('[id$="-level"]')?.id.replace('-level', '');
-        if (statKey && statKeys.includes(statKey)) {
+    statKeys.forEach(statKey => {
+        const nameEl = document.querySelector(`#${statKey}-level`)?.closest('.stat-row')?.closest('.stat-block')?.querySelector('.stat-name');
+        if (nameEl) {
             const icon = t(`statIcons.${statKey}`);
-            el.textContent = icon + ' ' + t(`stats.${statKey}`);
-        }
-    });
-
-    // Подписи опыта
-    const statBlocks = document.querySelectorAll('.stat-block');
-    statBlocks.forEach(block => {
-        const sublabels = block.querySelectorAll('.stat-sublabel');
-        if (sublabels.length >= 2) {
-            const loopSpan = sublabels[0].querySelector('span');
-            if (loopSpan) {
-                sublabels[0].innerHTML = t('ui.loopExp') + ': <span id="' + loopSpan.id + '">' + loopSpan.textContent + '</span>';
-            }
-            const permSpan = sublabels[1].querySelector('span');
-            if (permSpan) {
-                sublabels[1].innerHTML = t('ui.permanent') + ': <span id="' + permSpan.id + '">' + permSpan.textContent + '</span>';
-            }
+            nameEl.textContent = icon + ' ' + t(`stats.${statKey}`);
         }
     });
 
@@ -170,9 +158,17 @@ function applyTranslations() {
     if (modalTitle) {
         modalTitle.innerHTML = '⚙️ ' + t('ui.settings');
     }
-    const langLabel = document.querySelector('.settings-row label');
+    const langLabel = document.querySelector('.settings-row label[data-i18n="ui.language"]');
     if (langLabel) {
         langLabel.textContent = t('ui.language');
+    }
+    const fontSizeLabel = document.querySelector('.settings-row label[data-i18n="ui.fontSize"]');
+    if (fontSizeLabel) {
+        fontSizeLabel.textContent = t('ui.fontSize');
+    }
+    const themeLabel = document.querySelector('.settings-row label[data-i18n="ui.theme"]');
+    if (themeLabel) {
+        themeLabel.textContent = t('ui.theme');
     }
     const resetLoopBtn = document.querySelector('.reset-loop-btn');
     if (resetLoopBtn) {
@@ -192,7 +188,14 @@ function applyTranslations() {
         const key = el.getAttribute('data-i18n');
         const val = t(key);
         if (val && val !== key) {
-            el.textContent = val;
+            // Для option элементов используем textContent напрямую
+            if (el.tagName === 'OPTION') {
+                el.textContent = val;
+            } else if (el.tagName === 'LABEL') {
+                el.textContent = val;
+            } else {
+                el.textContent = val;
+            }
         }
     });
 

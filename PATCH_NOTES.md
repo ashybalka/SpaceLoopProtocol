@@ -1,5 +1,33 @@
 # Space Loop Protocol - Patch Notes
 
+## v0.3.3
+
+### New Features
+- **Dark Theme** — Added a dark theme option in settings. Choose between Default (space theme) and Dark themes.
+
+### Improvements
+- **Number Formatting** — Experience values now display in incremental game style: 1K, 1M, 1B, 1T instead of long numbers (1000+ becomes 1K).
+- **Stat Display Redesign** — Stats now show in a more compact format with XP multiplier in the header and levels displayed inline with XP values.
+- **Oxygen Precision** — When an activity completes mid-tick, the unused portion of that tick is now refunded back to oxygen (adjusted by efficiency bonuses). Previously, up to 0.1s of oxygen could be silently lost on each activity completion.
+
+### Mobile UI Improvements
+- **Settings Tab** — Added a dedicated 4th mobile tab (⚙️) for settings, replacing the fixed button approach. Settings are now accessible alongside Stats, Activities, and Automation tabs.
+- **Automation Icon Update** — Changed automation emoji from ⚙️ to 🤖 to avoid confusion with settings.
+
+### Inventory Improvements
+- **Compact Grid Layout** — Inventory now uses a grid layout with scrolling instead of wrapping endlessly:
+  - **Desktop**: 32x32px items, ~5 items per row, max height 130px
+  - **Mobile**: 28x28px items, compact spacing, max height 70px
+- **Prevents UI Overlap** — Items no longer overflow and cover other interface elements when you collect many permanent items.
+
+### Bug Fixes
+- **Automation Queue** — Fixed a bug where completing an activity could incorrectly advance a different queue slot if the same activity appeared multiple times.
+- **Automation Queue Stop** — Queue now stops automatically after the last item completes (unless Auto-Repeat is enabled). Previously it would loop indefinitely regardless of the repeat setting.
+- **Mobile Settings Panel** — Fixed empty settings panel on mobile devices.
+- **Mobile Settings Sync** — Language, theme, and font size controls now work correctly on mobile. Previously only desktop selects were being read.
+
+---
+
 ## v0.3.2
 
 ### Navigation

@@ -2,6 +2,16 @@
 
 let logFilters = { all: true, complete: true, history: true, stat: true, power: true };
 
+// Format numbers for incremental game style (1000 = 1K, 1000000 = 1M)
+function formatNumber(num) {
+    num = Math.floor(num);
+    if (num < 1000) return num.toString();
+    if (num < 1000000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    if (num < 1000000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (num < 1000000000000) return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+    return (num / 1000000000000).toFixed(1).replace(/\.0$/, '') + 'T';
+}
+
 // Тултип для экономии кислорода (делегирование — бейдж создаётся динамически)
 function initOxygenSaveTooltip() {
     const tooltip = document.getElementById('oxygen-save-tooltip');
@@ -55,10 +65,11 @@ function initStatBonusTooltip() {
     if (!tooltip) return;
 
     document.addEventListener('mouseover', (e) => {
-        const badge = e.target.closest('.stat-item-bonus');
-        if (!badge || !badge.dataset.stat) return;
+        const badge = e.target.closest('.stat-multiplier');
+        if (!badge) return;
 
-        const statKey = badge.dataset.stat;
+        // Get stat key from ID (e.g., "strength-multiplier" -> "strength")
+        const statKey = badge.id.replace('-multiplier', '');
         const stat = game.stats[statKey];
         const bonusKey = statKey + 'Exp';
         const lines = [];
@@ -92,7 +103,7 @@ function initStatBonusTooltip() {
     });
 
     document.addEventListener('mouseout', (e) => {
-        if (e.target.closest('.stat-item-bonus')) {
+        if (e.target.closest('.stat-multiplier')) {
             tooltip.style.display = 'none';
         }
     });
@@ -207,36 +218,26 @@ function updateUI() {
     ['strength', 'intelligence', 'agility', 'endurance', 'perception'].forEach(statKey => {
         const stat = game.stats[statKey];
 
-        document.getElementById(`${statKey}-level`).textContent = `${t('ui.level')} ${stat.level} (${stat.permLevel})`;
+        // Update levels
+        document.getElementById(`${statKey}-level`).textContent = stat.level;
+        document.getElementById(`${statKey}-perm-level`).textContent = stat.permLevel;
 
-        const loopExpNeeded = 10 * Math.pow(1.25, stat.level);
-        const loopExpProgress = (stat.loopExp / loopExpNeeded) * 100;
-        document.getElementById(`${statKey}-loop-exp`).textContent = `${Math.floor(stat.loopExp)}/${Math.floor(loopExpNeeded)}`;
-        document.getElementById(`${statKey}-loop-bar`).style.width = `${loopExpProgress}%`;
-
-        // Exp multiplier badge (items + perm level)
-        const loopSublabel = document.getElementById(`${statKey}-loop-exp`).parentNode;
-        let bonusBadge = document.getElementById(`${statKey}-item-bonus`);
+        // Calculate exp multiplier
         const itemBonus = getExpBonus(statKey);
         const permMultiplier = Math.pow(1.10, stat.permLevel);
         const totalMultiplier = (1 + itemBonus) * permMultiplier;
-        if (totalMultiplier > 1.001) {
-            if (!bonusBadge) {
-                bonusBadge = document.createElement('span');
-                bonusBadge.id = `${statKey}-item-bonus`;
-                bonusBadge.className = 'stat-item-bonus';
-                bonusBadge.dataset.stat = statKey;
-                loopSublabel.appendChild(bonusBadge);
-            }
-            bonusBadge.textContent = `x${totalMultiplier.toFixed(2)}`;
-            bonusBadge.style.display = '';
-        } else if (bonusBadge) {
-            bonusBadge.style.display = 'none';
-        }
+        document.getElementById(`${statKey}-multiplier`).textContent = `x${totalMultiplier.toFixed(2)}`;
 
+        // Update loop exp
+        const loopExpNeeded = 10 * Math.pow(1.25, stat.level);
+        const loopExpProgress = (stat.loopExp / loopExpNeeded) * 100;
+        document.getElementById(`${statKey}-loop-exp`).textContent = `${formatNumber(stat.loopExp)}/${formatNumber(loopExpNeeded)}`;
+        document.getElementById(`${statKey}-loop-bar`).style.width = `${loopExpProgress}%`;
+
+        // Update permanent exp
         const permExpNeeded = 100 * Math.pow(1.5, stat.permLevel);
         const permExpProgress = (stat.permExp / permExpNeeded) * 100;
-        document.getElementById(`${statKey}-perm-exp`).textContent = `${Math.floor(stat.permExp)}/${Math.floor(permExpNeeded)}`;
+        document.getElementById(`${statKey}-perm-exp`).textContent = `${formatNumber(stat.permExp)}/${formatNumber(permExpNeeded)}`;
         document.getElementById(`${statKey}-perm-bar`).style.width = `${permExpProgress}%`;
     });
 
