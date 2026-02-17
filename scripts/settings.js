@@ -36,31 +36,19 @@ function resetLoop() {
     endLoop();
 }
 
-function onThemeChange() {
-    const sel = document.getElementById('theme-select') || document.getElementById('mobile-theme-select');
-    if (!sel) {
-        console.error('Theme select not found');
-        return;
-    }
-    const theme = sel.value;
-    console.log('Theme changed to:', theme);
-    applyTheme(theme);
+function onThemeChange(sel) {
+    if (!sel) sel = document.getElementById('theme-select') || document.getElementById('mobile-theme-select');
+    if (!sel) return;
+    applyTheme(sel.value);
 }
 
 function applyTheme(theme) {
-    console.log('Applying theme:', theme);
-    // Backwards compatibility: convert 'space' to 'default'
     if (theme === 'space') theme = 'default';
     localStorage.setItem('gameTheme', theme);
-
-    // Remove all theme classes
     document.body.classList.remove('theme-dark');
-
-    // Apply theme class only if not default
     if (theme !== 'default') {
         document.body.classList.add('theme-' + theme);
     }
-    console.log('Body classes after theme apply:', document.body.classList);
     // Sync both selects
     if (typeof syncSettingsValues === 'function') {
         syncSettingsValues();
@@ -73,11 +61,9 @@ function initTheme() {
     applyTheme(theme);
 }
 
-function onLanguageChange() {
-    const langSelect = document.getElementById('lang-select') || document.getElementById('mobile-lang-select');
-    if (langSelect) {
-        setLanguage(langSelect.value);
-    }
+function onLanguageChange(sel) {
+    if (!sel) sel = document.getElementById('lang-select') || document.getElementById('mobile-lang-select');
+    if (sel) setLanguage(sel.value);
 }
 
 function exportSave() {
