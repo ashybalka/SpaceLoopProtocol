@@ -217,7 +217,7 @@
                     <div class="mobile-settings-content">
                         <div class="settings-row">
                             <label data-i18n="ui.language">Язык</label>
-                            <select id="mobile-lang-select" onchange="onLanguageChange()">
+                            <select id="mobile-lang-select" onchange="onLanguageChange(this)">
                                 <option value="ru">Русский</option>
                                 <option value="en">English</option>
                                 <option value="de">Deutsch</option>
@@ -225,7 +225,7 @@
                         </div>
                         <div class="settings-row">
                             <label data-i18n="ui.theme">Тема</label>
-                            <select id="mobile-theme-select" onchange="onThemeChange()">
+                            <select id="mobile-theme-select" onchange="onThemeChange(this)">
                                 <option value="default" data-i18n="ui.themeDefault">По умолчанию</option>
                                 <option value="dark" data-i18n="ui.themeDark">Тёмная</option>
                             </select>
@@ -255,7 +255,7 @@
             <h2>⚙️ <span data-i18n="ui.settings">Настройки</span></h2>
             <div class="settings-row">
                 <label data-i18n="ui.language">Язык</label>
-                <select id="lang-select" onchange="onLanguageChange()">
+                <select id="lang-select" onchange="onLanguageChange(this)">
                     <option value="ru">Русский</option>
                     <option value="en">English</option>
                     <option value="de">Deutsch</option>
@@ -263,7 +263,7 @@
             </div>
             <div class="settings-row">
                 <label data-i18n="ui.theme">Тема</label>
-                <select id="theme-select" onchange="onThemeChange()">
+                <select id="theme-select" onchange="onThemeChange(this)">
                     <option value="default" data-i18n="ui.themeDefault">По умолчанию</option>
                     <option value="dark" data-i18n="ui.themeDark">Тёмная</option>
                 </select>
@@ -312,7 +312,7 @@
     <script src="scripts/activities.js?v=30"></script>
     <script src="scripts/automation.js?v=29"></script>
     <script src="scripts/save.js?v=29"></script>
-    <script src="scripts/settings.js?v=31"></script>
+    <script src="scripts/settings.js?v=32"></script>
     <script src="scripts/main.js?v=31"></script>
 </body>
 </html>
